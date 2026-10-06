@@ -43,7 +43,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus 
 
 <section class="section section--navy grain" data-elementor="container:support-teaser"><div class="wrap split">
   <div data-reveal><span class="eyebrow">Student support</span><h2 class="h2">Help is <em>one call away.</em></h2><p class="lede" style="margin-top:18px">From assignment extensions to tuition payments and Blackboard, the student support team works with every department to help you reach your academic goals.</p><p style="margin-top:28px"><a class="btn btn--gold" href="life/student-support/">Open the support hub ${icon('arrow')}</a></p></div>
-  <div class="tiles" style="grid-template-columns:1fr 1fr" data-reveal><div class="tile"><span class="num">Call</span><h3 style="font-size:1.2rem">${D.site.phone1}<br>${D.site.phone2}</h3></div><div class="tile"><span class="num">Email</span><h3 style="font-size:1.05rem;word-break:break-word">${D.site.supportEmail}</h3></div></div>
+  <div class="tiles tiles--contact" data-reveal><div class="tile"><span class="num">Call</span><h3 style="font-size:1.2rem">${D.site.phone1}<br>${D.site.phone2}</h3></div><div class="tile"><span class="num">Email</span><h3 style="font-size:1.05rem;word-break:normal">${D.site.supportEmail.replace('@', '<wbr>@')}</h3></div></div>
 </div></section>
 
 ${L.nextStrip([['Meet the students', 'Stories in their own words', 'life/stories/'], ['Get support', 'Extensions, finance, Blackboard', 'life/student-support/'], ['Browse the gallery', 'Graduation and student life', 'gallery/']])}

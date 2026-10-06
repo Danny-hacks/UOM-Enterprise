@@ -932,3 +932,17 @@ body:has(.cmpdock.is-on) .totop { bottom: 112px; }
   .hero__bar .quick__fields { grid-template-columns: 1fr; gap: 10px; }
   .hero__bar .btn { width: 100%; justify-content: space-between; }
 }
+
+/* ---------- mobile header + contact tiles ---------- */
+.tiles--contact { grid-template-columns: 1fr 1fr; }
+.tiles--contact .tile h3 { overflow-wrap: normal; }
+@media (max-width: 700px) { .tiles--contact { grid-template-columns: 1fr; } }
+@media (max-width: 1199px) {
+  .hdr__in { min-height: 92px; gap: 6px; }
+  .logo img { height: 66px; }
+  .hdr.is-stuck .hdr__in { min-height: 80px; }
+  .hdr.is-stuck .logo img { height: 56px; }
+  .hdr .icon-btn { width: 52px; height: 52px; }
+  .hdr .icon-btn svg { width: 30px; height: 30px; }
+}
+@media (max-width: 400px) { .logo img { height: 58px; } .hdr.is-stuck .logo img { height: 50px; } .hdr .icon-btn { width: 48px; height: 48px; } }
