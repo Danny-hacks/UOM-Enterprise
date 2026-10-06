@@ -13,6 +13,7 @@ const pages = [
   require('./pages/international')(),
   ...require('./pages/life')(),
   ...require('./pages/others')(),
+  ...require('./pages/outcomes')(),
 ];
 
 for (const p of pages) {
@@ -51,6 +52,9 @@ const search = [
   { t: 'Schools, colleges & employers', u: 'partners/', k: 'Partners', x: 'taster lecture school college employer fair road show' },
   { t: 'Events & visits', u: 'events/', k: 'Events', x: 'open day fair expo visit taster lecture counselling' },
   { t: 'Gallery', u: 'gallery/', k: 'Life', x: 'photos graduation images' },
+  { t: 'Careers & outcomes', u: 'outcomes/', k: 'Careers', x: 'jobs employers sectors graduates stories careers support routes' },
+  { t: 'For parents', u: 'parents/', k: 'Parents', x: 'parent guardian recognised fees support safe campus visit' },
+  { t: 'Request a callback', u: 'contact/#callback', k: 'Contact', x: 'call back phone ring adviser' },
   { t: 'Contact', u: 'contact/', k: 'Contact', x: 'phone email address map hours location' },
   ...D.news.map((n) => ({ t: n.title, u: `news/${n.slug}/`, k: 'Guide', x: n.dek })),
 ];
@@ -64,4 +68,10 @@ const urls = pages.filter((p) => p.path !== '404.html').map((p) => base + p.path
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${base}sitemap.xml\n`);
 
+// stand-in content report
+const samples = [];
+(function scan(name, arr) { (arr || []).forEach((x) => { if (x && x.sample) samples.push(name + ': ' + (x.name || x.title || x.id || x.slug)); }); })('story', D.sampleStories);
+D.sectors.forEach((x) => x.sample && samples.push('sector: ' + x.title));
+samples.push('site.whatsapp (stand-in number ' + D.site.whatsappLabel + ')');
 console.log(`Built ${pages.length} pages`);
+console.log(`Stand-in content to replace (${samples.length}):\n  - ` + samples.join('\n  - '));

@@ -12,7 +12,7 @@ Quick reference for converting the approved demo (`demo/`) to a native Elementor
 
 ## 2. Header & navigation
 - White sticky header, logo (navy lockup) ~68px desktop / 66px mobile, shrinks when stuck. Search icon, Enquire (ghost), Apply now (crimson).
-- Nav: Study · Apply · International · Life at UoME · Schools & Partners (no dropdown) · About. Simple dropdowns, 4–5 plain links each (see `layout.js` `DD`).
+- Nav: Study · Apply · International · **Careers & outcomes** · Life at UoME · About (Parents and Schools & partners live under About). Simple dropdowns, 4–5 plain links each (see `layout.js` `DD`).
 - **Underline:** 4px crimson bar close under the label (bottom 24px; 17px when stuck) on hover/active.
 - **Active states:** parent tab underlined for its section. Dropdown item gets crimson text + left bar when it matches current path+query+hash, **and follows scroll** (scrollspy: item whose target section is above 38% of viewport). Falls back to the hashless link at page top (About → "Our story"). In Elementor use Nav Menu + small JS (`core.js`: `markDD`, scrollspy block).
 - Mobile: hamburger + search icons 40px; drawer with accordions; sticky bottom bar (Apply / Call / Enquire) under 900px.
@@ -66,3 +66,13 @@ Order: Hero + finder bar → Four ways in → Accreditation logo row → Stats (
 
 ## 8. Open items before build
 Fees (Apr 2025 schedule), 2027 intake dates, GBP fee for LLB English & Mauritian Law, LLB English Law syllabus, WhatsApp number, CRM/form destination, official logos (HEC, QAA, IDM, CVLE, navy UoME/UoL art), newer photography (old "Central Lancashire" banners in fair/gallery images), board portraits, more student stories, privacy/legal text. See `CLIENT-REVIEW.md`.
+
+## 9. Added after the brief audit (Oct 2026)
+- **Careers & outcomes** (`/outcomes/`): stats, six sectors with typical routes (stand-in), law-route diagram, 3 graduate stories, careers support (real published services). Data: `build/outcomes-data.js`.
+- **Stories:** story card (`.scard`) = photo or initials tile, quote, name, programme, outcome; filter chips; home **story rotator** (3 slides, 9s, dots, pauses off-screen). Stand-ins carry `sample: true`; `SHOW_SAMPLE_TAGS=1` shows a "Sample" tag; the build prints the stand-in list.
+- **Parents page** (`/parents/`): four reassurance tiles, six FAQs, school-leaver programmes, visit/callback CTA.
+- **Conversion:** `miniForm()` (name, phone/email, programme, consent) on Home and each programme page next to a graduate story; **callback form** at `/contact/#callback`; **WhatsApp** link (`waLink()`, stand-in number); default secondary CTA is "Request a callback".
+- **Study by level:** chips above results drive the Level filter (`data-levels` in `finder.js`).
+- **News & achievements:** 3 news posts added to `build/news.js` (cat `News`).
+- **Events:** "Coming up" tiles (no invented dates). **Partners:** industry & professional partners tiles.
+- **Visual calm:** angled corners now only on buttons, tags and chips; tiles, nodes, side card, estimator output and tour stage are rectangular.

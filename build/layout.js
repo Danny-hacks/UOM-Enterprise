@@ -21,6 +21,7 @@ const P = {
   book: '<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2V5zM6 19h13"/>',
   star: '<path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z" fill="currentColor" stroke="none"/>',
   award: '<circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/>',
+  chat: '<path d="M4 5h16v11H9l-5 4V5z"/>',
 };
 const icon = (n, cls = '') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
 const stars3 = `<span class="crest-stars" aria-hidden="true">${icon('star').replace('<svg class=""', '<svg width="12" height="12"')}${icon('star').replace('<svg class=""', '<svg width="12" height="12"')}${icon('star').replace('<svg class=""', '<svg width="12" height="12"')}</span>`;
@@ -92,11 +93,11 @@ function header(depth, active) {
   const nd = navData();
   const DD = {
     study: [['study/', 'Course finder'], ['study/?area=law', 'Law'], ['study/?area=pm', 'Project management'], ['study/?area=digital', 'Digital marketing'], ['study/#quiz', 'Programme quiz']],
-    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit']],
+    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit'], ['contact/#callback', 'Request a callback']],
     international: [['international/#journey', 'Your journey'], ['international/#visa', 'Visa & health'], ['international/#accommodation', 'Accommodation'], ['international/#cost', 'Cost of living']],
     life: [['life/#tour', 'Campus tour'], ['life/stories/', 'Student stories'], ['life/alumni/', 'Alumni'], ['life/student-support/', 'Student support'], ['gallery/', 'Gallery']],
-    partners: [],
-    about: [['about/', 'Our story'], ['careers-accreditation/', 'Accreditation'], ['about/#leadership', 'Leadership'], ['contact/', 'Contact']],
+    outcomes: [['outcomes/#sectors', 'Where graduates work'], ['outcomes/#stories', 'Graduate stories'], ['outcomes/#support', 'Careers support'], ['careers-accreditation/', 'Accreditation & routes']],
+    about: [['about/', 'Our story'], ['parents/', 'For parents'], ['partners/', 'Schools & partners'], ['about/#leadership', 'Leadership'], ['contact/', 'Contact']],
   };
   const items = D.nav.map((n) => {
     const dd = DD[n.id] || [];
@@ -136,7 +137,7 @@ function footer(depth) {
     </div>
     <div><h3>Study</h3><ul>${programmes.map((p) => `<li><a href="${R}${progUrl(p)}">${esc(p.short)}</a></li>`).join('')}<li><a href="${R}study/">Course finder</a></li></ul></div>
     <div><h3>Apply &amp; visit</h3><ul><li><a href="${R}apply/">How to apply</a></li><li><a href="${R}apply/#fees">Fees &amp; estimator</a></li><li><a href="${R}international/">International students</a></li><li><a href="${R}events/">Events &amp; taster lectures</a></li><li><a href="${R}life/">Campus &amp; student life</a></li><li><a href="${R}contact/">Contact</a></li></ul></div>
-    <div><h3>UoME</h3><ul><li><a href="${R}about/">About us</a></li><li><a href="${R}careers-accreditation/">Accreditation</a></li><li><a href="${R}life/stories/">Student stories</a></li><li><a href="${R}life/alumni/">Alumni</a></li><li><a href="${R}news/">Guides &amp; news</a></li><li><a href="${R}partners/">Schools &amp; partners</a></li></ul></div>
+    <div><h3>UoME</h3><ul><li><a href="${R}about/">About us</a></li><li><a href="${R}careers-accreditation/">Accreditation</a></li><li><a href="${R}outcomes/">Careers &amp; outcomes</a></li><li><a href="${R}life/stories/">Student stories</a></li><li><a href="${R}life/alumni/">Alumni</a></li><li><a href="${R}news/">Guides &amp; news</a></li><li><a href="${R}parents/">For parents</a></li><li><a href="${R}partners/">Schools &amp; partners</a></li></ul></div>
   </div>
   <div class="ftr__bot"><span>© 2010 – 2026 UOM Enterprise Ltd. Registered with the Higher Education Commission, Mauritius.</span><nav aria-label="Legal"><a href="${R}legal/">Privacy</a><a href="${R}legal/#cookies">Cookies</a><a href="${R}legal/#complaints">Complaints</a></nav></div>
 </div></footer>
@@ -146,18 +147,35 @@ function footer(depth) {
 <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 }
 
+const SHOW_SAMPLE = process.env.SHOW_SAMPLE_TAGS === '1';
+const sampleTag = (x) => (SHOW_SAMPLE && x && x.sample ? '<span class="sample-tag">Sample</span>' : '');
+const waLink = (msg = 'Hello UoME, I would like to know more about your programmes.') => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+// short enquiry form (home + programme pages). Wired by core.js [data-form][data-single]
+function miniForm({ programme = '', id = 'q', title = 'Ask us <em>anything.</em>', text = 'Leave your details and an adviser will get back to you during office hours.' } = {}) {
+  const opts = programmes.map((p) => `<option value="${p.slug}"${p.slug === programme ? ' selected' : ''}>${esc(p.short)}</option>`).join('');
+  return `<div class="formcard formcard--mini" data-elementor="widget:form"><form class="form" data-form data-single novalidate>
+    <h3 class="h3">${title}</h3><p class="small" style="margin:-4px 0 4px">${text}</p>
+    <div class="row2"><div class="field"><label class="lab" for="${id}n">Name</label><input class="input" id="${id}n" name="name" autocomplete="name" required><span class="err"></span></div><div class="field"><label class="lab" for="${id}p">Phone or email</label><input class="input" id="${id}p" name="contact" autocomplete="tel" required><span class="err"></span></div></div>
+    <div class="field"><label class="lab" for="${id}i">I’m interested in</label><select class="select" id="${id}i" name="programme"><option value="">Not sure yet</option>${opts}</select></div>
+    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that UOM Enterprise may contact me about this enquiry, in line with its <a href="legal/">privacy notice</a>.</span></label><span class="err" data-consent-err></span>
+    <div><button class="btn" type="submit">Send enquiry ${icon('arrow')}</button></div>
+    <div class="success" data-success hidden>${icon('check')}<h3 class="h3">Thank you — <em>we’ve got it.</em></h3><p>An adviser will be in touch during office hours (${esc(site.hours)}).</p></div>
+  </form></div>`;
+}
+
 function ctaBand(depth, o = {}) {
   const R = rel(depth);
   const eyebrow = o.eyebrow || 'Admissions are open';
   const title = o.title || 'Your next chapter <em>starts here.</em>';
   const text = o.text || 'Speak to our admissions team, book a campus visit, or start your application today — an adviser will get back to you during office hours.';
   const p = o.primary || ['Start your application', 'apply/start/'];
-  const s = o.secondary || ['Book a call with admissions', 'contact/'];
+  const s = o.secondary || ['Request a callback', 'contact/#callback'];
   const href = (u) => (/^(https?:|mailto:|tel:)/.test(u) ? u : R + u);
   return `
 <section class="cta" data-elementor="container:cta-band"><div class="wrap cta__in">
   <div><span class="eyebrow">${esc(eyebrow)}</span><h2 class="display">${title}</h2><p class="lede" style="margin-top:22px">${text}</p></div>
-  <div class="cta__acts"><a class="btn btn--navy" href="${href(p[1])}">${esc(p[0])} ${icon('arrow')}</a><a class="btn btn--white" href="${href(s[1])}">${esc(s[0])} ${icon('arrow')}</a><small>Or call <a class="tel" href="tel:${site.tel}">${site.phone1}</a><br>${esc(site.hours)}</small></div>
+  <div class="cta__acts"><a class="btn btn--navy" href="${href(p[1])}">${esc(p[0])} ${icon('arrow')}</a><a class="btn btn--white" href="${href(s[1])}">${esc(s[0])} ${icon('arrow')}</a><small>Or call <a class="tel" href="tel:${site.tel}">${site.phone1}</a> · <a href="${waLink()}">WhatsApp</a><br>${esc(site.hours)}</small></div>
 </div></section>`;
 }
 
@@ -250,4 +268,4 @@ const tickerBand = (words, gold = true) => {
   return `<div class="ticker ${gold === true ? 'ticker--gold' : gold === 'red' ? 'ticker--red' : ''}" aria-hidden="true" data-elementor="widget:marquee"><div class="ticker__track">${row}${row}</div></div>`;
 };
 
-module.exports = { page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };
+module.exports = { sampleTag, waLink, miniForm, page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };

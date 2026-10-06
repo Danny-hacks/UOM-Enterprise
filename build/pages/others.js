@@ -131,6 +131,18 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Schools & partners', null]], eyebrow: 'S
   </div>
 </div></section>
 
+<section class="section section--soft" id="industry" data-elementor="container:industry-partners"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Industry &amp; professional partners</span><h2 class="h2">Backed by <em>recognised bodies.</em></h2><p class="lede" style="margin-top:14px">UoME works with the University of Lancashire and professional and regulatory bodies so qualifications carry weight with employers.</p></div>
+  <div class="tiles">
+    <div class="tile"><span class="num">UoL</span><h3>University of Lancashire</h3><p>Awarding partner since 2011.</p></div>
+    <div class="tile"><span class="num">APM</span><h3>Association for Project Management</h3><p>Accredits the MSc Project Management and MSc Construction Project Management.</p></div>
+    <div class="tile"><span class="num">CIOB</span><h3>Chartered Institute of Building</h3><p>Accredits the MSc Construction Project Management.</p></div>
+    <div class="tile"><span class="num">IDM</span><h3>Institute of Data &amp; Marketing</h3><p>Certification route for the MSc Digital Marketing.</p></div>
+    <div class="tile"><span class="num">CVLE</span><h3>Council for Vocational Legal Education</h3><p>Recognises the LLB and GDL for the vocational examination in Mauritius.</p></div>
+    <div class="tile"><span class="num">HEC</span><h3>Higher Education Commission</h3><p>Registers UoME and accredits every programme.</p></div>
+  </div>
+</div></section>
+
 <section class="section" id="enquire" data-elementor="container:partner-form"><div class="wrap split split--top">
   <div data-reveal><span class="eyebrow">Get in touch</span><h2 class="h2">Tell us what you <em>have in mind.</em></h2><p class="lede" style="margin-top:16px">Request a taster lecture, a college presentation, or a conversation about developing your team.</p></div>
   <div class="formcard"><form class="form" data-form data-single novalidate>
@@ -164,6 +176,15 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Events', null]], eyebrow: 'Meet UoME', t
     <div><button class="btn" type="submit">Request my visit ${icon('arrow')}</button></div>
     <div class="success" data-success hidden>${icon('check')}<h3 class="h3">Request <em>received.</em></h3><p>The team will confirm a time with you, Monday to Friday between 09:00 and 16:30.</p></div>
   </form></div>
+</div></section>
+
+<section class="section section--soft" id="upcoming" data-elementor="container:upcoming-events"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Coming up</span><h2 class="h2">Where to <em>meet us next.</em></h2></div>
+  <div class="tiles">
+    <div class="tile"><span class="num">Open day</span><h3>Campus open days</h3><p>See the classrooms, lab and library and meet the team. Dates are announced by email and on the University of Lancashire in Mauritius Facebook page.</p><p style="margin-top:14px"><a class="link-arrow" href="#visit">Register your interest ${icon('arrow')}</a></p></div>
+    <div class="tile"><span class="num">Taster</span><h3>Free taster lectures</h3><p>Sit in on a University of Lancashire lecture before you apply — in our classroom or yours.</p><p style="margin-top:14px"><a class="link-arrow" href="#visit">Request a taster ${icon('arrow')}</a></p></div>
+    <div class="tile"><span class="num">Fairs</span><h3>Education &amp; career fairs</h3><p>We exhibit at fairs such as the SVICC Career Expo. Follow our Facebook page for the next dates.</p><p style="margin-top:14px"><a class="link-arrow" href="https://www.facebook.com/Uclaninmauritius">Follow on Facebook ${icon('arrow')}</a></p></div>
+  </div>
 </div></section>
 
 <section class="section section--paper2" id="past" data-elementor="container:events-list"><div class="wrap">
@@ -249,12 +270,23 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Contact', null]], eyebrow: 'Get in touch
   </form></div>
   <aside><div class="contact-cards">
     <a class="ccard" href="tel:${D.site.tel}">${icon('phone')}<div><b>${D.site.phone1}</b><span>${D.site.phone2} · ${esc(D.site.hours)}</span></div></a>
+    <a class="ccard" href="${L.waLink()}">${icon('chat')}<div><b>Chat on WhatsApp</b><span>${D.site.whatsappLabel} · replies during office hours</span></div></a>
     <a class="ccard" href="mailto:${D.site.email}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.email}</b><span>Admissions &amp; general enquiries</span></div></a>
     <a class="ccard" href="mailto:${D.site.supportEmail}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.supportEmail}</b><span>Current students — student support</span></div></a>
     <a class="ccard" href="mailto:${D.site.financeEmail}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.financeEmail}</b><span>Tuition payments &amp; finance</span></div></a>
     <a class="ccard" href="${D.site.map}">${icon('pin')}<div><b>${esc(D.site.address)}</b><span>Opposite the Ebene Commercial Centre · metro 10 minutes’ walk</span></div></a>
     <div class="ccard">${icon('clock')}<div><b>${esc(D.site.hours)}</b><span>${esc(D.site.hoursNote)}</span></div></div>
   </div></aside>
+</div></section>
+<section class="section section--soft" id="callback" data-elementor="container:callback"><div class="wrap split split--top">
+  <div><span class="eyebrow">Request a callback</span><h2 class="h2">Prefer us to <em>call you?</em></h2><p class="lede" style="margin:16px 0 0">Leave your number and a good time. An adviser will ring you back during office hours — ${esc(D.site.hours)}.</p></div>
+  <div class="formcard"><form class="form" data-form data-single novalidate>
+    <div class="row2"><div class="field"><label class="lab" for="cb1">Name</label><input class="input" id="cb1" name="name" autocomplete="name" required><span class="err"></span></div><div class="field"><label class="lab" for="cb2">Phone</label><input class="input" id="cb2" name="phone" type="tel" autocomplete="tel" required><span class="err"></span></div></div>
+    <div class="row2"><div class="field"><label class="lab" for="cb3">Best time</label><select class="select" id="cb3" name="time"><option>Morning (09:00 – 12:00)</option><option>Lunchtime (12:00 – 13:00)</option><option>Afternoon (13:00 – 16:30)</option></select></div><div class="field"><label class="lab" for="cb4">About</label><select class="select" id="cb4" name="programme"><option>Not sure yet</option>${D.programmes.map((p) => `<option>${esc(p.short)}</option>`).join('')}</select></div></div>
+    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that UOM Enterprise may call me about this request, in line with its <a href="legal/">privacy notice</a>.</span></label><span class="err" data-consent-err></span>
+    <div><button class="btn" type="submit">Request my callback ${icon('arrow')}</button></div>
+    <div class="success" data-success hidden>${icon('check')}<h3 class="h3">Callback <em>booked.</em></h3><p>We’ll ring you at your chosen time.</p></div>
+  </form></div>
 </div></section>
 <section class="section section--paper2"><div class="wrap"><div class="mapbox"><iframe title="Map of The Core Building, Ebene" loading="lazy" src="https://www.google.com/maps?q=The+Core+Building+Ebene+Mauritius&output=embed"></iframe></div></div></section>
 `;

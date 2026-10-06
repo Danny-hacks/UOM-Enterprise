@@ -131,6 +131,13 @@ function build(p) {
   </aside>
 </div>
 
+<section class="section" data-elementor="container:graduate-voice"><div class="wrap split split--top">
+  <div><span class="eyebrow">Why it matters</span><h2 class="h2">What studying this <em>can mean for you.</em></h2>
+    ${(() => { const O = require('./outcomes'); const m = O.allStories().filter((x) => x.programme === p.slug)[0] || D.sampleStories.filter((x) => x.area === p.area)[0] || D.sampleStories[0]; return O.storyCard(m).replace('<article class="scard"', '<article class="scard scard--wide" style="margin-top:28px"'); })()}
+  </div>
+  ${L.miniForm({ programme: p.slug, id: 'pq', title: `Ask about <em>${esc(p.short)}.</em>` })}
+</div></section>
+
 <section class="section section--paper2" data-elementor="container:related"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Keep exploring</span><h2 class="h2">Related <em>programmes.</em></h2></div>
   <div class="related">${rel}</div>

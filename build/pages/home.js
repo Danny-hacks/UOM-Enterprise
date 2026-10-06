@@ -59,7 +59,7 @@ module.exports = function home() {
     <a class="path" href="study/?level=postgraduate" data-reveal><span class="num">01</span><h3>A master’s that fits around work</h3><p>Part-time, hybrid MSc and LLM programmes in project management, digital marketing and financial law.</p><span class="path__go">Postgraduate options ${icon('arrow')}</span></a>
     <a class="path" href="study/?area=law" data-reveal style="--d:.08s"><span class="num">02</span><h3>Law — from school to the Bar</h3><p>Qualifying law degrees recognised for England &amp; Wales and by the CVLE in Mauritius, plus a graduate conversion course.</p><span class="path__go">Explore law ${icon('arrow')}</span></a>
     <a class="path" href="international/" data-reveal style="--d:.16s"><span class="num">03</span><h3>Studying from abroad</h3><p>Visa support, accommodation lists, airport pick-up and a clear cost of living — for applicants joining us from overseas.</p><span class="path__go">Plan your move ${icon('arrow')}</span></a>
-    <a class="path" href="partners/" data-reveal style="--d:.24s"><span class="num">04</span><h3>Schools, colleges &amp; employers</h3><p>Free taster lectures, college presentations and fairs — and part-time study that works for your team.</p><span class="path__go">Partner with us ${icon('arrow')}</span></a>
+    <a class="path" href="parents/" data-reveal style="--d:.24s"><span class="num">04</span><h3>Parents &amp; guardians</h3><p>Recognition, fees, support and what your child can do next — answered plainly, with a visit if you’d like one.</p><span class="path__go">For parents ${icon('arrow')}</span></a>
   </div>
 </div></section>
 
@@ -73,7 +73,7 @@ ${L.logoStrip(0)}
     <div class="stat" data-reveal style="--d:.16s"><b data-count="7">7</b><span>University of Lancashire programmes in law, project management and digital marketing</span></div>
     <div class="stat" data-reveal style="--d:.24s"><b data-count="15">15<sup>yrs</sup></b><span>delivering University of Lancashire awards in Mauritius since 2011</span></div>
   </div>
-  <p style="margin-top:36px;display:flex;gap:28px;flex-wrap:wrap"><a class="link-arrow" href="about/">Read our story ${icon('arrow')}</a><a class="link-arrow" href="life/alumni/">Meet the alumni ${icon('arrow')}</a><a class="link-arrow" href="about/#partnership">Our University of Lancashire partnership ${icon('arrow')}</a></p>
+  <ul class="creds"><li><b>Top 7%</b><span>of universities worldwide — CWUR 2025</span></li><li><b>Top 20%</b><span>in the UK for industry &amp; public-sector engagement</span></li><li><b>5 QS Stars</b><span>for teaching, 2025</span></li></ul><p class="fn">University of Lancashire ratings, as published by the University; terms and conditions apply.</p><p style="margin-top:36px;display:flex;gap:28px;flex-wrap:wrap"><a class="link-arrow" href="about/">Read our story ${icon('arrow')}</a><a class="link-arrow" href="life/alumni/">Meet the alumni ${icon('arrow')}</a><a class="link-arrow" href="about/#partnership">Our University of Lancashire partnership ${icon('arrow')}</a></p>
 </div></section>
 
 <section class="section" data-elementor="container:programmes"><div class="wrap">
@@ -85,15 +85,20 @@ ${L.logoStrip(0)}
 </div></section>
 
 <section class="section" data-elementor="container:student-story"><div class="wrap">
-  <div class="story">
-    <div class="story__img" data-reveal><div class="arch"><img src="assets/img/person-yaniish.webp" alt="Yaniish Engutsamy, MSc Digital Marketing Communications student" loading="lazy" width="800" height="800"></div></div>
-    <div data-reveal>
-      <span class="eyebrow">Student voice</span>
-      <blockquote class="quote" style="margin:0 0 8px">The MSc exceeded all my expectations. We didn’t just learn about strategies — we applied them through hands-on projects, case studies and simulations that mirrored real-world challenges.</blockquote>
-      <div class="cite"><b>Yaniish Engutsamy</b><span>MSc Digital Marketing Communications · Year 1</span></div>
-      <p style="margin-top:32px;display:flex;gap:28px;flex-wrap:wrap"><a class="link-arrow" href="life/stories/">Read the full story ${icon('arrow')}</a><a class="link-arrow" href="study/digital/msc-digital-marketing/">See the programme ${icon('arrow')}</a></p>
-    </div>
+  <div class="sec-head sec-head--row"><div><span class="eyebrow">Student voices</span><h2 class="h2">Why people <em>choose UoME.</em></h2></div><a class="link-arrow" href="outcomes/#stories">More graduate stories ${icon('arrow')}</a></div>
+  <div class="rot" data-rotator>
+    <div class="rot__s is-on"><div class="story">
+      <div class="story__img"><div class="arch"><img src="assets/img/person-yaniish.webp" alt="Yaniish Engutsamy, MSc Digital Marketing Communications student" loading="lazy" width="800" height="800"></div></div>
+      <div><blockquote class="quote" style="margin:0 0 8px">The MSc exceeded all my expectations. We didn’t just learn about strategies — we applied them through hands-on projects, case studies and simulations that mirrored real-world challenges.</blockquote><div class="cite"><b>Yaniish Engutsamy</b><span>MSc Digital Marketing Communications · Year 1</span></div><p style="margin-top:28px"><a class="link-arrow" href="study/digital/msc-digital-marketing/">See the programme ${icon('arrow')}</a></p></div>
+    </div></div>
+    ${D.sampleStories.slice(0, 2).map((m) => `<div class="rot__s"><div class="story"><div class="story__img"><div class="arch arch--mono" role="img" aria-label="Portrait placeholder"><span aria-hidden="true">${esc(m.init)}</span></div></div><div>${L.sampleTag(m)}<blockquote class="quote" style="margin:0 0 8px">${esc(m.quote)}</blockquote><div class="cite"><b>${esc(m.name)}</b><span>${esc(m.course)} · ${esc(m.yearLabel)}</span><span style="color:var(--crimson);font-weight:600">${esc(m.outcome)}</span></div><p style="margin-top:28px"><a class="link-arrow" href="study/${m.area === 'pm' ? 'business-management' : 'law'}/${m.programme}/">See the programme ${icon('arrow')}</a></p></div></div></div>`).join('')}
+    <div class="rot__dots" role="tablist" aria-label="Choose a story"><button class="is-on" aria-label="Story 1"></button><button aria-label="Story 2"></button><button aria-label="Story 3"></button></div>
   </div>
+</div></section>
+
+<section class="section section--soft" data-elementor="container:home-enquiry"><div class="wrap split split--top">
+  <div><span class="eyebrow">Talk to a person</span><h2 class="h2">Questions? <em>Ask an adviser.</em></h2><p class="lede" style="margin:18px 0 26px">Fees, entry requirements, study while working, visas — our team answers every weekday.</p><ul class="checks"><li>Replies during office hours, ${esc(D.site.hours)}</li><li>No obligation, no pressure</li><li>Parents welcome on every call</li></ul><p style="margin-top:24px;display:flex;gap:18px;flex-wrap:wrap"><a class="link-arrow" href="${L.waLink()}">Chat on WhatsApp ${icon('arrow')}</a><a class="link-arrow" href="tel:${D.site.tel}">Call ${D.site.phone1} ${icon('arrow')}</a></p></div>
+  ${L.miniForm({ id: 'hq' })}
 </div></section>
 
 <section class="section" data-elementor="container:campus-teaser"><div class="wrap">

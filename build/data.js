@@ -18,6 +18,8 @@ const site = {
   hoursNote: 'Open through lunch (12:00 – 13:00)',
   facebook: 'https://www.facebook.com/',
   map: 'https://www.google.com/maps/search/?api=1&query=The+Core+Building+Ebene+Mauritius',
+  whatsapp: '23050000000', // STAND-IN number — replace with UoME's WhatsApp line
+  whatsappLabel: '+230 5000 0000',
 };
 
 // next open intakes, evaluated at runtime too (assets/js/countdown.js)
@@ -512,6 +514,7 @@ const stories = [
     course: 'MSc Digital Marketing Communications',
     year: 'Year 1',
     img: 'person-yaniish',
+    short: 'The curriculum was thoughtfully structured to cover every essential aspect of modern digital marketing — and we applied it through real projects.',
     quote: 'The MSc in Digital Marketing Communications exceeded all my expectations. The curriculum was thoughtfully structured to cover every essential aspect of modern digital marketing, from content strategy and SEO to consumer behavior and analytics.',
     more: [
       'What stood out to me most was the balance between theory and practice as well as the hybrid mode of studies. We didn’t just learn about strategies — we applied them through hands-on projects, case studies, and simulations that mirrored real-world challenges. The lecturers from both the UK and Mauritius were always available and always encouraging us to think critically and creatively.',
@@ -527,9 +530,11 @@ const nav = [
   { id: 'study', label: 'Study', href: 'study/' },
   { id: 'apply', label: 'Apply', href: 'apply/' },
   { id: 'international', label: 'International', href: 'international/' },
+  { id: 'outcomes', label: 'Careers & outcomes', href: 'outcomes/' },
   { id: 'life', label: 'Life at UoME', href: 'life/' },
-  { id: 'partners', label: 'Schools & Partners', href: 'partners/' },
   { id: 'about', label: 'About', href: 'about/' },
 ];
 
-module.exports = { site, intakes, programmes, accreditations, fees, instalmentDates, costOfLiving, timeline, leadership, events, stories, news, nav };
+const O = require('./outcomes-data');
+
+module.exports = { sampleStories: O.sampleStories, sectors: O.sectors, careersSupport: O.careersSupport, site, intakes, programmes, accreditations, fees, instalmentDates, costOfLiving, timeline, leadership, events, stories, news, nav };

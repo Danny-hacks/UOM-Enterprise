@@ -99,4 +99,58 @@ module.exports = [
     related: ['llb-english-mauritian-law', 'msc-digital-marketing'],
     cta: { title: 'See it <em>for yourself.</em>', text: 'Walk the campus online, or book a visit and meet the team.', primary: ['Take the campus tour', 'life/#tour'], secondary: ['Book a visit', 'events/#visit'] },
   },
+  {
+    slug: 'first-msc-digital-marketing-graduates',
+    cat: 'News', kind: 'News', img: 'grad-honour',
+    title: '2026: the first MSc Digital Marketing graduates',
+    dek: 'UoME celebrates its first graduating cohort of the MSc Digital Marketing, introduced in 2024.',
+    takeaways: [
+      'The MSc Digital Marketing Communications launched in 2024 and its first cohort graduates in 2026.',
+      'It was created with digital marketing specialists and agency partners.',
+      'It is part-time and hybrid over 1.5 years.',
+    ],
+    sections: [
+      { h: 'A new chapter for the partnership', p: ['In 2024 the University of Lancashire partnership widened into the digital economy with the MSc Digital Marketing Communications. In 2026 the first graduating cohort is celebrated alongside more than 900 UoME graduates to date.'] },
+      { h: 'What the programme offers', p: ['Created with digital marketing specialists and agency partners, the MSc helps graduates plan, deliver and assess marketing activity in a digital-first world, using data and analytics responsibly. It prepares graduates for roles in digital strategy, online branding and communications, data-driven marketing, social media and digital campaign management.'] },
+    ],
+    facts: { title: 'MSc Digital Marketing', rows: [['Launched', '2024'], ['First graduates', '2026'], ['Duration', '1.5 years part-time'], ['Mode', 'Hybrid'], ['Certification', 'IDM']] },
+    related: ['msc-digital-marketing'],
+    cta: { title: 'Join <em>the next cohort.</em>', text: 'The MSc Digital Marketing starts in September.', primary: ['View the programme', 'study/digital/msc-digital-marketing/'], secondary: ['Apply now', 'apply/start/?programme=msc-digital-marketing'] },
+  },
+  {
+    slug: 'a-community-of-900-graduates',
+    cat: 'News', kind: 'News', img: 'grad-group',
+    title: 'A community of more than 900 graduates',
+    dek: 'From barristers and attorneys to engineers and national leaders — the UoME alumni network keeps growing.',
+    takeaways: [
+      'More than 900 graduates since UoME partnered with the University of Lancashire.',
+      'Over 100 LLB and GDL graduates are practising Barristers and Attorneys.',
+      'Alumni return for guest lectures, networking sessions and the annual Alumni Event.',
+    ],
+    sections: [
+      { h: 'A network that gives back', p: ['The alumni community of UOM Enterprise, in partnership with the University of Lancashire, reflects the strength and impact of its academic programmes. Many alumni have built distinguished careers in law, government, engineering, business and technology.'] },
+      { h: 'Staying in touch', p: ['Alumni are invited to graduation ceremonies, networking sessions, guest lectures, open days, Induction Week activities and the annual Alumni Event, and counsel current students on their career paths.'] },
+    ],
+    facts: { title: 'Alumni at a glance', rows: [['Graduates', '900+'], ['Practising barristers & attorneys', '100+'], ['Sectors', 'Law, government, engineering, business, technology']] },
+    related: ['llb-english-mauritian-law', 'msc-project-management'],
+    cta: { title: 'Become <em>part of the story.</em>', text: 'Meet the alumni community or start your own programme.', primary: ['Meet the alumni', 'life/alumni/'], secondary: ['Find your programme', 'study/'] },
+  },
+  {
+    slug: 'uome-at-the-svicc-career-expo-2025',
+    cat: 'News', kind: 'News', img: 'fair-1',
+    title: 'UoME at the SVICC Career Expo 2025',
+    dek: 'The team met students and parents across three days at the SVICC in Pailles.',
+    takeaways: [
+      'The expo ran 14–16 February 2025, 10:00–17:00, at the SVICC, Pailles.',
+      'Students could get one-to-one counselling and programme information.',
+      'UoME also took part in the Le Bocage International School education fair.',
+    ],
+    sections: [
+      { h: 'Three days at the SVICC', p: ['UoME’s marketing and recruitment team met prospective students and parents at the SVICC Career Expo in Pailles from 14 to 16 February 2025, presenting programmes and offering one-to-one counselling.'] },
+      { h: 'Meeting students where they are', p: ['Open days, education and career fairs, road shows, free taster lectures and presentations in colleges are all part of how UoME helps students understand the courses available and choose the right pathway.'] },
+    ],
+    facts: { title: 'Event details', rows: [['Event', 'SVICC Career Expo 2025'], ['Dates', '14–16 February 2025'], ['Time', '10:00–17:00'], ['Venue', 'SVICC, Pailles']] },
+    related: ['llb-english-mauritian-law', 'msc-digital-marketing'],
+    cta: { title: 'Meet us <em>in person.</em>', text: 'Book a campus visit, a taster lecture or a one-to-one conversation.', primary: ['Book a visit', 'events/#visit'], secondary: ['See upcoming events', 'events/#upcoming'] },
+  },
 ];

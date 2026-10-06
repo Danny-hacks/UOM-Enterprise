@@ -40,9 +40,11 @@ ${L.ctaBand(0, { title: 'See it <em>for yourself.</em>', text: 'Book a campus vi
 }
 
 function storiesPage() {
+  const O = require('./outcomes');
   const s = D.stories[0];
+  const more = D.sampleStories;
   const body = `
-${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stories', null]], eyebrow: 'In their own words', title: 'Student <em>stories.</em>', lede: 'What it’s really like to study at UoME, told by the people doing it.' })}
+${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stories', null]], eyebrow: 'In their own words', title: 'Student <em>stories.</em>', lede: 'What it’s really like to study at UoME, told by the people doing it — and where it has taken them.' })}
 <section class="section" data-elementor="container:story-feature"><div class="wrap">
   <div class="story">
     <div class="story__img" data-reveal><div class="arch"><img src="assets/img/${s.img}.webp" alt="${esc(s.name)}" width="800" height="800"></div></div>
@@ -55,14 +57,19 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
     </div>
   </div>
 </div></section>
-<section class="section section--paper2" data-elementor="container:share-story"><div class="wrap wrap--narrow" style="text-align:center">
+<section class="section section--soft" data-elementor="container:more-stories"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">More voices</span><h2 class="h2">From law to <em>project management.</em></h2></div>
+  <div class="plist__filters" role="group" aria-label="Filter stories" data-cat-filter><button class="chip is-on" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="law" aria-pressed="false">Law</button><button class="chip" data-f="pm" aria-pressed="false">Project management</button></div>
+  <div class="scards" data-cat-list>${more.map((m, i) => O.storyCard(m, i).replace('<article class="scard"', `<article class="scard" data-cat="${m.area}"`)).join('')}</div>
+</div></section>
+<section class="section" data-elementor="container:share-story"><div class="wrap wrap--narrow" style="text-align:center">
   <span class="eyebrow" style="justify-content:center">Your story next</span><h2 class="h2">Studying or graduated <em>with UoME?</em></h2>
   <p class="lede" style="margin:18px auto 28px">We’d love to hear how your programme has shaped your career. Share a few lines and a photo, and we’ll feature your story.</p>
   <a class="btn btn--navy" href="contact/?topic=story">Share your story ${icon('arrow')}</a>
 </div></section>
 ${L.ctaBand(0, { title: 'Your story could <em>be next.</em>', text: 'Ready to start your own chapter at UoME? Register your interest in two minutes.', primary: ['Start your application', 'apply/start/'], secondary: ['Explore programmes', 'study/'] })}
 `;
-  return { path: 'life/stories/index.html', html: L.page({ depth: 2, active: 'life', title: 'Student stories', desc: 'Hear from UoME students about the MSc Digital Marketing Communications and what it is like to study with the University of Lancashire in Mauritius.', body, scripts: [] }) };
+  return { path: 'life/stories/index.html', html: L.page({ depth: 2, active: 'life', title: 'Student stories', desc: 'Hear from UoME students and graduates about studying law, project management and digital marketing with the University of Lancashire in Mauritius.', body, scripts: [] }) };
 }
 
 function alumniPage() {

@@ -32,6 +32,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Study', null]], eyebrow: 'Course finder'
     <button class="btn btn--ghost btn--sm btn--block" data-reset>Clear all filters</button></div>
   </aside>
   <div>
+    <div class="levels" role="group" aria-label="Browse by level" data-levels><button class="chip is-on" data-lv="">All levels</button><button class="chip" data-lv="undergraduate">Undergraduate</button><button class="chip" data-lv="graduate">Graduate conversion</button><button class="chip" data-lv="postgraduate">Postgraduate</button></div>
     <div class="fbar"><div class="count" aria-live="polite"><span data-found>7</span> programmes</div>
       <div><label class="vh" for="sort">Sort</label><select class="select" id="sort" style="min-height:44px;padding:8px 40px 8px 14px"><option value="default">Sort: Recommended</option><option value="az">Name A – Z</option><option value="short">Shortest first</option></select></div></div>
     <div class="fcards" data-results>${cards}</div>

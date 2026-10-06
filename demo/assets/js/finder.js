@@ -40,6 +40,12 @@
     }
     var tg = $('[data-filter-toggle]', box);
     if (tg) tg.addEventListener('click', function () { var o = box.classList.toggle('is-open'); tg.setAttribute('aria-expanded', o); });
+    var lv = $('[data-levels]');
+    if (lv) {
+      var syncLv = function () { var on = active('level'); $$('[data-lv]', lv).forEach(function (b) { var v = b.getAttribute('data-lv'); b.classList.toggle('is-on', v ? (on.length === 1 && on[0] === v) : on.length === 0); }); };
+      $$('[data-lv]', lv).forEach(function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-lv'); $$('input[name=level]', box).forEach(function (i) { i.checked = v && i.value === v; }); apply(); syncLv(); }); });
+      box.addEventListener('change', syncLv); setTimeout(syncLv, 0);
+    }
     box.addEventListener('change', apply); sort.addEventListener('change', order);
     $('[data-reset]', box).addEventListener('click', function () { $$('input', box).forEach(function (i) { i.checked = false; }); apply(); });
     apply();

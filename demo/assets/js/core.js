@@ -256,6 +256,15 @@
     });
   });
 
+  /* story rotator */
+  $$('[data-rotator]').forEach(function (r) {
+    var slides = $$('.rot__s', r), dots = $$('.rot__dots button', r), cur = 0, t;
+    function go(n) { cur = (n + slides.length) % slides.length; slides.forEach(function (s, k) { s.classList.toggle('is-on', k === cur); }); dots.forEach(function (b, k) { b.classList.toggle('is-on', k === cur); }); clearTimeout(t); if (!reduceMotion) t = setTimeout(function () { go(cur + 1); }, 9000); }
+    dots.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });
+    var vis = 'IntersectionObserver' in w ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) go(cur); else clearTimeout(t); }); }) : null;
+    if (vis) vis.observe(r); else go(0);
+  });
+
   /* course sub-navigation scrollspy */
   var sub = $('[data-subnav]');
   if (sub && io) {

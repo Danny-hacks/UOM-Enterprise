@@ -71,9 +71,23 @@ Everything on the demo site is either **(A) taken directly from uomenterprise.mu
 - Hero: full-screen cycling photos on desktop; on phones the same structure with the caption card, countdown and hero buttons hidden.
 - Board profile tiles use initials as placeholders — please supply portrait photos.
 
+## 4a. STAND-IN content to replace with real content
+
+These items were written as realistic stand-ins so the demo reads as finished. They are **not verified facts or real people**. Build with `SHOW_SAMPLE_TAGS=1 node build/build.js` to show a "Sample" tag on each one. The build prints this list every time.
+
+| What | Where | Needed from UoME |
+|---|---|---|
+| 5 graduate stories (Aisha M., Kevin R., Priya S., Daniel T., Nadia K.) — quotes, outcomes, initial-only portraits | Outcomes, Student stories, Home rotator, programme pages (`build/outcomes-data.js`) | Real, consented stories with photo, programme, year and one-line outcome |
+| 6 career sectors and typical routes | Careers & outcomes (`build/outcomes-data.js`) | Real graduate destinations / employers (logos need permission) |
+| WhatsApp number `+230 5000 0000` | CTA band, Contact, Home (`build/data.js`) | UoME's real WhatsApp line |
+| Callback and enquiry forms | Home, programme pages, Contact | Form destination / CRM; callback hours |
+| "Coming up" events (open days, taster lectures) show no dates | Events | Real upcoming dates |
+| Board portraits (initials) | About | Photos |
+| Parents page answers | Parents | Review wording; all points come from published UoME information |
+
 ## 4c. Features added beyond the current site
 
-Course finder, compare tray and programme quiz; fees and savings estimator; next-intake countdown; three-step enquiry form that pre-fills; full programme pages; accreditation explorer; international journey and cost calculator; campus tour; student support hub; guides; alumni, events, gallery, schools and partners pages; site-wide search; back-to-top with progress ring.
+Careers & outcomes hub with sectors, route to the Bar and graduate stories; parents page; callback form, WhatsApp link and short enquiry forms on Home and every programme page; news and achievements posts; course finder, compare tray and programme quiz; fees and savings estimator; next-intake countdown; three-step enquiry form that pre-fills; full programme pages; accreditation explorer; international journey and cost calculator; campus tour; student support hub; guides; alumni, events, gallery, schools and partners pages; site-wide search; back-to-top with progress ring.
 
 ## 5. What is demo-only
 
