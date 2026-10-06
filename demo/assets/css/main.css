@@ -188,7 +188,7 @@ em { font-style: normal; font-weight: inherit; color: var(--crimson); }
 .search { position: fixed; inset: 0; z-index: 9000; background: rgba(10, 17, 66, .97); color: #fff; display: none; padding: 12vh var(--gut) 40px; overflow-y: auto; }
 .search.is-open { display: block; animation: fadeIn .3s; }
 .search__in { max-width: 860px; margin: 0 auto; }
-.search__field { width: 100%; background: none; border: 0; border-bottom: 4px solid var(--gold); font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 5vw, 3.4rem); letter-spacing: -.03em; color: #fff; padding: 12px 0; outline: none; }
+.search__field { width: 100%; background: none; border: 0; border-bottom: 4px solid var(--gold); font-family: var(--display); font-weight: 800; font-size: clamp(1.15rem, 2.4vw, 1.7rem); letter-spacing: -.02em; color: #fff; padding: 14px 0; outline: none; }
 .search__field::placeholder { color: rgba(255, 255, 255, .35); }
 .search__list { margin-top: 28px; display: grid; gap: 2px; }
 .search__list a { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 16px; text-decoration: none; border-bottom: 1px solid var(--line-light); transition: background .2s, padding .25s; }
@@ -268,7 +268,7 @@ em { font-style: normal; font-weight: inherit; color: var(--crimson); }
 .hero.paused .hero__dots button.is-on i { animation-play-state: paused; }
 @keyframes fill { to { width: 100%; } }
 .hero__bar { position: relative; z-index: 4; background: var(--crimson); color: #fff; }
-.hero__bar-in { display: grid; gap: 16px; padding-block: 20px; align-items: end; }
+.hero__bar-in { display: grid; gap: 16px; padding-block: 20px; align-items: center; }
 @media (min-width: 1000px) { .hero__bar-in { grid-template-columns: auto 1fr auto; gap: 36px; } }
 .hero__bar h2 { font-size: 1.1rem; font-weight: 800; white-space: nowrap; }
 .hero__bar .lab { color: #fff; opacity: .85; margin-bottom: 4px; }
