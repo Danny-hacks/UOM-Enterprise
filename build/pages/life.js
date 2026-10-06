@@ -24,18 +24,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus 
   <p style="margin-top:32px"><a class="btn btn--navy" href="${L.byslug ? 'contact/?topic=visit' : ''}">Book a campus visit ${icon('arrow')}</a></p>
 </div></section>
 
-<section class="section section--paper2" id="facilities" data-elementor="container:facilities"><div class="wrap">
-  <div class="sec-head" data-reveal><span class="eyebrow">Facilities</span><h2 class="h2">Everything <em>within reach.</em></h2></div>
-  <div class="tiles">
-    <div class="tile" data-reveal><span class="num">01</span><h3>Modern classrooms</h3><p>State-of-the-art classrooms equipped for lectures, seminars and moots.</p></div>
-    <div class="tile" data-reveal style="--d:.06s"><span class="num">02</span><h3>Computer laboratory</h3><p>Around 30 high-performance computers connecting you to the University of Lancashire’s online resources.</p></div>
-    <div class="tile" data-reveal style="--d:.12s"><span class="num">03</span><h3>Library</h3><p>Textbooks for each module — mostly for reference, with short-term loans where multiple copies exist.</p></div>
-    <div class="tile" data-reveal style="--d:.18s"><span class="num">04</span><h3>Online library</h3><p>E-books, e-databases A–Z, e-images, e-journals, e-newspapers and a research repository via University of Lancashire Learning Information Services.</p></div>
-    <div class="tile" data-reveal style="--d:.24s"><span class="num">05</span><h3>Student lunchroom</h3><p>A cosy space with a big smart TV for lunch and a break between lectures. Board games on request.</p></div>
-    <div class="tile" data-reveal style="--d:.3s"><span class="num">06</span><h3>Metro &amp; mall nearby</h3><p>The metro station is within a ten-minute walk; shops, a pharmacy and a food court are close by.</p></div>
-  </div>
-</div></section>
-
 <section class="section" id="clubs" data-elementor="container:clubs"><div class="wrap split">
   <div data-reveal><span class="eyebrow">Clubs &amp; societies</span><h2 class="h2">Student-led, <em>community-minded.</em></h2><div class="prose" style="margin-top:20px"><p>Two student-led clubs bring the cohort together: the <b>Law Society</b> and the <b>Rotaract Club</b>. Members organise diverse activities to help the community and address important social issues, alongside cultural activities and competitions that contribute to a fun and positive student experience.</p></div><p style="margin-top:24px"><a class="link-arrow" href="gallery/">See student life in the gallery ${icon('arrow')}</a></p></div>
   <div class="collage" data-reveal><div class="c1 media"><img src="assets/img/life-diversity.webp" alt="Students celebrating together" loading="lazy"></div><div class="c2 media"><img src="assets/img/life-clubs-s.webp" alt="Students at a club event" loading="lazy"></div><div class="c3 media"><img src="assets/img/life-group-2-s.webp" alt="A UoME class group" loading="lazy"></div><div class="c4 media"><img src="assets/img/life-celebrate-s.webp" alt="Celebrations on campus" loading="lazy"></div></div>
@@ -46,7 +34,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus 
   <div class="tiles tiles--contact" data-reveal><div class="tile"><span class="num">Call</span><h3 style="font-size:1.2rem">${D.site.phone1}<br>${D.site.phone2}</h3></div><div class="tile"><span class="num">Email</span><h3 style="font-size:1.05rem;word-break:normal">${D.site.supportEmail.replace('@', '<wbr>@')}</h3></div></div>
 </div></section>
 
-${L.nextStrip([['Meet the students', 'Stories in their own words', 'life/stories/'], ['Get support', 'Extensions, finance, Blackboard', 'life/student-support/'], ['Browse the gallery', 'Graduation and student life', 'gallery/']])}
 ${L.ctaBand(0, { title: 'See it <em>for yourself.</em>', text: 'Book a campus visit, join a taster lecture, or find the programme that fits.', primary: ['Book a campus visit', 'events/#visit'], secondary: ['Find your programme', 'study/'] })}
 `;
   return { path: 'life/index.html', html: L.page({ depth: 1, active: 'life', title: 'Life at UoME — campus, facilities and clubs', desc: 'Explore the UoME campus in Ebene: modern classrooms, a computer laboratory, library, lunchroom, the Law Society and Rotaract Club — plus student support.', body, scripts: [] }) };

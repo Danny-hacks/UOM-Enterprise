@@ -110,7 +110,6 @@ function build(p) {
         <div class="why"><span class="num" style="font-size:1.6rem">03</span><div><h3>Accept &amp; confirm your seat</h3><p>Email ${esc(D.site.supportEmail)} to accept, then make the first payment — 50% of annual or total course fees — to confirm your place.</p></div></div>
         <div class="why"><span class="num" style="font-size:1.6rem">04</span><div><h3>Begin your studies</h3><p>International students: your student visa is processed once the first payment is received. Welcome to UoME.</p></div></div>
       </div>
-      <p style="margin-top:28px;display:flex;gap:16px;flex-wrap:wrap"><a class="btn" href="${R}apply/start/?programme=${p.slug}">Start your application ${icon('arrow')}</a><a class="btn btn--ghost" href="${R}apply/#forms">Download the forms</a></p>
     </section>
 
     <section id="faqs" data-elementor="container:course-faq">
@@ -121,9 +120,8 @@ function build(p) {
 
   <aside class="aside" aria-label="Programme summary">
     <div class="aside__card">
-      <span class="eyebrow" style="color:var(--gold-2)">At a glance</span>
-      <h3>${esc(p.short)}</h3>
-      <dl><div><dt>Award</dt><dd>${esc(p.award)}</dd></div><div><dt>Duration</dt><dd>${esc(p.durationLabel)}</dd></div><div><dt>Mode</dt><dd>${esc(p.mode)}</dd></div><div><dt>Intakes</dt><dd>${esc(p.intakeLabel)}</dd></div><div><dt>Campus</dt><dd>Ebene</dd></div></dl>
+      <span class="eyebrow" style="color:var(--gold-2)">Ready?</span>
+      <h3>Apply or ask</h3>
       <a class="btn btn--gold" href="${R}apply/start/?programme=${p.slug}">Apply now ${icon('arrow')}</a>
       <a class="btn btn--ghost-light" href="${R}apply/start/?programme=${p.slug}&enquire=1">Ask a question ${icon('arrow')}</a>
       ${factBtn}
@@ -138,7 +136,7 @@ function build(p) {
   <div class="related">${rel}</div>
 </div></section>
 
-${L.ctaBand(depth, { title: 'Ready to apply for <em>${esc(p.short)}?</em>', text: 'Register your interest in two minutes — or ask an adviser about entry requirements, fees and intakes.', primary: ['Apply now', 'apply/start/?programme=' + p.slug], secondary: ['Ask a question', 'apply/start/?programme=' + p.slug + '&enquire=1'] })}
+${L.ctaBand(depth, { title: `Ready to apply for <em>${esc(p.short)}?</em>`, text: 'Register your interest in two minutes — or ask an adviser about entry requirements, fees and intakes.', primary: ['Apply now', 'apply/start/?programme=' + p.slug], secondary: ['Ask a question', 'apply/start/?programme=' + p.slug + '&enquire=1'] })}
 `;
   const schema = JSON.stringify([{ '@context': 'https://schema.org', '@type': 'Course', name: p.title, description: p.lede, provider: { '@type': 'EducationalOrganization', name: 'UOM Enterprise Ltd', sameAs: 'https://uomenterprise.mu/' } }, { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: p.faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }]);
   return { path: `${progUrl(p)}index.html`, html: L.page({ depth, active: 'study', title: `${p.title}${p.sub ? ' ' + p.sub : ''}`, desc: `${p.lede} ${p.durationLabel}, ${p.mode.toLowerCase()}, University of Lancashire award, Ebene, Mauritius.`, body, scripts: [], ogimg: p.hero, schema }) };

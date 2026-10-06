@@ -84,13 +84,6 @@ ${L.logoStrip(0)}
   <div class="plist" id="plist">${progRows}</div>
 </div></section>
 
-<section class="band" data-elementor="container:statement-band"><div class="band__bg" data-parallax="0.15"><img src="assets/img/grad-group.webp" alt="" loading="lazy"></div><div class="wrap band__in">
-  <span class="eyebrow">One community</span>
-  <h2 class="display">They studied in Ebene. <em>Now they lead</em> in law, government and industry.</h2>
-  <p class="lede" style="margin-bottom:34px;max-width:52ch">UoME alumni include practising barristers and attorneys, engineers shaping Mauritius’s built environment, and national leaders and policymakers.</p>
-  <a class="btn" href="life/alumni/">Meet the alumni community ${icon('arrow')}</a>
-</div></section>
-
 <section class="section" data-elementor="container:student-story"><div class="wrap">
   <div class="story">
     <div class="story__img" data-reveal><div class="arch"><img src="assets/img/person-yaniish.webp" alt="Yaniish Engutsamy, MSc Digital Marketing Communications student" loading="lazy" width="800" height="800"></div></div>

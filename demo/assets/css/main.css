@@ -942,7 +942,28 @@ body:has(.cmpdock.is-on) .totop { bottom: 112px; }
   .logo img { height: 66px; }
   .hdr.is-stuck .hdr__in { min-height: 80px; }
   .hdr.is-stuck .logo img { height: 56px; }
-  .hdr .icon-btn { width: 52px; height: 52px; }
-  .hdr .icon-btn svg { width: 30px; height: 30px; }
+  .hdr .icon-btn { width: 60px; height: 60px; }
+  .hdr .icon-btn svg { width: 40px; height: 40px; stroke-width: 1.9; }
 }
-@media (max-width: 400px) { .logo img { height: 58px; } .hdr.is-stuck .logo img { height: 50px; } .hdr .icon-btn { width: 48px; height: 48px; } }
+@media (max-width: 400px) { .logo img { height: 58px; } .hdr.is-stuck .logo img { height: 50px; } .hdr .icon-btn { width: 56px; height: 56px; } .hdr .icon-btn svg { width: 40px; height: 40px; } }
+
+/* ---------- mobile: no selector + panel duplicates; show every panel in sequence ---------- */
+@media (max-width: 959px) {
+  .jr__nav, .acc__list, [data-next-step] { display: none !important; }
+  .jr, .acc { gap: 16px; }
+  .jr > div, .acc > div { display: grid; gap: 16px; }
+  .jr__pane, .acc__pane { display: block !important; min-height: 0; animation: none; }
+  .jr__pane li:nth-child(n+1) { padding-top: 7px; padding-bottom: 7px; }
+  .jr__pane p[style*="margin-top:26px"]:has([data-next-step]) { display: none; }
+}
+
+@media (max-width: 959px) {
+  .jr__hint { display: none; }
+  .aside__card h3, .aside__card dl { display: none; }
+  .aside__card { padding-top: 24px; }
+}
+
+@media (max-width: 959px) { .hide-m { display: none !important; } }
+
+.acc__pane .eyebrow { color: var(--crimson); }
+@media (max-width: 959px) { .acc__pane h3.h2 { font-size: 1.5rem !important; } .acc__pane img.lg { height: 48px; margin-bottom: 12px; } .acc__pane { padding: 24px 22px; } }

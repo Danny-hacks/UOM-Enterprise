@@ -47,7 +47,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & accreditation', null]], eyebro
     <div class="tile" data-reveal style="--d:.24s"><span class="num">Financial law</span><h3>Negotiation &amp; dispute resolution</h3><p>Transferable skills essential in the modern workplace and crucial to effective leadership.</p></div>
   </div>
 </div></section>
-${L.nextStrip([['Find your programme', 'Filter by subject, level and mode', 'study/'], ['See the fees', 'MUR and GBP, instalments, 5% saving', 'apply/#fees'], ['Take the law pathway', 'LLB, GDL and the route to the Bar', '#law-route']])}
 ${L.ctaBand(0, { title: 'Choose a programme with <em>the profession behind it.</em>', text: 'Accredited and recognised routes in law, project management, construction and digital marketing.', primary: ['Find your programme', 'study/'], secondary: ['Start your application', 'apply/start/'] })}
 `;
   return { path: 'careers-accreditation/index.html', html: L.page({ depth: 1, active: 'study', title: 'Accreditation, recognition and career routes', desc: 'What HEC, QAA, CVLE, APM, CIOB and IDM recognition means for your UoME qualification — plus the routes from an LLB or GDL to the Bar in England & Wales and Mauritius.', body, scripts: [] }) };
@@ -220,7 +219,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Guides & news', 'news/'], [n.cat, null]]
   <article class="article" data-elementor="widget:post-content">
     <div class="takeaways"><b>Key takeaways</b><ul class="checks">${n.takeaways.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div>
     ${n.sections.map((s, i) => `<section id="s${i + 1}"><h2 class="h2">${esc(s.h)}</h2>${s.p.map((p) => `<p>${esc(p)}</p>`).join('')}</section>`).join('')}
-    <div class="artcta"><span class="eyebrow">Next step</span><p class="h3" style="margin:0 0 18px">${n.cta.title}</p><p style="color:var(--mute)">${esc(n.cta.text)}</p><a class="btn" href="${n.cta.primary[1]}">${esc(n.cta.primary[0])} ${icon('arrow')}</a></div>
   </article>
   <aside class="artaside">
     <div class="tocard"><b>In this guide</b><ol>${toc}</ol></div>

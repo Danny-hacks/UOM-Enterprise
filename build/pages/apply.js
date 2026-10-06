@@ -21,14 +21,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
     <div class="why"><span class="num" style="font-size:1.6rem">05</span><div><h3>Accept your offer</h3><p>Email ${esc(D.site.supportEmail)} to accept the offer.</p></div></div>
     <div class="why"><span class="num" style="font-size:1.6rem">06</span><div><h3>Pay your first instalment</h3><p>Make a first payment of 50% of your annual or total course fees to confirm your seat. Payment details are in your offer letter.</p></div></div>
   </div></div>
-  <div class="tabpanel" data-p="intl"><div class="whys">
-    <div class="why"><span class="num" style="font-size:1.6rem">01</span><div><h3>Download the form and checklist</h3><p>Request the application form by email or download it below, with the international checklist.</p></div></div>
-    <div class="why"><span class="num" style="font-size:1.6rem">02</span><div><h3>Complete every section</h3><p>Including your personal statement. This may be supplied on a separate sheet.</p></div></div>
-    <div class="why"><span class="num" style="font-size:1.6rem">03</span><div><h3>Attach certificates &amp; references</h3><p>Copies of academic certificates and transcripts from high school onwards, a copy of your passport and your birth certificate — plus one reference letter (undergraduate) or two (postgraduate).</p></div></div>
-    <div class="why"><span class="num" style="font-size:1.6rem">04</span><div><h3>Sign, date &amp; email</h3><p>Send your application and supporting documents to ${esc(D.site.email)}. International students do not pay the Rs 1,000 application fee.</p></div></div>
-    <div class="why"><span class="num" style="font-size:1.6rem">05</span><div><h3>Receive your offer</h3><p>Selected applicants receive a letter of offer within 1 week of a complete application.</p></div></div>
-    <div class="why"><span class="num" style="font-size:1.6rem">06</span><div><h3>First payment &amp; student visa</h3><p>Pay 50% of annual or total fees to confirm your seat. Once received, UoME applies for your student visa to enter Mauritius.</p></div></div>
-  </div></div>
+  <div class="tabpanel" data-p="intl"><div class="notice"><b>Applying from abroad?</b> International applicants follow the same form and checklist, with no application fee, an offer within one week, and visa support once the first payment is received. <a href="international/#journey"><b>See the seven-step journey →</b></a></div><p style="margin-top:22px"><a class="btn" href="international/#journey">Your journey to Mauritius ${icon('arrow')}</a></p></div>
 </div></section>
 
 <section class="section section--paper2" id="requirements" data-elementor="container:entry-requirements"><div class="wrap">
@@ -49,7 +42,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
       <a class="big-link" href="assets/docs/application-checklist-international.pdf" download><span>Application checklist — International applicants<small>Documents, entry requirements and steps (PDF)</small></span>${icon('arrow')}</a>
     </div>
   </div>
-  <div class="split split--top" style="margin-top:64px">
+  <div class="split split--top hide-m" style="margin-top:64px">
     <div><h3 class="h3" style="margin-bottom:14px">Documents to prepare <em style="font-size:.7em">(Mauritian applicants)</em></h3><ul class="checks"><li>“O” Level / SC statement of results or certificate</li><li>“A” Level / HSC statement of results or certificate, French Bac or International Bac</li><li>Undergraduate / postgraduate degree certificate and transcript</li><li>National Identity Card (NIC) and birth certificate</li><li>Personal statement</li><li>1 reference letter (undergraduate) or 2 (postgraduate)</li><li>2 passport-size photographs (undergraduate) or 1 (graduate / postgraduate)</li><li>A recent utility bill as proof of address</li></ul></div>
     <div><h3 class="h3" style="margin-bottom:14px">Documents to prepare <em style="font-size:.7em">(International applicants)</em></h3><ul class="checks"><li>“O” Level and “A” Level results or equivalent, French Bac or International Bac</li><li>Degree certificate and transcript (if required)</li><li>A copy of your passport and your birth certificate</li><li>Personal statement</li><li>1 reference letter (undergraduate) or 2 (postgraduate)</li><li>Passport-size photographs: 2 (undergraduate) or 1 (graduate / postgraduate)</li><li>Originals to be brought to Mauritius for verification</li></ul></div>
   </div>
@@ -60,7 +53,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
   <div class="tiles">
     ${D.intakes.map((it, i) => `<div class="tile" data-reveal style="--d:${i * 0.08}s"><span class="num">0${i + 1}</span><h3>${esc(it.label)}</h3><p>${it.programmes.map((s) => esc(L.byslug(s).short)).join(' · ')}</p><p style="margin-top:14px"><a class="link-arrow" href="apply/start/?intake=${it.id}">Apply for ${esc(it.label.split(' ')[0])} ${icon('arrow')}</a></p></div>`).join('')}
   </div>
-  <p class="small" style="margin-top:24px">Instalment due dates follow your intake: September intake — on acceptance, by 30 January, by 30 April. February intake — on acceptance, by 30 April, by 31 July. January intake — on acceptance, by 30 April, by 31 August.</p>
+  <p class="small hide-m" style="margin-top:24px">Instalment due dates follow your intake: September intake — on acceptance, by 30 January, by 30 April. February intake — on acceptance, by 30 April, by 31 July. January intake — on acceptance, by 30 April, by 31 August.</p>
 </div></section>
 
 <section class="section" id="fees" data-elementor="container:fees-estimator"><div class="wrap">
@@ -99,7 +92,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
   </tbody></table>
 </div></section>
 
-${L.nextStrip([['Not sure which programme?', 'Take the 2-minute quiz', 'study/#quiz'], ['Want to see the campus?', 'Book a visit or taster lecture', 'events/#visit'], ['Applying from abroad?', 'Visa, accommodation and costs', 'international/']])}
 ${L.ctaBand(0, { title: 'Ready when <em>you are.</em>', text: 'Register your interest in two minutes — an adviser will confirm requirements and send your application pack.', primary: ['Start your application', 'apply/start/'], secondary: ['Book a campus visit', 'events/#visit'] })}
 `;
   return { path: 'apply/index.html', html: L.page({ depth: 1, active: 'apply', title: 'How to apply — admissions, fees and entry requirements', desc: 'Apply to UoME: six clear steps, entry requirements, application forms, published tuition fees in MUR and GBP, instalment plans and a savings estimator.', body, scripts: ['estimator'] }) };

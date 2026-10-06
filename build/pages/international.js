@@ -17,7 +17,7 @@ module.exports = function international() {
 ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'International students', title: 'Study in the <em>Indian Ocean.</em>', lede: 'A University of Lancashire degree, a student visa handled for you, accommodation lists from dedicated landlords and airport pick-up — everything you need to move to Mauritius with confidence.', image: 'core-night', extra: `<div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--gold" href="apply/start/?who=intl">Start an enquiry ${icon('arrow')}</a><a class="btn btn--ghost-light" href="#journey">See the seven steps</a></div>` })}
 
 <section class="section" id="journey" data-elementor="container:journey"><div class="wrap">
-  <div class="sec-head" data-reveal><span class="eyebrow">Your journey to Mauritius</span><h2 class="h2">Seven steps. <em>No surprises.</em></h2><p class="lede" style="margin-top:14px">Select a step to see what happens and what we need from you.</p></div>
+  <div class="sec-head" data-reveal><span class="eyebrow">Your journey to Mauritius</span><h2 class="h2">Seven steps. <em>No surprises.</em></h2><p class="lede jr__hint" style="margin-top:14px">Select a step to see what happens and what we need from you.</p></div>
   <div class="jr" data-journey>
     <div class="jr__nav" role="tablist" aria-label="Journey steps">${STEPS.map(([t], i) => `<button class="jr__btn" role="tab" aria-selected="${i === 0}" data-i="${i}"><span class="num">0${i + 1}</span><b>${esc(t)}</b></button>`).join('')}</div>
     <div>${STEPS.map(([t, d, l], i) => `<div class="jr__pane ${i === 0 ? 'is-on' : ''}" data-i="${i}" role="tabpanel"><span class="eyebrow">Step ${i + 1} of 7</span><h3 class="h2" style="font-size:2.2rem">${esc(t)}</h3><p class="lede" style="margin-bottom:22px">${esc(d)}</p><ul>${l.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>${i < 6 ? `<p style="margin-top:26px"><button class="link-arrow" style="background:none;border-width:0 0 1.5px;cursor:pointer;font-size:inherit" data-next-step>Next step ${icon('arrow')}</button></p>` : `<p style="margin-top:26px"><a class="btn" href="apply/start/?who=intl">Start your enquiry ${icon('arrow')}</a></p>`}</div>`).join('')}</div>
@@ -31,11 +31,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
     <p><b style="color:#fff">What’s required:</b> copies of your passport, your acceptance letter, a sponsor letter confirming financial responsibility, and proof of sufficient funds. A student visa cannot be processed until accommodation has been secured.</p>
     <p><b style="color:#fff">How long it lasts:</b> a minimum of one year, renewable every year provided you remain registered with UoME the following year.</p>
   </div>
-</div></section>
-
-<section class="section" id="health" data-elementor="container:health"><div class="wrap split split--top">
-  <div data-reveal><span class="eyebrow">Health requirements</span><h2 class="h2">One medical, <em>within a month.</em></h2></div>
-  <div class="prose" data-reveal><p>The Passport and Immigration Office requires medical certification. A test for HIV and Hepatitis B, and a chest X-ray, should be done at any private medical laboratory, clinic or hospital in Mauritius within one month of arrival.</p><p>Our student support team can point you to the right facilities when you arrive.</p></div>
 </div></section>
 
 <section class="section section--paper2" id="accommodation" data-elementor="container:accommodation"><div class="wrap">
@@ -76,7 +71,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
   <div class="stats" style="margin-top:56px;border-color:var(--line)"><div class="stat" style="border-color:var(--line)"><b style="color:var(--navy)">15–33<sup>°C</sup></b><span style="color:var(--mute)">year-round tropical climate</span></div><div class="stat" style="border-color:var(--line)"><b style="color:var(--navy)">1.2<sup>m</sup></b><span style="color:var(--mute)">people in a multicultural island nation</span></div><div class="stat" style="border-color:var(--line)"><b style="color:var(--navy)">150<sup>km</sup></b><span style="color:var(--mute)">of white sandy beaches</span></div><div class="stat" style="border-color:var(--line)"><b style="color:var(--navy)">10<sup>min</sup></b><span style="color:var(--mute)">on foot from campus to the metro station</span></div></div>
 </div></section>
 
-${L.nextStrip([['Check the fees', 'Pay in GBP — and save 5%', 'apply/#fees'], ['Pick a programme', 'Seven University of Lancashire programmes', 'study/'], ['Read the guide', 'Applying from abroad in plain English', 'news/applying-from-abroad/']])}
 ${L.ctaBand(0, { title: 'Ready to <em>make the move?</em>', text: 'Tell us where you’re applying from and which programme interests you — an adviser will guide you through every step.', primary: ['Start your enquiry', 'apply/start/?who=intl'], secondary: ['Download the international checklist', 'assets/docs/application-checklist-international.pdf'] })}
 `;
   return { path: 'international/index.html', html: L.page({ depth: 1, active: 'international', title: 'International students — visa, accommodation and cost of living', desc: 'Study at UoME from abroad: a seven-step journey from application to arrival, student visa support, accommodation in Ebene, airport pick-up and a cost-of-living calculator.', body, scripts: ['estimator'] }) };
