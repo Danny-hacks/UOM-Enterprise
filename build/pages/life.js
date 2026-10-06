@@ -25,13 +25,8 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus 
 </div></section>
 
 <section class="section" id="clubs" data-elementor="container:clubs"><div class="wrap split">
-  <div data-reveal><span class="eyebrow">Clubs &amp; societies</span><h2 class="h2">Student-led, <em>community-minded.</em></h2><div class="prose" style="margin-top:20px"><p>Two student-led clubs bring the cohort together: the <b>Law Society</b> and the <b>Rotaract Club</b>. Members organise diverse activities to help the community and address important social issues, alongside cultural activities and competitions that contribute to a fun and positive student experience.</p></div><p style="margin-top:24px"><a class="link-arrow" href="gallery/">See student life in the gallery ${icon('arrow')}</a></p></div>
+  <div data-reveal><span class="eyebrow">Clubs &amp; societies</span><h2 class="h2">Student-led, <em>community-minded.</em></h2><div class="prose" style="margin-top:20px"><p>Two student-led clubs bring the cohort together: the <b>Law Society</b> and the <b>Rotaract Club</b>. Members organise diverse activities to help the community and address important social issues, alongside cultural activities and competitions that contribute to a fun and positive student experience.</p></div><p style="margin-top:24px;display:flex;gap:26px;flex-wrap:wrap"><a class="link-arrow" href="gallery/">See student life in the gallery ${icon('arrow')}</a><a class="link-arrow" href="life/student-support/">Student support hub ${icon('arrow')}</a></p></div>
   <div class="collage" data-reveal><div class="c1 media"><img src="assets/img/life-diversity.webp" alt="Students celebrating together" loading="lazy"></div><div class="c2 media"><img src="assets/img/life-clubs-s.webp" alt="Students at a club event" loading="lazy"></div><div class="c3 media"><img src="assets/img/life-group-2-s.webp" alt="A UoME class group" loading="lazy"></div><div class="c4 media"><img src="assets/img/life-celebrate-s.webp" alt="Celebrations on campus" loading="lazy"></div></div>
-</div></section>
-
-<section class="section section--navy grain" data-elementor="container:support-teaser"><div class="wrap split">
-  <div data-reveal><span class="eyebrow">Student support</span><h2 class="h2">Help is <em>one call away.</em></h2><p class="lede" style="margin-top:18px">From assignment extensions to tuition payments and Blackboard, the student support team works with every department to help you reach your academic goals.</p><p style="margin-top:28px"><a class="btn btn--gold" href="life/student-support/">Open the support hub ${icon('arrow')}</a></p></div>
-  <div class="tiles tiles--contact" data-reveal><div class="tile"><span class="num">Call</span><h3 style="font-size:1.2rem">${D.site.phone1}<br>${D.site.phone2}</h3></div><div class="tile"><span class="num">Email</span><h3 style="font-size:1.05rem;word-break:normal">${D.site.supportEmail.replace('@', '<wbr>@')}</h3></div></div>
 </div></section>
 
 ${L.ctaBand(0, { title: 'See it <em>for yourself.</em>', text: 'Book a campus visit, join a taster lecture, or find the programme that fits.', primary: ['Book a campus visit', 'events/#visit'], secondary: ['Find your programme', 'study/'] })}
@@ -62,12 +57,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
   <div class="plist__filters" role="group" aria-label="Filter stories" data-cat-filter><button class="chip is-on" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="law" aria-pressed="false">Law</button><button class="chip" data-f="pm" aria-pressed="false">Project management</button></div>
   <div class="scards" data-cat-list>${more.map((m, i) => O.storyCard(m, i).replace('<article class="scard"', `<article class="scard" data-cat="${m.area}"`)).join('')}</div>
 </div></section>
-<section class="section" data-elementor="container:share-story"><div class="wrap wrap--narrow" style="text-align:center">
-  <span class="eyebrow" style="justify-content:center">Your story next</span><h2 class="h2">Studying or graduated <em>with UoME?</em></h2>
-  <p class="lede" style="margin:18px auto 28px">We’d love to hear how your programme has shaped your career. Share a few lines and a photo, and we’ll feature your story.</p>
-  <a class="btn btn--navy" href="contact/?topic=story">Share your story ${icon('arrow')}</a>
-</div></section>
-${L.ctaBand(0, { title: 'Your story could <em>be next.</em>', text: 'Ready to start your own chapter at UoME? Register your interest in two minutes.', primary: ['Start your application', 'apply/start/'], secondary: ['Explore programmes', 'study/'] })}
+${L.ctaBand(0, { title: 'Your story could <em>be next.</em>', text: 'Ready to start your own chapter at UoME — or already a student or graduate with a story to share?', primary: ['Start your application', 'apply/start/'], secondary: ['Share your story', 'contact/?topic=story'] })}
 `;
   return { path: 'life/stories/index.html', html: L.page({ depth: 2, active: 'life', title: 'Student stories', desc: 'Hear from UoME students and graduates about studying law, project management and digital marketing with the University of Lancashire in Mauritius.', body, scripts: [] }) };
 }

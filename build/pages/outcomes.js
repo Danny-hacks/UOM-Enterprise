@@ -31,7 +31,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & outcomes', null]], eyebrow: 'W
 </div></section>
 
 <section class="section section--navy" id="law-route" data-elementor="container:law-route"><div class="wrap">
-  <div class="split split--top" style="margin-bottom:44px"><div><span class="eyebrow">The route to the Bar</span><h2 class="h2">One degree, <em>two jurisdictions.</em></h2></div><p class="lede" style="margin:0">Whatever your starting point, here is how UoME law programmes connect to practice in England &amp; Wales and in Mauritius.</p></div>
+  <div class="split split--head"><div><span class="eyebrow">The route to the Bar</span><h2 class="h2">One degree, <em>two jurisdictions.</em></h2></div><p class="lede" style="margin:0">Whatever your starting point, here is how UoME law programmes connect to practice in England &amp; Wales and in Mauritius.</p></div>
   <div class="route__flow">
     <div class="node"><small>01 · Study at UoME</small><h3>LLB or GDL</h3><p>LLB (Hons) with English &amp; Mauritian Law or English Law; or the Graduate Diploma in Law if your first degree is in another subject.</p></div>
     <div class="arrow-c">${icon('arrow')}</div>
@@ -49,7 +49,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & outcomes', null]], eyebrow: 'W
 
 <section class="section section--soft" id="support" data-elementor="container:careers-support"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Careers support</span><h2 class="h2">Help that goes <em>beyond the classroom.</em></h2></div>
-  <div class="tiles">${D.careersSupport.map(([t, d], i) => `<div class="tile"><span class="num">0${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
+  <div class="tiles tiles--3 tiles--badge">${D.careersSupport.map(([t, d], i) => `<div class="tile"><span class="num">0${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
 </div></section>
 
 ${L.ctaBand(0, { title: 'Start building <em>your next chapter.</em>', text: 'Tell us where you want your career to go and an adviser will suggest the programme and route.', primary: ['Find your programme', 'study/'], secondary: ['Talk to an adviser', 'contact/#callback'] })}

@@ -41,7 +41,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Study', null]], eyebrow: 'Course finder'
 </div>
 
 <section class="section section--paper2" id="quiz" data-elementor="container:programme-quiz"><div class="wrap">
-  <div class="split split--wide-r split--top" style="margin-bottom:48px">
+  <div class="split split--head">
     <div data-reveal><span class="eyebrow">Not sure yet?</span><h2 class="h2">Which programme is <em>right for me?</em></h2></div>
     <p class="lede" style="margin:0" data-reveal>Answer four quick questions and we’ll rank the programmes that fit your goals, background and schedule — with the reasons why.</p>
   </div>

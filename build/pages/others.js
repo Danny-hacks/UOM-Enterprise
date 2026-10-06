@@ -22,7 +22,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & accreditation', null]], eyebro
 </div></section>
 
 <section class="section section--paper2" id="law-route" data-elementor="container:law-pathway"><div class="wrap">
-  <div class="split split--wide-r split--top" style="margin-bottom:48px"><div data-reveal><span class="eyebrow">Law career routes</span><h2 class="h2">From UoME to the <em>Bar.</em></h2></div><p class="lede" data-reveal style="margin:0">Two jurisdictions, one clear path for each starting point.</p></div>
+  <div class="split split--head"><div data-reveal><span class="eyebrow">Law career routes</span><h2 class="h2">From UoME to the <em>Bar.</em></h2></div><p class="lede" data-reveal style="margin:0">Two jurisdictions, one clear path for each starting point.</p></div>
   <div class="route" data-route>
     <div class="route__tabs" role="tablist"><button class="chip is-on" role="tab" aria-selected="true" data-t="a">LLB route</button><button class="chip" role="tab" aria-selected="false" data-t="b">GDL route</button></div>
     <div class="route__panel is-on" data-p="a"><div class="route__flow">
@@ -111,7 +111,7 @@ function partnersPage() {
 ${L.pageHead({ crumbs: [['Home', ''], ['Schools & partners', null]], eyebrow: 'Schools, colleges & employers', title: 'Partner with <em>UoME.</em>', lede: 'Free taster lectures and guidance for schools and colleges; part-time, accredited study for employers developing their teams.', image: 'campus-advice' })}
 
 <section class="section" id="schools" data-elementor="container:schools"><div class="wrap">
-  <div class="split split--wide-r split--top" style="margin-bottom:48px"><div data-reveal><span class="eyebrow">Schools &amp; colleges</span><h2 class="h2">Help students <em>choose with confidence.</em></h2></div><p class="lede" style="margin:0" data-reveal>Our marketing and recruitment team communicates the University’s value, listens to the needs of students and guides them towards the pathway that will shape their future.</p></div>
+  <div class="split split--head"><div data-reveal><span class="eyebrow">Schools &amp; colleges</span><h2 class="h2">Help students <em>choose with confidence.</em></h2></div><p class="lede" style="margin:0" data-reveal>Our marketing and recruitment team communicates the University’s value, listens to the needs of students and guides them towards the pathway that will shape their future.</p></div>
   <div class="tiles">
     <div class="tile" data-reveal><span class="num">01</span><h3>Free taster lectures</h3><p>Let students experience a University of Lancashire lecture before they apply.</p></div>
     <div class="tile" data-reveal style="--d:.06s"><span class="num">02</span><h3>Presentations in colleges</h3><p>We come to you with a clear guide to programmes, entry routes and fees.</p></div>
@@ -133,7 +133,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Schools & partners', null]], eyebrow: 'S
 
 <section class="section section--soft" id="industry" data-elementor="container:industry-partners"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Industry &amp; professional partners</span><h2 class="h2">Backed by <em>recognised bodies.</em></h2><p class="lede" style="margin-top:14px">UoME works with the University of Lancashire and professional and regulatory bodies so qualifications carry weight with employers.</p></div>
-  <div class="tiles">
+  <div class="tiles tiles--3 tiles--badge">
     <div class="tile"><span class="num">UoL</span><h3>University of Lancashire</h3><p>Awarding partner since 2011.</p></div>
     <div class="tile"><span class="num">APM</span><h3>Association for Project Management</h3><p>Accredits the MSc Project Management and MSc Construction Project Management.</p></div>
     <div class="tile"><span class="num">CIOB</span><h3>Chartered Institute of Building</h3><p>Accredits the MSc Construction Project Management.</p></div>

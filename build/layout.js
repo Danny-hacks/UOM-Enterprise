@@ -228,7 +228,7 @@ ${schema ? `<script type="application/ld+json">${schema}</script>` : ''}
 <div class="pre" id="pre" aria-hidden="true"><div class="pre__in"><img class="pre__logo" src="${R}assets/img/logos/uome-white.png" alt="" width="290" height="76"><div class="pre__row"><span>Shaping tomorrow’s leaders</span><span class="pre__n" data-pre-n>0</span></div><div class="pre__bar"><i data-pre-bar></i></div></div></div><div class="pre-c" id="pre-c"></div>
 ${header(depth, active)}
 <main id="main">
-${depth ? fixPaths(body, depth) : body}
+${(depth ? fixPaths(body, depth) : body).replace(/<span class="num">(?!\d)([^<]*)<\/span>/g, '<span class="num num--lbl">$1</span>')}
 </main>
 ${footer(depth)}
 <script src="${R}assets/js/uome-data.js"></script>

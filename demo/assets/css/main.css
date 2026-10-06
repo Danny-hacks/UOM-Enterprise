@@ -1073,3 +1073,29 @@ details.faq p { overflow-wrap: anywhere; }
 .tile { box-shadow: 0 1px 0 var(--line); }
 
 @media (min-width: 1000px) { .sectors { grid-template-columns: repeat(3, 1fr); } }
+
+/* text labels that use the numeral style (Law, Project management, Ebene…) */
+.num.num--lbl, .tile .num.num--lbl, .sector .num.num--lbl { font-size: clamp(1.05rem, 1.6vw, 1.3rem) !important; letter-spacing: -.01em; overflow-wrap: normal; word-break: normal; hyphens: manual; line-height: 1.2; margin-bottom: 14px; }
+
+/* heading on the left, supporting text on the right: share a bottom edge and a readable measure */
+.split--head { margin-bottom: clamp(32px, 4.5vw, 56px); gap: clamp(20px, 3vw, 48px); }
+.split--head > * { min-width: 0; }
+.split--head > .lede, .split--head > p, .split--head > .tabs { margin: 0 !important; max-width: 46ch; }
+.split--head > .tabs { max-width: none; align-self: end; justify-content: flex-start; }
+@media (min-width: 900px) { .split--head { grid-template-columns: 1.1fr .9fr; align-items: end; } .split--head > p { padding-bottom: 6px; } }
+
+/* end-of-route node must stand out on navy as well as light backgrounds */
+.node--end { background: var(--crimson); color: #fff; border-top-color: var(--gold); }
+.node--end small { color: var(--gold-light); }
+.node--end p { color: rgba(255, 255, 255, .92); }
+
+/* six-up tile grids: 3 columns × 2 rows, badge numbers */
+.tiles--3 { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .tiles--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 960px) { .tiles--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tiles--badge .tile { padding: 30px 28px 30px; border-top: 4px solid var(--crimson); background: #fff; display: grid; gap: 10px; align-content: start; transition: transform .35s var(--ease), box-shadow .35s; }
+.tiles--badge .tile:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(10, 17, 66, .1); }
+.tiles--badge .tile .num, .tiles--badge .tile .num.num--lbl { display: inline-grid; place-items: center; justify-self: start; min-width: 46px; height: 46px; padding: 0 14px; background: var(--crimson); color: #fff !important; font-size: 1rem !important; letter-spacing: .02em; margin: 0 0 6px; }
+.tiles--badge .tile h3 { font-size: 1.2rem; margin: 0; }
+.tiles--badge .tile p { font-size: 1rem; }
+.section--soft .tiles--badge .tile { background: #fff; }
