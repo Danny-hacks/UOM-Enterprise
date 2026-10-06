@@ -30,4 +30,78 @@ const careersSupport = [
   ['Professional recognition', 'APM, CIOB and IDM accreditation on selected postgraduate courses; CVLE recognition for the LLB and GDL.'],
 ];
 
+const storyQA = {
+ "aisha-m": [
+  [
+   "Why UoME?",
+   "I wanted a law degree I could use in both Mauritius and England. The English & Mauritian Law LLB was the only programme that covered both, and I could study it close to home."
+  ],
+  [
+   "What was studying like?",
+   "Small classes, moots and debates from the first year, and lecturers who are also practitioners. The Mauritian law modules made the English ones click."
+  ],
+  [
+   "What is next?",
+   "I am preparing for the CVLE vocational examination and thinking about the Bar Professional Course afterwards."
+  ]
+ ],
+ "kevin-r": [
+  [
+   "Why this MSc?",
+   "I already worked in construction. I wanted the management theory behind what I do every day, with accreditation my employer recognises."
+  ],
+  [
+   "How did you balance work and study?",
+   "Part-time and hybrid made it possible. I could join online sessions when travelling and attend campus sessions in Ebene when I was on the island."
+  ],
+  [
+   "What changed?",
+   "I now lead delivery on my projects with a much clearer view of planning, risk and value."
+  ]
+ ],
+ "priya-s": [
+  [
+   "Why the GDL?",
+   "My first degree was in business, but I always wanted to practise law. The GDL is the recognised conversion route, and it is recognised in Mauritius too."
+  ],
+  [
+   "What stood out?",
+   "Mooting. Standing up to argue a case early on built a confidence I did not expect."
+  ],
+  [
+   "What is next?",
+   "I am moving into legal training and planning my route to practice."
+  ]
+ ],
+ "daniel-t": [
+  [
+   "Why the LLM?",
+   "I work around compliance, and the Financial Investigation pathway matched exactly what the job asks for."
+  ],
+  [
+   "What did you learn?",
+   "Banking regulation, corporate governance and how to investigate money laundering and recover assets — skills I use directly."
+  ],
+  [
+   "Would you recommend it?",
+   "Yes, especially if you are already working. The case studies come straight from the real world."
+  ]
+ ],
+ "nadia-k": [
+  [
+   "Why project management?",
+   "I manage projects every week but had no formal grounding. The APM accreditation also matters to my employer."
+  ],
+  [
+   "What is it like to study part-time?",
+   "Demanding but well structured. Lecturers understand that we are professionals first."
+  ],
+  [
+   "What do you hope for?",
+   "To move into programme management once I graduate."
+  ]
+ ]
+};
+sampleStories.forEach((s) => { s.qa = storyQA[s.slug]; });
+
 module.exports = { sampleStories, sectors, careersSupport };

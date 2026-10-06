@@ -6,9 +6,15 @@ const reqList = (arr) => `<ul class="checks">${arr.map((e) => `<li>${esc(e)}</li
 
 function applyPage() {
   const body = `
-${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', title: 'Apply to UoME <em>with confidence.</em>', lede: 'Clear steps, published fees and a team that treats every applicant as an individual. Here is everything you need — from entry requirements to your first payment.', extra: `<div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--gold" href="apply/start/">Start your application ${icon('arrow')}</a><a class="btn btn--ghost-light" href="#forms">Download the forms</a></div>` , image: 'grad-stage'})}
+${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', title: 'Apply to UoME <em>with confidence.</em>', lede: 'Clear steps, published fees and a team that treats every applicant as an individual. Here is everything you need — from entry requirements to your first payment.', extra: `<div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--gold" href="apply/online/">Start your application ${icon('arrow')}</a><a class="btn btn--ghost-light" href="#forms">Download the forms</a></div>` , image: 'grad-stage'})}
 
 <nav class="subnav" aria-label="On this page" data-subnav><div class="wrap subnav__in"><a href="#steps">How to apply</a><a href="#requirements">Entry requirements</a><a href="#forms">Forms</a><a href="#intakes">Key dates</a><a href="#fees">Fees</a><a href="#instalments">Payment</a><a href="#refund">Refunds</a></div></nav>
+
+<section class="section--tight routes" data-elementor="container:apply-routes"><div class="wrap"><div class="rt3">
+  <a class="rt" href="apply/online/" data-reveal><span class="num">01</span><b>Apply online</b><span>Seven short steps, saved as you go. About 10 minutes.</span>${icon('arrow')}</a>
+  <a class="rt" href="apply/start/" data-reveal style="--d:.07s"><span class="num">02</span><b>Register your interest</b><span>Not ready yet? Two minutes and an adviser will guide you.</span>${icon('arrow')}</a>
+  <a class="rt" href="#forms" data-reveal style="--d:.14s"><span class="num">03</span><b>Download the form</b><span>Prefer paper? Take the pack and send it by email or in person.</span>${icon('arrow')}</a>
+</div></div></section>
 
 <section class="section" id="steps" data-elementor="container:apply-steps"><div class="wrap">
   <div class="split split--head"><div data-reveal><span class="eyebrow">How to apply</span><h2 class="h2">Six steps to <em>your offer letter.</em></h2></div>
@@ -51,7 +57,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
 <section class="section section--paper2" id="intakes" data-elementor="container:intakes"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Key dates</span><h2 class="h2">Three <em>intakes</em> a year.</h2></div>
   <div class="tiles">
-    ${D.intakes.map((it, i) => `<div class="tile" data-reveal style="--d:${i * 0.08}s"><span class="num">0${i + 1}</span><h3>${esc(it.label)}</h3><p>${it.programmes.map((s) => esc(L.byslug(s).short)).join(' · ')}</p><p style="margin-top:14px"><a class="link-arrow" href="apply/start/?intake=${it.id}">Apply for ${esc(it.label.split(' ')[0])} ${icon('arrow')}</a></p></div>`).join('')}
+    ${D.intakes.map((it, i) => `<div class="tile" data-reveal style="--d:${i * 0.08}s"><span class="num">0${i + 1}</span><h3>${esc(it.label)}</h3><p>${it.programmes.map((s) => esc(L.byslug(s).short)).join(' · ')}</p><p style="margin-top:14px"><a class="link-arrow" href="apply/online/?intake=${it.id}">Apply for ${esc(it.label.split(' ')[0])} ${icon('arrow')}</a></p></div>`).join('')}
   </div>
   <p class="small hide-m" style="margin-top:24px">Instalment due dates follow your intake: September intake — on acceptance, by 30 January, by 30 April. February intake — on acceptance, by 30 April, by 31 July. January intake — on acceptance, by 30 April, by 31 August.</p>
 </div></section>
@@ -72,7 +78,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
       <div class="est__save" data-e-save hidden>You save <b data-e-saving>Rs 0</b> by paying in full. <span class="small" style="color:rgba(255,255,255,.75)" data-e-savenote></span></div>
       <div class="insts" data-e-insts></div>
       <p class="small" style="color:rgba(255,255,255,.7);margin-top:18px" data-e-note></p>
-      <p style="margin-top:22px;position:relative"><a class="btn btn--gold" data-e-apply href="apply/start/">Apply for this programme ${icon('arrow')}</a></p>
+      <p style="margin-top:22px;position:relative"><a class="btn btn--gold" data-e-apply href="apply/online/">Apply for this programme ${icon('arrow')}</a></p>
     </div>
   </div>
 </div></section>
@@ -92,14 +98,14 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
   </tbody></table>
 </div></section>
 
-${L.ctaBand(0, { title: 'Ready when <em>you are.</em>', text: 'Register your interest in two minutes — an adviser will confirm requirements and send your application pack.', primary: ['Start your application', 'apply/start/'], secondary: ['Book a campus visit', 'events/#visit'] })}
+${L.ctaBand(0, { title: 'Ready when <em>you are.</em>', text: 'Register your interest in two minutes — an adviser will confirm requirements and send your application pack.', primary: ['Start your application', 'apply/online/'], secondary: ['Book a campus visit', 'events/#visit'] })}
 `;
   return { path: 'apply/index.html', html: L.page({ depth: 1, active: 'apply', title: 'How to apply — admissions, fees and entry requirements', desc: 'Apply to UoME: six clear steps, entry requirements, application forms, published tuition fees in MUR and GBP, instalment plans and a savings estimator.', body, scripts: ['estimator'] }) };
 }
 
 function startPage() {
   const body = `
-${L.pageHead({ crumbs: [['Home', ''], ['Apply', 'apply/'], ['Start', null]], eyebrow: 'Register your interest', title: 'Start your <em>application.</em>', lede: 'Three short steps. We’ll use your answers to point you to the right adviser, share the right forms, and answer the questions that matter to you.', depth: 0 })}
+${L.pageHead({ crumbs: [['Home', ''], ['Apply', 'apply/'], ['Start', null]], eyebrow: 'Register your interest', title: 'Register your <em>interest.</em>', lede: 'Three short steps. We’ll use your answers to point you to the right adviser, share the right forms, and answer the questions that matter to you.', depth: 0 })}
 <section class="section"><div class="wrap split split--wide-l split--top">
   <div class="formcard" data-elementor="widget:form">
     <form class="form" data-form novalidate>
@@ -126,7 +132,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', 'apply/'], ['Start', null]], eye
         <label class="consent"><input type="checkbox" name="consent" required> <span>I agree that UOM Enterprise may contact me about my enquiry and store my details in line with its <a href="legal/">privacy notice</a> and the Data Protection Act 2017 (Mauritius).</span></label><span class="err" data-consent-err></span>
         <div style="display:flex;gap:12px;flex-wrap:wrap"><button type="button" class="btn btn--ghost" data-prev>Back</button><button type="submit" class="btn btn--gold">Send my enquiry ${icon('arrow')}</button></div>
       </div>
-      <div class="success" data-success hidden>${icon('check')}<h2 class="h3">Thank you — <em>we’ve got it.</em></h2><p class="lede" style="margin:12px auto 24px">An adviser from the UoME admissions team will be in touch using your preferred method. In the meantime, you can download your application pack.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="assets/docs/uome-application-form.docx" download>Application form</a><a class="btn btn--ghost" href="study/">Keep exploring</a></div></div>
+      <div class="success" data-success hidden>${icon('check')}<h2 class="h3">Thank you — <em>we’ve got it.</em></h2><p class="lede" style="margin:12px auto 24px">An adviser from the UoME admissions team will be in touch using your preferred method.</p><ol class="next3"><li><b>We contact you</b><span>During office hours, using the method you chose.</span></li><li><b>You apply</b><span>Apply online or send the application pack — we confirm requirements first.</span></li><li><b>You receive an offer</b><span>Within 3 working days of a complete application (1 week for international applicants).</span></li></ol><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="apply/online/">Apply online</a><a class="btn btn--ghost" href="study/">Keep exploring</a></div></div>
     </form>
   </div>
   <aside class="stack" data-reveal>
@@ -135,7 +141,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', 'apply/'], ['Start', null]], eye
   </aside>
 </div></section>
 `;
-  return { path: 'apply/start/index.html', html: L.page({ depth: 2, active: 'apply', title: 'Start your application', desc: 'Register your interest in a University of Lancashire programme at UoME in three short steps and an adviser will be in touch.', body, scripts: [] }) };
+  return { path: 'apply/start/index.html', html: L.page({ depth: 2, active: 'apply', title: 'Register your interest', desc: 'Register your interest in a University of Lancashire programme at UoME in three short steps and an adviser will be in touch.', body, scripts: [] }) };
 }
 
 module.exports = () => [applyPage(), startPage()];

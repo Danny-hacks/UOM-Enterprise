@@ -47,7 +47,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & accreditation', null]], eyebro
     <div class="tile" data-reveal style="--d:.24s"><span class="num">Financial law</span><h3>Negotiation &amp; dispute resolution</h3><p>Transferable skills essential in the modern workplace and crucial to effective leadership.</p></div>
   </div>
 </div></section>
-${L.ctaBand(0, { title: 'Choose a programme with <em>the profession behind it.</em>', text: 'Accredited and recognised routes in law, project management, construction and digital marketing.', primary: ['Find your programme', 'study/'], secondary: ['Start your application', 'apply/start/'] })}
+${L.ctaBand(0, { title: 'Choose a programme with <em>the profession behind it.</em>', text: 'Accredited and recognised routes in law, project management, construction and digital marketing.', primary: ['Find your programme', 'study/'], secondary: ['Start your application', 'apply/online/'] })}
 `;
   return { path: 'careers-accreditation/index.html', html: L.page({ depth: 1, active: 'study', title: 'Accreditation, recognition and career routes', desc: 'What HEC, QAA, CVLE, APM, CIOB and IDM recognition means for your UoME qualification — plus the routes from an LLB or GDL to the Bar in England & Wales and Mauritius.', body, scripts: [] }) };
 }
@@ -191,7 +191,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Events', null]], eyebrow: 'Meet UoME', t
   <div class="sec-head" data-reveal><span class="eyebrow">Where we’ve been</span><h2 class="h2">Recent <em>events.</em></h2><p class="lede" style="margin-top:14px">New dates are announced here and on the University of Lancashire in Mauritius Facebook page.</p></div>
   ${D.events.past.map((e) => `<article class="ev" data-reveal><div class="ev__d">${esc(e.date)}${e.time ? `<br><span style="font-size:1rem">${esc(e.time)}</span>` : ''}<small>${esc(e.kind)}</small></div><div><h3 class="h3">${esc(e.title)}</h3><p>${esc(e.text)}</p><p class="small"><b>${esc(e.place)}</b></p></div><div class="media"><img src="assets/img/${e.img}-s.webp" alt="" loading="lazy"></div></article>`).join('')}
 </div></section>
-${L.ctaBand(0, { title: 'Can’t make an event? <em>We’ll come to you.</em>', text: 'Ask for a one-to-one call, a taster lecture or a college presentation.', primary: ['Request a call', 'contact/?topic=visit'], secondary: ['Start your application', 'apply/start/'] })}
+${L.ctaBand(0, { title: 'Can’t make an event? <em>We’ll come to you.</em>', text: 'Ask for a one-to-one call, a taster lecture or a college presentation.', primary: ['Request a call', 'contact/?topic=visit'], secondary: ['Start your application', 'apply/online/'] })}
 `;
   return { path: 'events/index.html', html: L.page({ depth: 1, active: 'apply', title: 'Events — open days, taster lectures and fairs', desc: 'Meet the UoME team: book a campus visit, a free taster lecture or one-to-one counselling, and see where we’ve been recently.', body, scripts: [] }) };
 }
@@ -317,7 +317,20 @@ function notFound() {
   return { path: '404.html', html: L.page({ depth: 0, title: 'Page not found', desc: 'Page not found.', body, scripts: [] }) };
 }
 
+function searchPage() {
+  const body = `
+${L.pageHead({ crumbs: [['Home', ''], ['Search', null]], eyebrow: 'Search', title: 'Find <em>anything.</em>', lede: 'Programmes, fees, visas, guides and more.' })}
+<section class="section" data-elementor="container:search-results"><div class="wrap wrap--narrow">
+  <form class="searchbox" role="search" data-searchpage><label class="vh" for="sq2">Search the site</label><input class="input searchbox__in" id="sq2" type="search" placeholder="Search programmes, fees, visas…" autocomplete="off"><button class="btn" type="submit">Search ${icon('arrow')}</button></form>
+  <p class="small" data-sp-count style="margin:18px 0 0"></p>
+  <ol class="sresults" data-sp-list></ol>
+  <div class="empty" data-sp-empty hidden><h3 class="h3">No matches.</h3><p class="small">Try “fees”, “visa” or “law”, or call ${D.site.phone1}.</p></div>
+</div></section>
+`;
+  return { path: 'search/index.html', html: L.page({ depth: 1, title: 'Search', desc: 'Search UoME programmes, fees, visas, guides and more.', body, scripts: [] }) };
+}
+
 function partnersAndRest() {
-  return [careersPage(), aboutPage(), partnersPage(), eventsPage(), galleryPage(), ...newsPages(), contactPage(), legalPage(), notFound()];
+  return [searchPage(), careersPage(), aboutPage(), partnersPage(), eventsPage(), galleryPage(), ...newsPages(), contactPage(), legalPage(), notFound()];
 }
 module.exports = partnersAndRest;

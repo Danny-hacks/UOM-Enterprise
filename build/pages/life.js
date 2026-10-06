@@ -48,7 +48,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
       <h2 class="h2" style="margin-bottom:26px">${esc(s.name)}</h2>
       <blockquote class="quote" style="margin:0 0 28px">${esc(s.quote)}</blockquote>
       <div class="prose">${s.more.map((m) => `<p>${esc(m)}</p>`).join('')}</div>
-      <p style="margin-top:24px"><a class="btn btn--navy" href="study/digital/msc-digital-marketing/">Explore the MSc Digital Marketing ${icon('arrow')}</a></p>
+      <p style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--navy" href="life/stories/${s.slug}/">Read the full story ${icon('arrow')}</a><a class="btn btn--ghost" href="study/digital/msc-digital-marketing/">Explore the MSc</a></p>
     </div>
   </div>
 </div></section>
@@ -57,7 +57,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
   <div class="plist__filters" role="group" aria-label="Filter stories" data-cat-filter><button class="chip is-on" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="law" aria-pressed="false">Law</button><button class="chip" data-f="pm" aria-pressed="false">Project management</button></div>
   <div class="scards" data-cat-list>${more.map((m, i) => O.storyCard(m, i).replace('<article class="scard"', `<article class="scard" data-cat="${m.area}"`)).join('')}</div>
 </div></section>
-${L.ctaBand(0, { title: 'Your story could <em>be next.</em>', text: 'Ready to start your own chapter at UoME — or already a student or graduate with a story to share?', primary: ['Start your application', 'apply/start/'], secondary: ['Share your story', 'contact/?topic=story'] })}
+${L.ctaBand(0, { title: 'Your story could <em>be next.</em>', text: 'Ready to start your own chapter at UoME — or already a student or graduate with a story to share?', primary: ['Start your application', 'apply/online/'], secondary: ['Share your story', 'contact/?topic=story'] })}
 `;
   return { path: 'life/stories/index.html', html: L.page({ depth: 2, active: 'life', title: 'Student stories', desc: 'Hear from UoME students and graduates about studying law, project management and digital marketing with the University of Lancashire in Mauritius.', body, scripts: [] }) };
 }
@@ -126,7 +126,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student suppo
     <div>${T.map(([t, k, d]) => `<details class="faq" data-keys="${esc(k)} ${esc(t.toLowerCase())}"><summary>${esc(t)}</summary><p>${esc(d)}</p></details>`).join('')}</div>
     <p class="small" data-filter-empty hidden style="margin-top:20px">No topics match. Call us on ${D.site.phone1} and we’ll help directly.</p>
   </div>
-  <aside class="stack"><div class="aside__card"><span class="eyebrow" style="color:var(--gold-2)">Contact the team</span><h3>Student support</h3><dl><div><dt>Phone</dt><dd><a href="tel:${D.site.tel}">${D.site.phone1}</a></dd></div><div><dt>Alt.</dt><dd>${D.site.phone2}</dd></div><div><dt>Email</dt><dd style="font-size:.85rem;word-break:break-all">${D.site.supportEmail}</dd></div><div><dt>Finance</dt><dd style="font-size:.85rem;word-break:break-all">${D.site.financeEmail}</dd></div><div><dt>Hours</dt><dd>Mon – Fri<br>09:00 – 16:30</dd></div></dl><a class="btn btn--gold" href="mailto:${D.site.supportEmail}">Email student support ${icon('arrow')}</a></div></aside>
+  <aside class="stack"><div class="aside__card"><span class="eyebrow" style="color:var(--gold-2)">Contact the team</span><p class="h3" style="margin:0 0 6px">Student support</p><dl><div><dt>Phone</dt><dd><a href="tel:${D.site.tel}">${D.site.phone1}</a></dd></div><div><dt>Alt.</dt><dd>${D.site.phone2}</dd></div><div><dt>Email</dt><dd style="font-size:.85rem;word-break:break-all">${D.site.supportEmail}</dd></div><div><dt>Finance</dt><dd style="font-size:.85rem;word-break:break-all">${D.site.financeEmail}</dd></div><div><dt>Hours</dt><dd>Mon – Fri<br>09:00 – 16:30</dd></div></dl><a class="btn btn--gold" href="mailto:${D.site.supportEmail}">Email student support ${icon('arrow')}</a></div></aside>
 </div></section>
 ${L.ctaBand(0, { title: 'Still need <em>a hand?</em>', text: 'Our team is open Monday to Friday, 09:00 – 16:30 — including through lunchtime.' })}
 `;

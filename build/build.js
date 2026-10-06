@@ -14,6 +14,7 @@ const pages = [
   ...require('./pages/life')(),
   ...require('./pages/others')(),
   ...require('./pages/outcomes')(),
+  ...require('./pages/application')(),
 ];
 
 for (const p of pages) {
@@ -39,7 +40,8 @@ const search = [
   { t: 'Fees & savings estimator', u: 'apply/#fees', k: 'Fees', x: 'tuition fees cost price instalment 5% discount mur gbp pay' },
   { t: 'Entry requirements', u: 'apply/#requirements', k: 'Apply', x: 'entry a-levels ielts degree 2:2 requirements' },
   { t: 'Refund policy', u: 'apply/#refund', k: 'Fees', x: 'refund withdraw withdrawal money back' },
-  { t: 'Start your application', u: 'apply/start/', k: 'Apply', x: 'enquire enquiry register interest apply now' },
+  { t: 'Apply online', u: 'apply/online/', k: 'Apply', x: 'start your application apply now online form personal statement referees' },
+  { t: 'Register your interest', u: 'apply/start/', k: 'Apply', x: 'enquire enquiry register interest' },
   { t: 'International students', u: 'international/', k: 'International', x: 'visa accommodation airport pick-up abroad overseas student' },
   { t: 'Cost of living in Mauritius', u: 'international/#cost', k: 'International', x: 'rent food budget living cost calculator' },
   { t: 'Student visa', u: 'international/#visa', k: 'International', x: 'visa passport sponsor immigration' },
@@ -73,5 +75,12 @@ const samples = [];
 (function scan(name, arr) { (arr || []).forEach((x) => { if (x && x.sample) samples.push(name + ': ' + (x.name || x.title || x.id || x.slug)); }); })('story', D.sampleStories);
 D.sectors.forEach((x) => x.sample && samples.push('sector: ' + x.title));
 samples.push('site.whatsapp (stand-in number ' + D.site.whatsappLabel + ')');
+// minified assets (esbuild); pages link the .min files, sources stay editable
+try {
+  const esbuild = require('esbuild');
+  const out = (f, o) => esbuild.buildSync({ entryPoints: [path.join(OUT, f)], outfile: path.join(OUT, o), minify: true, allowOverwrite: true, logLevel: 'error' });
+  out('assets/css/main.css', 'assets/css/main.min.css');
+  ['core', 'finder', 'estimator', 'application', 'uome-data'].forEach((n) => out(`assets/js/${n}.js`, `assets/js/${n}.min.js`));
+} catch (e) { console.warn('esbuild not installed — run `npm install` to emit minified assets'); }
 console.log(`Built ${pages.length} pages`);
 console.log(`Stand-in content to replace (${samples.length}):\n  - ` + samples.join('\n  - '));

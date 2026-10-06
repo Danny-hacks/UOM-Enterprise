@@ -9,7 +9,7 @@ const mono = (s) => (s.init || s.name.split(/\s+/).map((w) => w[0]).slice(0, 2).
 function storyCard(s, i = 0) {
   const p = byslug(s.programme);
   const img = s.real ? `<div class="scard__img"><img src="assets/img/${s.img}-s.webp" alt="${esc(s.name)}" loading="lazy"></div>` : `<div class="scard__img scard__img--mono" role="img" aria-label="Portrait placeholder"><span aria-hidden="true">${esc(mono(s))}</span></div>`;
-  return `<article class="scard" data-area="${esc(s.area || (p && p.area) || '')}" data-reveal style="--d:${(i % 3) * 0.08}s">${img}<div class="scard__b">${L.sampleTag(s)}<blockquote>${esc(s.short ? s.short : s.quote.length > 190 ? s.quote.slice(0, 187).replace(/\s+\S*$/, '') + '…' : s.quote)}</blockquote><div class="scard__who"><b>${esc(s.name)}</b><span>${esc(s.course)}${s.year ? ' · ' + esc(s.year) : s.yearLabel ? ' · ' + esc(s.yearLabel) : ''}</span>${s.outcome ? `<em class="scard__out">${esc(s.outcome)}</em>` : ''}</div>${p ? `<a class="link-arrow" href="${progUrl(p)}">View the programme ${icon('arrow')}</a>` : ''}</div></article>`;
+  return `<article class="scard" data-area="${esc(s.area || (p && p.area) || '')}" data-reveal style="--d:${(i % 3) * 0.08}s">${img}<div class="scard__b">${L.sampleTag(s)}<blockquote>${esc(s.short ? s.short : s.quote.length > 190 ? s.quote.slice(0, 187).replace(/\s+\S*$/, '') + '…' : s.quote)}</blockquote><div class="scard__who"><b>${esc(s.name)}</b><span>${esc(s.course)}${s.year ? ' · ' + esc(s.year) : s.yearLabel ? ' · ' + esc(s.yearLabel) : ''}</span>${s.outcome ? `<em class="scard__out">${esc(s.outcome)}</em>` : ''}</div><a class="link-arrow" href="life/stories/${s.slug}/">Read their story ${icon('arrow')}</a></div></article>`;
 }
 
 function outcomesPage() {
@@ -94,6 +94,25 @@ ${L.ctaBand(0, { title: 'Come and <em>see it together.</em>', text: 'Book a camp
   return { path: 'parents/index.html', html: L.page({ depth: 1, active: 'about', title: 'For parents and guardians', desc: 'Answers for parents on recognition, fees, student support, campus location and what happens after graduation at UoME.', body, scripts: [] }) };
 }
 
-module.exports = () => [outcomesPage(), parentsPage()];
+function storyPage(s) {
+  const p = byslug(s.programme);
+  const others = allStories().filter((x) => x.slug !== s.slug).slice(0, 3);
+  const qa = s.real ? [['Why this programme?', s.quote], ...s.more.map((m, i) => [i === 0 ? 'What stood out?' : 'What has changed?', m])] : s.qa;
+  const area = p ? p.area : s.area;
+  const art = s.real ? `<div class="story__img"><div class="arch"><img src="assets/img/${s.img}.webp" alt="${esc(s.name)}" width="800" height="800"></div></div>` : `<div class="story__img"><div class="arch arch--mono" role="img" aria-label="Portrait placeholder"><span aria-hidden="true">${esc(mono(s))}</span></div></div>`;
+  const body = `
+${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stories', 'life/stories/'], [s.name, null]], eyebrow: `${s.course}`, title: `${esc(s.name)}: <em>${esc(s.outcome || 'in their own words')}.</em>`, lede: '' })}
+<section class="section" data-elementor="container:story-detail"><div class="wrap">
+  <div class="story">${art}<div><blockquote class="quote" style="margin:0 0 8px">${esc(s.quote)}</blockquote><div class="cite"><b>${esc(s.name)}</b><span>${esc(s.course)}${s.year ? ' · ' + esc(s.year) : s.yearLabel ? ' · ' + esc(s.yearLabel) : ''}</span></div>${L.sampleTag(s)}</div></div>
+  <div class="qa">${qa.map(([q, a]) => `<div class="qa__i" data-reveal><h2 class="h3">${esc(q)}</h2><p>${esc(a)}</p></div>`).join('')}</div>
+  ${p ? `<div class="routebox" data-reveal><div><span class="eyebrow">Their programme</span><h2 class="h3" style="margin:0 0 8px">${esc(p.title)}</h2><p class="small" style="margin:0">${esc(p.durationLabel)} · ${esc(p.mode)} · Intakes: ${esc(p.intakeLabel)}</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="${progUrl(p)}">View the programme ${icon('arrow')}</a><a class="btn btn--ghost" href="apply/online/?programme=${p.slug}">Apply now</a></div></div>` : ''}
+</div></section>
+<section class="section section--soft"><div class="wrap"><div class="sec-head sec-head--row"><div><span class="eyebrow">More voices</span><h2 class="h2">Read <em>more stories.</em></h2></div><a class="link-arrow" href="life/stories/">All stories ${icon('arrow')}</a></div><div class="scards">${others.map(storyCard).join('')}</div></div></section>
+${L.ctaBand(0, { title: 'Write <em>your own chapter.</em>', text: 'Apply online in about ten minutes, or talk to an adviser first.', primary: ['Apply online', 'apply/online/' + (p ? '?programme=' + p.slug : '')], secondary: ['Request a callback', 'contact/#callback'] })}
+`;
+  return { path: `life/stories/${s.slug}/index.html`, html: L.page({ depth: 3, active: 'life', title: `${s.name} — ${s.course}`, desc: `${s.name}, ${s.course}: ${s.outcome || 'their story'}.`, body, scripts: [] }) };
+}
+
+module.exports = () => [outcomesPage(), parentsPage(), ...allStories().map(storyPage)];
 module.exports.storyCard = storyCard;
 module.exports.allStories = allStories;

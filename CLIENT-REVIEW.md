@@ -84,6 +84,9 @@ These items were written as realistic stand-ins so the demo reads as finished. T
 | "Coming up" events (open days, taster lectures) show no dates | Events | Real upcoming dates |
 | Board portraits (initials) | About | Photos |
 | Parents page answers | Parents | Review wording; all points come from published UoME information |
+| Online application (7-step form) | `/apply/online/` | Decision: online application vs. enquiry + downloadable form; where submissions go; fee-payment instructions; document upload method |
+| Factsheet download gate (name + email) | Programme pages | Confirm you want to capture leads before download |
+| Per-story Q&A pages for the five stand-in stories | `/life/stories/<name>/` | Real, consented interviews |
 
 ## 4c. Features added beyond the current site
 

@@ -76,3 +76,13 @@ Fees (Apr 2025 schedule), 2027 intake dates, GBP fee for LLB English & Mauritian
 - **News & achievements:** 3 news posts added to `build/news.js` (cat `News`).
 - **Events:** "Coming up" tiles (no invented dates). **Partners:** industry & professional partners tiles.
 - **Visual calm:** angled corners now only on buttons, tags and chips; tiles, nodes, side card, estimator output and tour stage are rectangular.
+
+## 10. Brief-to-10 round (Oct 2026)
+- **Online application** `/apply/online/` (`build/pages/application.js`, `demo/assets/js/application.js`): 7 steps (programme+intake, about you, education, statement, referees [1 for UG, 2 for PG], documents checklist [local vs overseas], review+consent). Autosaves to localStorage (`uome.app`) with a resume banner; validates per step; success shows a reference `UOME-YYYY-#####` and a 3-step "what happens next". Prefills from `?programme=`, `?intake=2027-01|02|09`, `?who=intl`. **Demo only** → in WP use a multi-step form plugin/Elementor Forms with file upload, CRM + email confirmation, and server-side reference numbers. All "Apply now" CTAs point here; `/apply/start/` is now "Register your interest".
+- **Apply page** opens with three route cards: Apply online · Register interest · Download the form.
+- **Factsheet gate:** programme-page factsheet link opens a name+email modal once per session (skip allowed), then downloads. Events: `factsheet_gate_open`, `factsheet_download`.
+- **WhatsApp float** (desktop) + WhatsApp links; **stand-in number** in `data.js` `site.whatsapp`.
+- **Story detail pages** `/life/stories/<slug>/`: quote, Q&A, programme box, more stories. Story cards link to them.
+- **Programme pages:** "Where it can lead" sector chips; on phones Structure / Entry / Fees / How-to-apply are accordions (`data-accm`).
+- **Search results page** `/search/?q=`; Enter in the overlay goes there.
+- **Performance/QA:** assets minified by esbuild (`npm install` then `node build/build.js` writes `*.min.*`; pages link the min files); headings split lazily; fonts self-hosted; hero images pre-brightened (`*-hero.webp`). Lighthouse mobile (local, throttled, gzip): Accessibility 100, Best practices 100, SEO 100, Performance ≈ 83–90 (LCP 2.4–3.4 s). Host with brotli/gzip + long cache headers + CDN for best results. axe: 0 violations across 43 pages.

@@ -114,13 +114,13 @@ function header(depth, active) {
 <header class="hdr" data-elementor="header"><div class="wrap hdr__in">
   <a class="logo" href="${R}" aria-label="UOM Enterprise — home"><img src="${R}assets/img/logos/uome-navy.png" alt="UOM Enterprise — Shaping tomorrow’s Leaders" width="260" height="68"></a>
   <nav class="nav" aria-label="Primary"><ul class="nav__list">${items}</ul></nav>
-  <div class="hdr__cta"><button class="icon-btn" data-search-open aria-label="Search">${icon('search')}</button><a class="btn btn--ghost btn--sm" href="${R}contact/">Enquire</a><a class="btn btn--sm" href="${R}apply/start/">Apply now ${icon('arrow')}</a></div>
+  <div class="hdr__cta"><button class="icon-btn" data-search-open aria-label="Search">${icon('search')}</button><a class="btn btn--ghost btn--sm" href="${R}contact/">Enquire</a><a class="btn btn--sm" href="${R}apply/online/">Apply now ${icon('arrow')}</a></div>
   <button class="icon-btn hdr__sm" data-search-open aria-label="Search" style="margin-left:auto">${icon('search')}</button>
   <button class="icon-btn burger" data-drawer-open aria-label="Open menu" style="margin-left:0">${icon('menu')}</button>
 </div></header>
 <div class="drawer" id="drawer" aria-hidden="true"><div class="drawer__top"><a class="logo" href="${R}"><img src="${R}assets/img/logos/uome-white.png" alt="UOM Enterprise" height="40"></a><button class="icon-btn" data-drawer-close aria-label="Close menu">${icon('close')}</button></div>
   <div class="drawer__body">${drawer}<a class="drawer__plain" href="${R}contact/">Contact</a></div>
-  <div class="drawer__foot"><a class="btn btn--gold btn--block" href="${R}apply/start/">Apply now ${icon('arrow')}</a><a class="btn btn--ghost-light btn--block" href="tel:${site.tel}">Call ${site.phone1}</a></div></div>
+  <div class="drawer__foot"><a class="btn btn--gold btn--block" href="${R}apply/online/">Apply now ${icon('arrow')}</a><a class="btn btn--ghost-light btn--block" href="tel:${site.tel}">Call ${site.phone1}</a></div></div>
 <div class="search" id="search" role="dialog" aria-label="Search the site"><button class="icon-btn search__close" data-search-close aria-label="Close search">${icon('close')}</button><div class="search__in"><input class="search__field" id="q" type="search" placeholder="Search programmes, fees, visas…" autocomplete="off"><div class="search__list" id="qres"></div></div></div>`;
 }
 
@@ -135,15 +135,17 @@ function footer(depth) {
       <div class="ftr__uol"><img src="${R}assets/img/logos/uol-white.png" alt="University of Lancashire" width="144" height="38"><span>Delivering University of Lancashire awards in Mauritius</span></div>
       <div class="social"><a href="https://www.facebook.com/Uclaninmauritius" aria-label="Facebook">${icon('fb')}</a><a href="https://www.instagram.com/uclan_mauritius/" aria-label="Instagram">${icon('ig')}</a></div>
     </div>
-    <div><h3>Study</h3><ul>${programmes.map((p) => `<li><a href="${R}${progUrl(p)}">${esc(p.short)}</a></li>`).join('')}<li><a href="${R}study/">Course finder</a></li></ul></div>
-    <div><h3>Apply &amp; visit</h3><ul><li><a href="${R}apply/">How to apply</a></li><li><a href="${R}apply/#fees">Fees &amp; estimator</a></li><li><a href="${R}international/">International students</a></li><li><a href="${R}events/">Events &amp; taster lectures</a></li><li><a href="${R}life/">Campus &amp; student life</a></li><li><a href="${R}contact/">Contact</a></li></ul></div>
-    <div><h3>UoME</h3><ul><li><a href="${R}about/">About us</a></li><li><a href="${R}careers-accreditation/">Accreditation</a></li><li><a href="${R}outcomes/">Careers &amp; outcomes</a></li><li><a href="${R}life/stories/">Student stories</a></li><li><a href="${R}life/alumni/">Alumni</a></li><li><a href="${R}news/">Guides &amp; news</a></li><li><a href="${R}parents/">For parents</a></li><li><a href="${R}partners/">Schools &amp; partners</a></li></ul></div>
+    <div><p class="ftr-h" role="heading" aria-level="2">Study</p><ul>${programmes.map((p) => `<li><a href="${R}${progUrl(p)}">${esc(p.short)}</a></li>`).join('')}<li><a href="${R}study/">Course finder</a></li></ul></div>
+    <div><p class="ftr-h" role="heading" aria-level="2">Apply &amp; visit</p><ul><li><a href="${R}apply/">How to apply</a></li><li><a href="${R}apply/#fees">Fees &amp; estimator</a></li><li><a href="${R}international/">International students</a></li><li><a href="${R}events/">Events &amp; taster lectures</a></li><li><a href="${R}life/">Campus &amp; student life</a></li><li><a href="${R}contact/">Contact</a></li></ul></div>
+    <div><p class="ftr-h" role="heading" aria-level="2">UoME</p><ul><li><a href="${R}about/">About us</a></li><li><a href="${R}careers-accreditation/">Accreditation</a></li><li><a href="${R}outcomes/">Careers &amp; outcomes</a></li><li><a href="${R}life/stories/">Student stories</a></li><li><a href="${R}life/alumni/">Alumni</a></li><li><a href="${R}news/">Guides &amp; news</a></li><li><a href="${R}parents/">For parents</a></li><li><a href="${R}partners/">Schools &amp; partners</a></li></ul></div>
   </div>
   <div class="ftr__bot"><span>© 2010 – 2026 UOM Enterprise Ltd. Registered with the Higher Education Commission, Mauritius.</span><nav aria-label="Legal"><a href="${R}legal/">Privacy</a><a href="${R}legal/#cookies">Cookies</a><a href="${R}legal/#complaints">Complaints</a></nav></div>
 </div></footer>
+<aside class="wa-wrap" aria-label="Chat with UoME"><a class="wa" href="${waLink()}" aria-label="Chat with UoME on WhatsApp" data-elementor="widget:whatsapp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/></svg><span>Chat with us</span></a></aside>
+<div class="modal gate" id="gate" role="dialog" aria-modal="true" aria-label="Get the factsheet"><div class="modal__box"><button class="modal__x" data-gate-close aria-label="Close">×</button><form class="form" data-gate-form novalidate><span class="eyebrow">Free download</span><h2 class="h3">Get the <em>factsheet.</em></h2><p class="small" style="margin:-4px 0 6px">Tell us who you are and the download starts straight away — an adviser may follow up during office hours.</p><div class="field"><label class="lab" for="gn">Name</label><input class="input" id="gn" name="name" required autocomplete="name"><span class="err"></span></div><div class="field"><label class="lab" for="ge">Email</label><input class="input" id="ge" name="email" type="email" required autocomplete="email"><span class="err"></span></div><label class="consent"><input type="checkbox" name="consent" required><span>I agree that UOM Enterprise may contact me about this programme, in line with its <a href="${R}legal/">privacy notice</a>.</span></label><span class="err" data-consent-err></span><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" type="submit">Download ${icon('arrow')}</button><button class="btn btn--ghost" type="button" data-gate-skip>Skip, just download</button></div></form></div></div>
 <div class="topbar" id="topbar" aria-hidden="true"></div>
 <button class="totop" id="totop" aria-label="Back to top"><svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="bg" cx="32" cy="32" r="29"/><circle class="fg" cx="32" cy="32" r="29" stroke-dasharray="182.2" stroke-dashoffset="182.2"/></svg><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-<div class="mbar" role="navigation" aria-label="Quick actions"><a href="${R}apply/start/">${icon('arrow')}Apply now</a><a href="tel:${site.tel}">${icon('phone')}Call</a><a href="${R}contact/">${icon('mail')}Enquire</a></div>
+<div class="mbar" role="navigation" aria-label="Quick actions"><a href="${R}apply/online/">${icon('arrow')}Apply now</a><a href="tel:${site.tel}">${icon('phone')}Call</a><a href="${R}contact/">${icon('mail')}Enquire</a></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 }
 
@@ -169,7 +171,7 @@ function ctaBand(depth, o = {}) {
   const eyebrow = o.eyebrow || 'Admissions are open';
   const title = o.title || 'Your next chapter <em>starts here.</em>';
   const text = o.text || 'Speak to our admissions team, book a campus visit, or start your application today — an adviser will get back to you during office hours.';
-  const p = o.primary || ['Start your application', 'apply/start/'];
+  const p = o.primary || ['Start your application', 'apply/online/'];
   const s = o.secondary || ['Request a callback', 'contact/#callback'];
   const href = (u) => (/^(https?:|mailto:|tel:)/.test(u) ? u : R + u);
   return `
@@ -220,7 +222,7 @@ function page({ path, title, desc, body, depth = 0, active = '', scripts = [], o
 <link rel="icon" type="image/png" href="${R}assets/img/logos/favicon.png">
 ${FONTS.replace(/\$\{R\}/g, R)}
 ${preload ? `<link rel="preload" as="image" href="${R}${preload}"${preloadSet ? ` imagesrcset="${preloadSet}" imagesizes="100vw"` : ''}>` : ''}
-<link rel="stylesheet" href="${R}assets/css/main.css">
+<link rel="stylesheet" href="${R}assets/css/main.min.css">
 ${schema ? `<script type="application/ld+json">${schema}</script>` : ''}
 </head>
 <body class="${bodyClass}" data-root="${R}">
@@ -231,9 +233,9 @@ ${header(depth, active)}
 ${(depth ? fixPaths(body, depth) : body).replace(/<span class="num">(?!\d)([^<]*)<\/span>/g, '<span class="num num--lbl">$1</span>')}
 </main>
 ${footer(depth)}
-<script src="${R}assets/js/uome-data.js"></script>
-<script src="${R}assets/js/core.js"></script>
-${scripts.map((s) => `<script src="${R}assets/js/${s}.js"></script>`).join('\n')}
+<script src="${R}assets/js/uome-data.min.js"></script>
+<script src="${R}assets/js/core.min.js"></script>
+${scripts.map((s) => `<script src="${R}assets/js/${s}.min.js"></script>`).join('\n')}
 </body>
 </html>
 `;

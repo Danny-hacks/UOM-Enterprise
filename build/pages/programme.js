@@ -39,7 +39,7 @@ function build(p) {
   const mods = p.modules ? `<div class="mods ${p.modules.length >= 3 ? 'mods--3' : p.modules.length === 2 ? 'mods--2' : ''}">${p.modules.map(([h, l]) => `<div class="mod" data-reveal><h3>${esc(h)}</h3><ul>${l.map((m) => `<li>${esc(m)}</li>`).join('')}</ul></div>`).join('')}</div>${p.modulesNote ? `<p class="small" style="margin-top:18px">${esc(p.modulesNote)}</p>` : ''}` : `<div class="notice">${esc(p.modulesNote)} <a href="${R}contact/?topic=factsheet&programme=${p.slug}"><b>Request the syllabus →</b></a></div>`;
   const rel = p.related.map((s) => byslug(s)).filter(Boolean).slice(0, 3).map((q) => `<a class="rcard" href="${R}${progUrl(q)}" data-reveal><div class="media"><img src="${R}assets/img/${q.img}-s.webp" alt="" loading="lazy"></div><small>${esc(q.levelLabel)} · ${esc(q.durationLabel)}</small><h3>${esc(q.title)}</h3></a>`).join('');
   const doc = FACT[p.slug];
-  const factBtn = doc ? `<a class="btn btn--ghost-light" href="${R}assets/docs/${doc}" download>Download factsheet ${icon('arrow')}</a>` : `<a class="btn btn--ghost-light" href="${R}contact/?topic=factsheet&programme=${p.slug}">Request the factsheet ${icon('arrow')}</a>`;
+  const factBtn = doc ? `<a class="btn btn--ghost-light" href="${R}assets/docs/${doc}" download data-gate>Download factsheet ${icon('arrow')}</a>` : `<a class="btn btn--ghost-light" href="${R}contact/?topic=factsheet&programme=${p.slug}">Request the factsheet ${icon('arrow')}</a>`;
 
   const body = `
 <section class="phead phead--img" data-elementor="container:course-hero">
@@ -76,7 +76,7 @@ function build(p) {
       <div class="whys">${p.why.map(([h, t], i) => `<div class="why" data-reveal><span class="num" style="font-size:1.6rem">0${i + 1}</span><div><h3>${esc(h)}</h3><p>${esc(t)}</p></div></div>`).join('')}</div>
     </section>
 
-    <section id="structure" data-elementor="container:course-structure">
+    <section id="structure" data-accm data-elementor="container:course-structure">
       <span class="eyebrow">Programme structure</span><h2 class="h2">What you’ll <em>study.</em></h2>
       ${mods}
       <h3 class="h3" style="margin:44px 0 12px">How you’re assessed</h3><p class="prose">${esc(p.assessment)}</p>
@@ -86,10 +86,11 @@ function build(p) {
       <span class="eyebrow">Careers &amp; next steps</span><h2 class="h2">Where it can <em>take you.</em></h2>
       <ul class="checks">${p.careers.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>
       <div class="notice" style="margin-top:26px">${esc(p.careersNote)}</div>
+      ${(() => { const sec = D.sectors.filter((s) => s.programmes.includes(p.slug)); return sec.length ? `<div style="margin-top:30px"><h3 class="h3" style="margin-bottom:12px">Where it can lead</h3><p class="secchips">${sec.map((s) => `<a href="${R}outcomes/#sectors">${esc(s.title)}</a>`).join('')}</p></div>` : ''; })()}
       ${accAll.length ? `<div style="margin-top:36px"><h3 class="h3" style="margin-bottom:14px">Accreditation &amp; recognition</h3>${accAll.map((a) => `<p><b>${esc(a.name)} (${esc(a.abbr)}).</b> ${esc(a.what)}</p>`).join('')}<a class="link-arrow" href="${R}careers-accreditation/">How accreditation works ${icon('arrow')}</a></div>` : ''}
     </section>
 
-    <section id="entry" data-elementor="container:course-entry">
+    <section id="entry" data-accm data-elementor="container:course-entry">
       <span class="eyebrow">Entry requirements</span><h2 class="h2">Who can <em>apply.</em></h2>
       <div class="tabs" role="tablist" data-tabs><button class="chip is-on" role="tab" aria-selected="true" data-t="local">Local applicants</button><button class="chip" role="tab" aria-selected="false" data-t="intl">International applicants</button></div>
       <div class="tabpanel is-on" data-p="local"><ul class="checks">${p.entry.local.map((e) => `<li>${esc(e)}</li>`).join('')}</ul></div>
@@ -97,12 +98,12 @@ function build(p) {
       <p class="small" style="margin-top:20px">${esc(p.entry.note)}</p>
     </section>
 
-    <section id="fees" data-elementor="container:course-fees">
+    <section id="fees" data-accm data-elementor="container:course-fees">
       <span class="eyebrow">Fees</span><h2 class="h2">Clear, published <em>tuition.</em></h2>
       ${feeBlock(p, R)}
     </section>
 
-    <section id="apply" data-elementor="container:course-apply">
+    <section id="apply" data-accm data-elementor="container:course-apply">
       <span class="eyebrow">How to apply</span><h2 class="h2">Four steps to <em>your offer.</em></h2>
       <div class="whys">
         <div class="why"><span class="num" style="font-size:1.6rem">01</span><div><h3>Submit your application</h3><p>Complete the application form with your personal statement and certificates, with ${p.level === 'undergraduate' ? 'one referee' : 'two referees'}. Local applicants pay the Rs 1,000 application fee; it is waived for international students.</p></div></div>
@@ -121,8 +122,8 @@ function build(p) {
   <aside class="aside" aria-label="Programme summary">
     <div class="aside__card">
       <span class="eyebrow" style="color:var(--gold-2)">Ready?</span>
-      <h3>Apply or ask</h3>
-      <a class="btn btn--gold" href="${R}apply/start/?programme=${p.slug}">Apply now ${icon('arrow')}</a>
+      <p class="h3" style="margin:0 0 6px">Apply or ask</p>
+      <a class="btn btn--gold" href="${R}apply/online/?programme=${p.slug}">Apply now ${icon('arrow')}</a>
       <a class="btn btn--ghost-light" href="${R}apply/start/?programme=${p.slug}&enquire=1">Ask a question ${icon('arrow')}</a>
       ${factBtn}
       <button class="btn btn--ghost-light" data-shortlist="${p.slug}" aria-pressed="false">${icon('compare')}<span>Add to compare</span></button>
@@ -143,7 +144,7 @@ function build(p) {
   <div class="related">${rel}</div>
 </div></section>
 
-${L.ctaBand(depth, { title: `Ready to apply for <em>${esc(p.short)}?</em>`, text: 'Register your interest in two minutes — or ask an adviser about entry requirements, fees and intakes.', primary: ['Apply now', 'apply/start/?programme=' + p.slug], secondary: ['Ask a question', 'apply/start/?programme=' + p.slug + '&enquire=1'] })}
+${L.ctaBand(depth, { title: `Ready to apply for <em>${esc(p.short)}?</em>`, text: 'Register your interest in two minutes — or ask an adviser about entry requirements, fees and intakes.', primary: ['Apply now', 'apply/online/?programme=' + p.slug], secondary: ['Ask a question', 'apply/start/?programme=' + p.slug + '&enquire=1'] })}
 `;
   const schema = JSON.stringify([{ '@context': 'https://schema.org', '@type': 'Course', name: p.title, description: p.lede, provider: { '@type': 'EducationalOrganization', name: 'UOM Enterprise Ltd', sameAs: 'https://uomenterprise.mu/' } }, { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: p.faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }]);
   return { path: `${progUrl(p)}index.html`, html: L.page({ depth, active: 'study', title: `${p.title}${p.sub ? ' ' + p.sub : ''}`, desc: `${p.lede} ${p.durationLabel}, ${p.mode.toLowerCase()}, University of Lancashire award, Ebene, Mauritius.`, body, scripts: [], ogimg: p.hero, schema }) };

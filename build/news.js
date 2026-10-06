@@ -115,7 +115,7 @@ module.exports = [
     ],
     facts: { title: 'MSc Digital Marketing', rows: [['Launched', '2024'], ['First graduates', '2026'], ['Duration', '1.5 years part-time'], ['Mode', 'Hybrid'], ['Certification', 'IDM']] },
     related: ['msc-digital-marketing'],
-    cta: { title: 'Join <em>the next cohort.</em>', text: 'The MSc Digital Marketing starts in September.', primary: ['View the programme', 'study/digital/msc-digital-marketing/'], secondary: ['Apply now', 'apply/start/?programme=msc-digital-marketing'] },
+    cta: { title: 'Join <em>the next cohort.</em>', text: 'The MSc Digital Marketing starts in September.', primary: ['View the programme', 'study/digital/msc-digital-marketing/'], secondary: ['Apply now', 'apply/online/?programme=msc-digital-marketing'] },
   },
   {
     slug: 'a-community-of-900-graduates',

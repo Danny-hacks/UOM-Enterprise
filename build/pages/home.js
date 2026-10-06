@@ -24,7 +24,7 @@ module.exports = function home() {
 
   const body = `
 <section class="hero" data-hero data-elementor="container:hero-slider">
-  <div class="hero__slides" aria-hidden="true">${SLIDES.map(([img], i) => `<div class="hero__slide ${i === 0 ? 'is-on' : ''}"><img style="--fx:${FOCUS[img] || 50}%" src="assets/img/${img}.webp" srcset="assets/img/${img}-s.webp 800w, assets/img/${img}.webp 2000w" sizes="100vw" alt="" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}></div>`).join('')}</div>
+  <div class="hero__slides" aria-hidden="true">${SLIDES.map(([img], i) => `<div class="hero__slide ${i === 0 ? 'is-on' : ''}"><img style="--fx:${FOCUS[img] || 50}%" src="assets/img/${img}-hero.webp" srcset="assets/img/${img}-hero-s.webp 800w, assets/img/${img}-hero.webp 2000w" sizes="100vw" alt="" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}></div>`).join('')}</div>
   <div class="hero__shade"></div>
   <a class="hero__scroll" href="#start">Scroll</a>
   <div class="wrap hero__in">
@@ -33,7 +33,7 @@ module.exports = function home() {
       <h1 class="display" style="margin-bottom:36px">A British degree, <em>rooted in</em> Mauritius.</h1>
       <div class="hero__cta">
         <a class="btn" href="study/">Find your programme ${icon('arrow')}</a>
-        <a class="btn btn--ghost-light" href="apply/start/">Start your application ${icon('arrow')}</a>
+        <a class="btn btn--ghost-light" href="apply/online/">Start your application ${icon('arrow')}</a>
       </div>
       <div class="hero__meta"><div class="countdown" data-countdown aria-live="off"><span class="countdown__lab">Next intake</span><span class="countdown__v"><span data-cd-label>January 2027</span><small data-cd-days></small></span></div></div>
     </div>
@@ -92,7 +92,7 @@ ${L.logoStrip(0)}
       <div><blockquote class="quote" style="margin:0 0 8px">The MSc exceeded all my expectations. We didn’t just learn about strategies — we applied them through hands-on projects, case studies and simulations that mirrored real-world challenges.</blockquote><div class="cite"><b>Yaniish Engutsamy</b><span>MSc Digital Marketing Communications · Year 1</span></div><p style="margin-top:28px"><a class="link-arrow" href="study/digital/msc-digital-marketing/">See the programme ${icon('arrow')}</a></p></div>
     </div></div>
     ${D.sampleStories.slice(0, 2).map((m) => `<div class="rot__s"><div class="story"><div class="story__img"><div class="arch arch--mono" role="img" aria-label="Portrait placeholder"><span aria-hidden="true">${esc(m.init)}</span></div></div><div>${L.sampleTag(m)}<blockquote class="quote" style="margin:0 0 8px">${esc(m.quote)}</blockquote><div class="cite"><b>${esc(m.name)}</b><span>${esc(m.course)} · ${esc(m.yearLabel)}</span><span style="color:var(--crimson);font-weight:600">${esc(m.outcome)}</span></div><p style="margin-top:28px"><a class="link-arrow" href="study/${m.area === 'pm' ? 'business-management' : 'law'}/${m.programme}/">See the programme ${icon('arrow')}</a></p></div></div></div>`).join('')}
-    <div class="rot__dots" role="tablist" aria-label="Choose a story"><button class="is-on" aria-label="Story 1"></button><button aria-label="Story 2"></button><button aria-label="Story 3"></button></div>
+    <div class="rot__dots" role="tablist" aria-label="Choose a story"><button role="tab" class="is-on" aria-label="Story 1"></button><button role="tab" aria-label="Story 2"></button><button role="tab" aria-label="Story 3"></button></div>
   </div>
 </div></section>
 
@@ -126,7 +126,7 @@ ${L.ctaBand(0)}
     path: 'index.html', html: L.page({
       depth: 0, active: '', title: 'UOM Enterprise — University of Lancashire in Mauritius',
       desc: 'Study law, project management and digital marketing with the University of Lancashire in Ebene, Mauritius. Qualifying law degrees, APM, CIOB and IDM accredited MSc programmes.',
-      body, scripts: [], preload: 'assets/img/grad-hall.webp', preloadSet: 'assets/img/grad-hall-s.webp 800w, assets/img/grad-hall.webp 2000w', schema: JSON.stringify({ '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'UOM Enterprise Ltd', alternateName: 'UoME', url: 'https://uomenterprise.mu/', telephone: '+230 467 8925', email: D.site.email, address: { '@type': 'PostalAddress', streetAddress: '1st Floor, The Core Building', addressLocality: 'Ebene', addressCountry: 'MU' }, foundingDate: '2010' }),
+      body, scripts: [], preload: 'assets/img/grad-hall-hero.webp', preloadSet: 'assets/img/grad-hall-hero-s.webp 800w, assets/img/grad-hall-hero.webp 2000w', schema: JSON.stringify({ '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'UOM Enterprise Ltd', alternateName: 'UoME', url: 'https://uomenterprise.mu/', telephone: '+230 467 8925', email: D.site.email, address: { '@type': 'PostalAddress', streetAddress: '1st Floor, The Core Building', addressLocality: 'Ebene', addressCountry: 'MU' }, foundingDate: '2010' }),
     }),
   };
 };

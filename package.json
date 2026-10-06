@@ -1,0 +1,8 @@
+{
+  "name": "uome-website-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static generator for the UoME demo site",
+  "scripts": { "build": "node build/build.js" },
+  "devDependencies": { "esbuild": "^0.25.0" }
+}
