@@ -22,9 +22,11 @@ Everything on the demo site is either **(A) taken directly from uomenterprise.mu
 
 ## 2. Content we wrote (editorial) — please confirm tone and accuracy
 
-- Hero headline and all section headings/lede copy; "Why UoME" six reasons; audience-path copy.
+- Hero headline and all section headings/lede copy; audience-path copy.
 - Programme "why this programme" bullets and **careers lists** (the factsheets give career prospects only for the LLM; the others are written conservatively from programme aims).
-- Five guides in *Guides & news* (qualifying law degree, applying from abroad, fees, APM accreditation, campus life).
+- Five guides in *Guides & news* (qualifying law degree, applying from abroad, fees, APM accreditation, campus life), including their key-takeaway and key-facts boxes.
+- About page copy: at-a-glance row, timeline intro, quality tiles.
+- Closing call-to-action headings and text on each page.
 - Accreditation explorer "What it means for you" lines.
 - Neighbourhood descriptions for Quatre Bornes and Rose-Hill; "ten minutes' walk to the metro" (from the Services page) used in marketing copy.
 - Law pathway diagram wording (BPC / LPC / CVLE routes taken from factsheets).
@@ -57,14 +59,21 @@ Everything on the demo site is either **(A) taken directly from uomenterprise.mu
 - Photography: all images are from the current site. Several fair-stand photos show the older "University of Central Lancashire" banners — we recommend newer photography. No stock imagery is used.
 - 4–8 more consented student/alumni stories (we do not invent testimonials).
 - Staff/lecturer profiles (Universal College Lanka-style "lecture panel") if desired.
-- Approval to quote University of Lancashire rankings.
+- Approval to quote University of Lancashire rankings (shown on the About page).
+- Board member portrait photos.
 
 ## 4b. Design decisions to confirm
 
-- Yellow-led palette (header and page headers are solid yellow); navy used for footer and contrast sections.
-- Fonts: Montserrat and Source Sans 3 (free, Google Fonts) — swap if UoME has brand fonts.
-- Navy versions of the UoME and University of Lancashire logos were produced from the white originals for use on yellow — please supply official artwork.
-- Pre-loader shows once per browser session; page-transition curtain on every internal link — both can be switched off.
+- Palette: white header, crimson as the main action colour, navy for contrast sections and footer, gold as an accent.
+- Fonts: Montserrat and Source Sans 3 (free, self-hosted) — swap if UoME has brand fonts.
+- Navy versions of the UoME and University of Lancashire logos were produced from the white originals — please supply official artwork.
+- Pre-loader plays on a first visit or refresh only (not when moving between pages); it can be shortened or switched off.
+- Hero: full-screen cycling photos on desktop; on phones the same structure with the caption card, countdown and hero buttons hidden.
+- Board profile tiles use initials as placeholders — please supply portrait photos.
+
+## 4c. Features added beyond the current site
+
+Course finder, compare tray and programme quiz; fees and savings estimator; next-intake countdown; three-step enquiry form that pre-fills; full programme pages; accreditation explorer; international journey and cost calculator; campus tour; student support hub; guides; alumni, events, gallery, schools and partners pages; site-wide search; back-to-top with progress ring.
 
 ## 5. What is demo-only
 

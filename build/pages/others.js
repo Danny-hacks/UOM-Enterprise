@@ -94,7 +94,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['About', null]], eyebrow: 'About UoME', t
 
 <section class="section section--soft" id="leadership" data-elementor="container:leadership"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Leadership</span><h2 class="h2">The <em>board.</em></h2></div>
-  <div class="people">${D.leadership.map(([n, r]) => `<div class="person" data-reveal><span class="mono" aria-hidden="true">${esc(initials(n))}</span><b>${esc(n)}</b><span>${esc(r)}</span></div>`).join('')}</div>
+  <div class="people">${D.leadership.map(([n, r]) => `<div class="person" data-reveal><div class="person__img" role="img" aria-label="Portrait placeholder for ${esc(n)}"><span aria-hidden="true">${esc(initials(n))}</span></div><div class="person__txt"><b>${esc(n)}</b><span>${esc(r)}</span></div></div>`).join('')}</div>
 </div></section>
 
 <section class="section" data-elementor="container:visit"><div class="wrap split">
