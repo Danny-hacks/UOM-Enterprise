@@ -165,7 +165,7 @@ em { font-style: normal; font-weight: inherit; color: var(--crimson); }
 .nav__list { display: flex; gap: clamp(0px, .4vw, 8px); margin-inline: auto; }
 .nav__link { display: flex; align-items: center; gap: 6px; padding: 38px clamp(6px, .75vw, 13px); font-family: var(--display); font-weight: 700; font-size: .74rem; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; position: relative; background: none; border: 0; color: var(--navy); white-space: nowrap; }
 .hdr.is-stuck .nav__link { padding-block: 30px; }
-.nav__link::after { content: ""; position: absolute; left: clamp(6px, .75vw, 13px); right: clamp(6px, .75vw, 13px); bottom: 0; height: 5px; background: var(--crimson); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav__link::after { content: ""; position: absolute; left: clamp(6px, .75vw, 13px); right: clamp(6px, .75vw, 13px); bottom: 24px; height: 4px; background: var(--crimson); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
 .nav__item:hover .nav__link::after, .nav__item:focus-within .nav__link::after, .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 .nav__link svg { width: 11px; height: 11px; opacity: .7; }
 .hdr__cta { display: none; gap: 10px; margin-left: auto; align-items: center; }
@@ -1022,3 +1022,7 @@ details.faq p { overflow-wrap: anywhere; }
   .tile .num { font-size: clamp(1.15rem, 4.6vw, 1.5rem); }
   .chero__facts .fact:first-child { padding-left: 14px; }
 }
+
+.hdr.is-stuck .nav__link::after { bottom: 17px; }
+.dd a.is-active { background: var(--soft); border-left-color: var(--crimson); color: var(--crimson); }
+.nav__item:has(.dd a.is-active) > .nav__link::after { transform: scaleX(1); }
