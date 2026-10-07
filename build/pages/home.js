@@ -108,13 +108,8 @@ ${L.logoStrip(0)}
 </div></section>
 
 <section class="section" data-elementor="container:home-faq"><div class="wrap split split--top">
-  <div class="stickycol"><span class="eyebrow">FAQs</span><h2 class="h2">Quick answers, <em>before you ask.</em></h2><p class="lede" style="margin:18px 0 26px">The questions we hear most from applicants and parents — answered from UoME’s published information.</p><p style="display:flex;gap:18px;flex-wrap:wrap"><a class="btn btn--navy" href="faq/">All FAQs ${icon('arrow')}</a><a class="link-arrow" href="contact/#callback">Still unsure? Request a callback ${icon('arrow')}</a></p></div>
+  <div class="stickycol"><span class="eyebrow">FAQs</span><h2 class="h2">Quick answers, <em>before you ask.</em></h2><p class="lede" style="margin:18px 0 26px">The questions we hear most from applicants and parents — answered from UoME’s published information.</p><p style="display:flex;gap:18px;flex-wrap:wrap"><a class="btn btn--navy" href="faq/">All FAQs ${icon('arrow')}</a><a class="btn btn--ghost" href="contact/">Talk to a person</a></p></div>
   <div>${['How do I apply?', 'What are the entry requirements?', 'Can I study while working?', 'Can I pay in instalments?', 'Is my degree recognised?', 'Do I need a visa?'].map((q) => { const f = D.faqs.find((x) => x.q === q); return f ? `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>` : ''; }).join('')}</div>
-</div></section>
-
-<section class="section section--soft" data-elementor="container:home-enquiry"><div class="wrap split split--top">
-  <div><span class="eyebrow">Talk to a person</span><h2 class="h2">Questions? <em>Ask an adviser.</em></h2><p class="lede" style="margin:18px 0 26px">Fees, entry requirements, study while working, visas — our team answers every weekday.</p><ul class="checks"><li>Replies during office hours, ${esc(D.site.hours)}</li><li>No obligation, no pressure</li><li>Parents welcome on every call</li></ul><p style="margin-top:24px;display:flex;gap:18px;flex-wrap:wrap"><a class="link-arrow" href="${L.waLink()}">Chat on WhatsApp ${icon('arrow')}</a><a class="link-arrow" href="tel:${D.site.tel}">Call ${D.site.phone1} ${icon('arrow')}</a></p></div>
-  ${L.miniForm({ id: 'hq' })}
 </div></section>
 
 <section class="section" data-elementor="container:campus-teaser"><div class="wrap">

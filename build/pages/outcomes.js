@@ -52,7 +52,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Careers & outcomes', null]], eyebrow: 'W
   <div class="tiles tiles--3 tiles--badge">${D.careersSupport.map(([t, d], i) => `<div class="tile"><span class="num">0${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
 </div></section>
 
-${L.ctaBand(0, { title: 'Start building <em>your next chapter.</em>', text: 'Tell us where you want your career to go and an adviser will suggest the programme and route.', primary: ['Find your programme', 'study/'], secondary: ['Talk to an adviser', 'contact/#callback'] })}
+${L.ctaBand(0, { title: 'Start building <em>your next chapter.</em>', text: 'Tell us where you want your career to go and an adviser will suggest the programme and route.', primary: ['Find your programme', 'study/'], secondary: ['Talk to an adviser', 'contact/'] })}
 `;
   return { path: 'outcomes/index.html', html: L.page({ depth: 1, active: 'outcomes', title: 'Careers & outcomes — where UoME can take you', desc: 'See the sectors and professions UoME programmes lead to, graduate stories, the route to the Bar and the careers support available.', body, scripts: [], ogimg: 'grad-hall' }) };
 }
@@ -67,7 +67,7 @@ function parentsPage() {
     ['Can we visit first?', 'Yes. The team offers open days, taster lectures and one-to-one counselling for students and parents — book a visit or call during office hours.'],
   ];
   const body = `
-${L.pageHead({ crumbs: [['Home', ''], ['For parents', null]], eyebrow: 'Parents & guardians', title: 'Choosing a degree <em>together.</em>', lede: 'Straight answers on recognition, fees, support and what your child can do next — so the decision feels clear for everyone.', image: 'campus-atrium', extra: `<div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="events/#visit">Book a visit ${icon('arrow')}</a><a class="btn btn--ghost" href="contact/#callback">Request a callback</a></div>` })}
+${L.pageHead({ crumbs: [['Home', ''], ['For parents', null]], eyebrow: 'Parents & guardians', title: 'Choosing a degree <em>together.</em>', lede: 'Straight answers on recognition, fees, support and what your child can do next — so the decision feels clear for everyone.', image: 'campus-atrium', extra: `<div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="events/#visit">Book a visit ${icon('arrow')}</a><a class="btn btn--ghost" href="contact/">Talk to an adviser</a></div>` })}
 
 <section class="section" data-elementor="container:parent-reassurance"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">What matters most</span><h2 class="h2">Four things <em>parents ask first.</em></h2></div>
@@ -89,7 +89,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['For parents', null]], eyebrow: 'Parents 
   <div class="related">${['llb-english-mauritian-law', 'llb-english-law'].map((s) => { const q = byslug(s); return `<a class="rcard" href="${progUrl(q)}" data-reveal><div class="media"><img src="assets/img/${q.img}-s.webp" alt="" loading="lazy"></div><small>${esc(q.levelLabel)} · ${esc(q.durationLabel)}</small><h3>${esc(q.title)}</h3></a>`; }).join('')}</div>
 </div></section>
 
-${L.ctaBand(0, { title: 'Come and <em>see it together.</em>', text: 'Book a campus visit, a taster lecture or a conversation with an adviser.', primary: ['Book a visit', 'events/#visit'], secondary: ['Request a callback', 'contact/#callback'] })}
+${L.ctaBand(0, { title: 'Come and <em>see it together.</em>', text: 'Book a campus visit, a taster lecture or a conversation with an adviser.', primary: ['Book a visit', 'events/#visit'], secondary: ['Book a campus visit', 'events/#visit'] })}
 `;
   return { path: 'parents/index.html', html: L.page({ depth: 1, active: 'about', title: 'For parents and guardians', desc: 'Answers for parents on recognition, fees, student support, campus location and what happens after graduation at UoME.', body, scripts: [] }) };
 }
@@ -108,7 +108,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
   ${p ? `<div class="routebox" data-reveal><div><span class="eyebrow">Their programme</span><h2 class="h3" style="margin:0 0 8px">${esc(p.title)}</h2><p class="small" style="margin:0">${esc(p.durationLabel)} · ${esc(p.mode)} · Intakes: ${esc(p.intakeLabel)}</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="${progUrl(p)}">View the programme ${icon('arrow')}</a><a class="btn btn--ghost" href="apply/online/?programme=${p.slug}">Apply now</a></div></div>` : ''}
 </div></section>
 <section class="section section--soft"><div class="wrap"><div class="sec-head sec-head--row"><div><span class="eyebrow">More voices</span><h2 class="h2">Read <em>more stories.</em></h2></div><a class="link-arrow" href="life/stories/">All stories ${icon('arrow')}</a></div><div class="scards">${others.map(storyCard).join('')}</div></div></section>
-${L.ctaBand(0, { title: 'Write <em>your own chapter.</em>', text: 'Apply online in about ten minutes, or talk to an adviser first.', primary: ['Apply online', 'apply/online/' + (p ? '?programme=' + p.slug : '')], secondary: ['Request a callback', 'contact/#callback'] })}
+${L.ctaBand(0, { title: 'Write <em>your own chapter.</em>', text: 'Apply online in about ten minutes, or talk to an adviser first.', primary: ['Apply online', 'apply/online/' + (p ? '?programme=' + p.slug : '')], secondary: ['Book a campus visit', 'events/#visit'] })}
 `;
   return { path: `life/stories/${s.slug}/index.html`, html: L.page({ depth: 3, active: 'life', title: `${s.name} — ${s.course}`, desc: `${s.name}, ${s.course}: ${s.outcome || 'their story'}.`, body, scripts: [] }) };
 }

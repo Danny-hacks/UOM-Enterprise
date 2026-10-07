@@ -80,7 +80,7 @@ These items were written as realistic stand-ins so the demo reads as finished. T
 | 5 graduate stories (Aisha M., Kevin R., Priya S., Daniel T., Nadia K.) — quotes, outcomes, initial-only portraits | Outcomes, Student stories, Home rotator, programme pages (`build/outcomes-data.js`) | Real, consented stories with photo, programme, year and one-line outcome |
 | 6 career sectors and typical routes | Careers & outcomes (`build/outcomes-data.js`) | Real graduate destinations / employers (logos need permission) |
 | WhatsApp number `+230 5000 0000` | CTA band, Contact, Home (`build/data.js`) | UoME's real WhatsApp line |
-| Callback and enquiry forms | Home, programme pages, Contact | Form destination / CRM; callback hours |
+| Enquiry forms | Home, programme pages, Contact | Form destination / CRM; callback hours |
 | "Coming up" events (open days, taster lectures) show no dates | Events | Real upcoming dates |
 | Board portraits (initials) | About | Photos |
 | Parents page answers | Parents | Review wording; all points come from published UoME information |

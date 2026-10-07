@@ -278,17 +278,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Contact', null]], eyebrow: 'Get in touch
     <div class="ccard">${icon('clock')}<div><b>${esc(D.site.hours)}</b><span>${esc(D.site.hoursNote)}</span></div></div>
   </div></aside>
 </div></section>
-<section class="section section--soft" id="callback" data-elementor="container:callback"><div class="wrap split split--top">
-  <div><span class="eyebrow">Request a callback</span><h2 class="h2">Prefer us to <em>call you?</em></h2><p class="lede" style="margin:16px 0 0">Leave your number and a good time. An adviser will ring you back during office hours — ${esc(D.site.hours)}.</p></div>
-  <div class="formcard"><form class="form" data-form data-single novalidate>
-    <div class="row2"><div class="field"><label class="lab" for="cb1">Name</label><input class="input" id="cb1" name="name" autocomplete="name" required><span class="err"></span></div><div class="field"><label class="lab" for="cb2">Phone</label><input class="input" id="cb2" name="phone" type="tel" autocomplete="tel" required><span class="err"></span></div></div>
-    <div class="row2"><div class="field"><label class="lab" for="cb3">Best time</label><select class="select" id="cb3" name="time"><option>Morning (09:00 – 12:00)</option><option>Lunchtime (12:00 – 13:00)</option><option>Afternoon (13:00 – 16:30)</option></select></div><div class="field"><label class="lab" for="cb4">About</label><select class="select" id="cb4" name="programme"><option>Not sure yet</option>${D.programmes.map((p) => `<option>${esc(p.short)}</option>`).join('')}</select></div></div>
-    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that UOM Enterprise may call me about this request, in line with its <a href="legal/">privacy notice</a>.</span></label><span class="err" data-consent-err></span>
-    <div><button class="btn" type="submit">Request my callback ${icon('arrow')}</button></div>
-    <div class="success" data-success hidden>${icon('check')}<h3 class="h3">Callback <em>booked.</em></h3><p>We’ll ring you at your chosen time.</p></div>
-  </form></div>
-</div></section>
-<section class="section section--paper2"><div class="wrap"><div class="mapbox"><iframe title="Map of The Core Building, Ebene" loading="lazy" src="https://www.google.com/maps?q=The+Core+Building+Ebene+Mauritius&output=embed"></iframe></div></div></section>
+<section class="section section--tight section--paper2"><div class="wrap"><div class="mapbox"><iframe title="Map of The Core Building, Ebene" loading="lazy" src="https://www.google.com/maps?q=The+Core+Building+Ebene+Mauritius&output=embed"></iframe></div></div></section>
 `;
   return { path: 'contact/index.html', html: L.page({ depth: 1, active: '', title: 'Contact UoME — admissions, support and visits', desc: 'Contact UOM Enterprise in Ebene, Mauritius: admissions, student support, finance, and how to visit The Core Building.', body, scripts: [] }) };
 }

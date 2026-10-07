@@ -71,7 +71,7 @@ Fees (Apr 2025 schedule), 2027 intake dates, GBP fee for LLB English & Mauritian
 - **Careers & outcomes** (`/outcomes/`): stats, six sectors with typical routes (stand-in), law-route diagram, 3 graduate stories, careers support (real published services). Data: `build/outcomes-data.js`.
 - **Stories:** story card (`.scard`) = photo or initials tile, quote, name, programme, outcome; filter chips; home **story rotator** (3 slides, 9s, dots, pauses off-screen). Stand-ins carry `sample: true`; `SHOW_SAMPLE_TAGS=1` shows a "Sample" tag; the build prints the stand-in list.
 - **Parents page** (`/parents/`): four reassurance tiles, six FAQs, school-leaver programmes, visit/callback CTA.
-- **Conversion:** `miniForm()` (name, phone/email, programme, consent) on Home and each programme page next to a graduate story; **callback form** at `/contact/#callback`; **WhatsApp** link (`waLink()`, stand-in number); default secondary CTA is "Request a callback".
+- **Conversion:** `miniForm()` (name, phone/email, programme, consent) on Home and each programme page next to a graduate story; **WhatsApp** link (`waLink()`, stand-in number); default secondary CTA is "Request a callback".
 - **Study by level:** chips above results drive the Level filter (`data-levels` in `finder.js`).
 - **News & achievements:** 3 news posts added to `build/news.js` (cat `News`).
 - **Events:** "Coming up" tiles (no invented dates). **Partners:** industry & professional partners tiles.

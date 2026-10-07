@@ -93,7 +93,7 @@ function header(depth, active) {
   const nd = navData();
   const DD = {
     study: [['study/', 'Course finder'], ['study/?area=law', 'Law'], ['study/?area=pm', 'Project management'], ['study/?area=digital', 'Digital marketing'], ['study/#quiz', 'Programme quiz']],
-    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit'], ['faq/', 'FAQs'], ['contact/#callback', 'Request a callback']],
+    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit'], ['faq/', 'FAQs']],
     international: [['international/#journey', 'Your journey'], ['international/#visa', 'Visa & health'], ['international/#accommodation', 'Accommodation'], ['international/#cost', 'Cost of living']],
     life: [['life/#tour', 'Campus tour'], ['life/stories/', 'Student stories'], ['life/alumni/', 'Alumni'], ['life/student-support/', 'Student support'], ['gallery/', 'Gallery']],
     outcomes: [['outcomes/#sectors', 'Where graduates work'], ['outcomes/#stories', 'Graduate stories'], ['outcomes/#support', 'Careers support'], ['careers-accreditation/', 'Accreditation & routes']],
@@ -185,7 +185,7 @@ function ctaBand(depth, o = {}) {
   const title = o.title || 'Your next chapter <em>starts here.</em>';
   const text = o.text || 'Speak to our admissions team, book a campus visit, or start your application today — an adviser will get back to you during office hours.';
   const p = o.primary || ['Start your application', 'apply/online/'];
-  const s = o.secondary || ['Request a callback', 'contact/#callback'];
+  const s = o.secondary || ['Book a campus visit', 'events/#visit'];
   const href = (u) => (/^(https?:|mailto:|tel:)/.test(u) ? u : R + u);
   return `
 <section class="cta" data-elementor="container:cta-band"><div class="wrap cta__in">

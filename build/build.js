@@ -58,7 +58,6 @@ const search = [
   { t: 'Careers & outcomes', u: 'outcomes/', k: 'Careers', x: 'jobs employers sectors graduates stories careers support routes' },
   { t: 'For parents', u: 'parents/', k: 'Parents', x: 'parent guardian recognised fees support safe campus visit' },
   { t: 'FAQs', u: 'faq/', k: 'Help', x: 'frequently asked questions help how do I apply documents fees visa accommodation refund instalments' },
-  { t: 'Request a callback', u: 'contact/#callback', k: 'Contact', x: 'call back phone ring adviser' },
   { t: 'Contact', u: 'contact/', k: 'Contact', x: 'phone email address map hours location' },
   ...D.news.map((n) => ({ t: n.title, u: `news/${n.slug}/`, k: 'Guide', x: n.dek })),
 ];
