@@ -168,8 +168,8 @@ function miniForm({ programme = '', id = 'q', title = 'Ask us <em>anything.</em>
 }
 
 // video card: poster + play button; opens the shared player modal (core.js [data-video])
-function videoCard(v, { big = false, label = '', cls = '' } = {}) {
-  return `<button class="vcard ${big ? 'vcard--big' : ''} ${cls}" type="button" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}" data-vtitle="${esc(v.title)}" aria-label="Play video: ${esc(v.title)}"><img src="${v.poster}" alt="" loading="lazy"><span class="vcard__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="vcard__cap">${label ? `<small>${esc(label)}</small>` : ''}<b>${esc(v.title)}</b></span>${sampleTag(v)}</button>`;
+function videoCard(v, { big = false, label = '', cls = '', dur = '' } = {}) {
+  return `<button class="vcard ${big ? 'vcard--big' : ''} ${cls}" type="button" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}" data-vtitle="${esc(v.title)}" aria-label="Play video: ${esc(v.title)}"><img src="${v.poster}" alt="" loading="lazy"><span class="vcard__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="vcard__cap">${label ? `<small>${esc(label)}</small>` : ''}<b>${esc(v.title)}</b></span>${dur ? `<span class="vcard__dur">${esc(dur)}</span>` : ''}${sampleTag(v)}</button>`;
 }
 
 // FAQ list (accordion); cat filters to one category, limit trims
@@ -217,6 +217,42 @@ function fixPaths(html, depth) {
     .replace(/(src)="(?!https?:|data:|\.\.\/|\/)([^"]*)"/g, `$1="${R}$2"`);
 }
 
+// Alternate plain section backgrounds so two neighbouring sections never share the same colour.
+// Works on top-level <section> blocks of a page body; explicit dark/accent sections are left alone.
+function alternateBackgrounds(html) {
+  const DARK = /(?:^|\s)(section--navy|section--gold|cta|band|hero|filmsec|ticker)(?:\s|$)/;
+  const out = []; let i = 0, prev = null, first = true;
+  const re = /<section(?: class="([^"]*)")?|<\/section>|<nav class="subnav"|<div class="wrap cbody"|<div class="wrap finder"|<div class="wrap artwrap"|<div class="factbar"/g;
+  let m, depth = 0, last = 0; const parts = [];
+  while ((m = re.exec(html))) {
+    if (m[0] === '</section>') { depth--; continue; }
+    if (m[0].startsWith('<section')) {
+      if (m[1] === undefined) { depth++; continue; }
+      if (depth === 0) {
+        let cls = m[1] || '', kind;
+        if (/(?:^|\s)phead(?:\s|$)/.test(cls)) kind = 'soft';
+        else if (DARK.test(cls)) kind = 'dark';
+        else if (/(?:^|\s)proof(?:\s|$)/.test(cls)) kind = 'soft';
+        else if (/(?:^|\s)(glance|routes)(?:\s|$)/.test(cls)) kind = 'white';
+        else if (/section--(soft|paper2)/.test(cls)) kind = 'soft';
+        else if (/section--white/.test(cls)) kind = 'white';
+        else if (/(?:^|\s)section(?:\s|$)/.test(cls)) kind = 'plain';
+        else kind = 'dark';
+        let nk = kind;
+        if (kind === 'plain') { nk = prev === 'white' || prev === null ? (prev === null ? 'white' : 'soft') : 'white'; if (nk === 'soft') cls += ' section--soft'; }
+        else if (kind === 'soft' && prev === 'soft') { cls = cls.replace(/section--(soft|paper2)/, 'section--white'); nk = 'white'; }
+        else if (kind === 'white' && prev === 'white' && /section--white/.test(cls)) { cls = cls.replace('section--white', 'section--soft'); nk = 'soft'; }
+        parts.push(html.slice(last, m.index) + `<section class="${cls}"`); last = m.index + m[0].length; prev = nk;
+      }
+      depth++;
+    } else if (depth === 0) {
+      prev = m[0].includes('factbar') ? 'dark' : 'white';
+    }
+  }
+  parts.push(html.slice(last));
+  return parts.join('');
+}
+
 function page({ path, title, desc, body, depth = 0, active = '', scripts = [], ogimg = 'grad-hall', schema = '', bodyClass = '', preload = '', preloadSet = '' }) {
   const R = rel(depth);
   const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 1).replace(/\s+\S*$/, '') + '…');
@@ -243,7 +279,7 @@ ${schema ? `<script type="application/ld+json">${schema}</script>` : ''}
 <div class="pre" id="pre" aria-hidden="true"><div class="pre__in"><img class="pre__logo" src="${R}assets/img/logos/uome-white.png" alt="" width="290" height="76"><div class="pre__row"><span>Shaping tomorrow’s leaders</span><span class="pre__n" data-pre-n>0</span></div><div class="pre__bar"><i data-pre-bar></i></div></div></div><div class="pre-c" id="pre-c"></div>
 ${header(depth, active)}
 <main id="main">
-${(depth ? fixPaths(body, depth) : body).replace(/<span class="num">(?!\d)([^<]*)<\/span>/g, '<span class="num num--lbl">$1</span>')}
+${alternateBackgrounds(depth ? fixPaths(body, depth) : body).replace(/<span class="num">(?!\d)([^<]*)<\/span>/g, '<span class="num num--lbl">$1</span>')}
 </main>
 ${footer(depth)}
 <script src="${R}assets/js/uome-data.min.js"></script>

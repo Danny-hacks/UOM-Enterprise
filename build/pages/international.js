@@ -24,7 +24,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
   </div>
 </div></section>
 
-<section class="section section--navy filmsec" data-elementor="container:mauritius-film"><div class="wrap split">
+<section class="section" data-elementor="container:mauritius-film"><div class="wrap split">
   <div><span class="eyebrow">Welcome</span><h2 class="h2">Your new home, <em>in two minutes.</em></h2><p class="lede" style="margin-top:18px">See Ebene, the campus and everyday life in Mauritius before you pack.</p></div>
   ${L.videoCard(D.videos.mauritius, { big: true, label: 'Mauritius · 2 min' })}
 </div></section>

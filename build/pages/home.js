@@ -79,10 +79,10 @@ ${L.logoStrip(0)}
 <section class="section section--navy filmsec" data-elementor="container:featured-video"><div class="wrap">
   <div class="split split--head" style="margin-bottom:36px"><div><span class="eyebrow">Watch</span><h2 class="h2">See UoME <em>in a minute.</em></h2></div><p class="lede">Graduation day, the Ebene campus and the people who make it work — a short film for anyone wondering what studying here is really like.</p></div>
   <div class="filmgrid">
-    ${L.videoCard(D.videos.film, { big: true, label: 'Featured film · 1 min' })}
+    ${L.videoCard(D.videos.film, { big: true, label: 'Featured film', dur: '1:00' })}
     <div class="filmside">
-      ${L.videoCard(D.videos.campus, { label: 'Campus · 45 sec' })}
-      ${L.videoCard(D.videos.students, { label: 'Students · 1 min' })}
+      ${L.videoCard(D.videos.campus, { label: 'Campus', dur: '0:45' })}
+      ${L.videoCard(D.videos.students, { label: 'Students', dur: '1:00' })}
     </div>
   </div>
 </div></section>
@@ -108,8 +108,11 @@ ${L.logoStrip(0)}
 </div></section>
 
 <section class="section" data-elementor="container:home-faq"><div class="wrap split split--top">
-  <div class="stickycol"><span class="eyebrow">FAQs</span><h2 class="h2">Quick answers, <em>before you ask.</em></h2><p class="lede" style="margin:18px 0 26px">The questions we hear most from applicants and parents — answered from UoME’s published information.</p><p style="display:flex;gap:18px;flex-wrap:wrap"><a class="btn btn--navy" href="faq/">All FAQs ${icon('arrow')}</a><a class="btn btn--ghost" href="contact/">Talk to a person</a></p></div>
-  <div>${['How do I apply?', 'What are the entry requirements?', 'Can I study while working?', 'Can I pay in instalments?', 'Is my degree recognised?', 'Do I need a visa?'].map((q) => { const f = D.faqs.find((x) => x.q === q); return f ? `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>` : ''; }).join('')}</div>
+  <div class="stickycol"><span class="eyebrow">FAQs</span><h2 class="h2">Quick answers, <em>before you ask.</em></h2><p class="lede" style="margin:18px 0 26px">The questions we hear most from applicants and parents — answered from UoME’s published information.</p><p style="display:flex;gap:18px;flex-wrap:wrap;align-items:center"><a class="btn btn--navy" href="faq/">All FAQs ${icon('arrow')}</a><a class="link-arrow" href="#notsure">Still not sure? ${icon('arrow')}</a></p></div>
+  <div>${['How do I apply?', 'What are the entry requirements?', 'Can I study while working?', 'Can I pay in instalments?', 'Is my degree recognised?', 'Do I need a visa?'].map((q) => { const f = D.faqs.find((x) => x.q === q); return f ? `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>` : ''; }).join('')}
+    <div class="notsure" id="notsure"><span class="eyebrow">Still not sure?</span><p class="h3" style="margin:0 0 6px">Most questions take one short conversation.</p><p class="small" style="margin:0 0 18px">Pick whichever is easiest — we reply during office hours, ${esc(D.site.hours)}.</p>
+      <div class="notsure__opts"><a href="${L.waLink()}">${icon('chat')}<b>WhatsApp us</b><span>Quick answers</span></a><a href="tel:${D.site.tel}">${icon('phone')}<b>Call ${D.site.phone1}</b><span>Talk it through</span></a><a href="contact/">${icon('mail')}<b>Talk to a person</b><span>Send a message</span></a></div></div>
+  </div>
 </div></section>
 
 <section class="section" data-elementor="container:campus-teaser"><div class="wrap">
