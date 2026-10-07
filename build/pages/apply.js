@@ -88,6 +88,11 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', null]], eyebrow: 'Admissions', t
   <div class="prose" data-reveal><p><b>Mauritian students (MUR).</b> Pay by office cheque, banker’s cheque or bank transfer to the UoME account at SBM. A 5% discount applies when full fees are paid by the early-payment deadline for your intake.</p><p><b>International students (GBP).</b> Pay by bank transfer to the State Bank of Mauritius only. A 5% discount applies when full fees are paid on enrolment.</p><p>Questions about instalments or payment arrangements? Email the finance team at <a href="mailto:${D.site.financeEmail}">${D.site.financeEmail}</a>.</p></div>
 </div></div></section>
 
+<section class="section section--soft" id="faqs" data-elementor="container:apply-faq"><div class="wrap split split--top">
+  <div><span class="eyebrow">FAQs</span><h2 class="h2">Applying: <em>your questions.</em></h2><p style="margin-top:20px"><a class="link-arrow" href="faq/">All FAQs ${icon('arrow')}</a></p></div>
+  <div>${L.faqList(['Applying', 'Fees'], 6)}</div>
+</div></section>
+
 <section class="section" id="refund" data-elementor="container:refund"><div class="wrap wrap--narrow">
   <span class="eyebrow">Refund policy</span><h2 class="h2" style="margin-bottom:26px">If your plans <em>change.</em></h2>
   <table class="reftable"><tbody>

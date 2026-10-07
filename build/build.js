@@ -15,6 +15,7 @@ const pages = [
   ...require('./pages/others')(),
   ...require('./pages/outcomes')(),
   ...require('./pages/application')(),
+  ...require('./pages/faq')(),
 ];
 
 for (const p of pages) {
@@ -56,6 +57,7 @@ const search = [
   { t: 'Gallery', u: 'gallery/', k: 'Life', x: 'photos graduation images' },
   { t: 'Careers & outcomes', u: 'outcomes/', k: 'Careers', x: 'jobs employers sectors graduates stories careers support routes' },
   { t: 'For parents', u: 'parents/', k: 'Parents', x: 'parent guardian recognised fees support safe campus visit' },
+  { t: 'FAQs', u: 'faq/', k: 'Help', x: 'frequently asked questions help how do I apply documents fees visa accommodation refund instalments' },
   { t: 'Request a callback', u: 'contact/#callback', k: 'Contact', x: 'call back phone ring adviser' },
   { t: 'Contact', u: 'contact/', k: 'Contact', x: 'phone email address map hours location' },
   ...D.news.map((n) => ({ t: n.title, u: `news/${n.slug}/`, k: 'Guide', x: n.dek })),
@@ -74,6 +76,7 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap
 const samples = [];
 (function scan(name, arr) { (arr || []).forEach((x) => { if (x && x.sample) samples.push(name + ': ' + (x.name || x.title || x.id || x.slug)); }); })('story', D.sampleStories);
 D.sectors.forEach((x) => x.sample && samples.push('sector: ' + x.title));
+Object.values(D.videos).forEach((v) => samples.push('video: ' + v.title + ' (placeholder slideshow)'));
 samples.push('site.whatsapp (stand-in number ' + D.site.whatsappLabel + ')');
 // minified assets (esbuild); pages link the .min files, sources stay editable
 try {

@@ -15,6 +15,11 @@ function lifePage() {
   const body = `
 ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus & community', title: 'Life at <em>UoME.</em>', lede: 'A compact, connected campus in the heart of Ebene — and a community of students, graduates and academics who look out for each other.' , image: 'campus-atrium'})}
 
+<section class="section section--navy filmsec" data-elementor="container:campus-film"><div class="wrap split split--top">
+  <div><span class="eyebrow">Campus film</span><h2 class="h2">Step inside <em>The Core.</em></h2><p class="lede" style="margin-top:18px">A short walk through our Ebene campus — classrooms, lab, library and the people who use them. Then take the full scroll-through tour below.</p><p style="margin-top:24px"><a class="link-arrow" href="#tour" style="color:#fff">Take the campus tour ${icon('arrow')}</a></p></div>
+  ${L.videoCard(D.videos.campus, { big: true, label: 'Campus · 45 sec' })}
+</div></section>
+
 <section class="section" id="tour" data-elementor="container:campus-tour"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Campus tour</span><h2 class="h2">Walk the campus, <em>scroll by scroll.</em></h2></div>
   <div class="tour" data-tour>
@@ -51,6 +56,10 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
       <p style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--navy" href="life/stories/${s.slug}/">Read the full story ${icon('arrow')}</a><a class="btn btn--ghost" href="study/digital/msc-digital-marketing/">Explore the MSc</a></p>
     </div>
   </div>
+</div></section>
+<section class="section section--navy filmsec" data-elementor="container:story-videos"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Watch</span><h2 class="h2">Hear it <em>from students.</em></h2></div>
+  <div class="filmrow">${L.videoCard(D.videos.students, { label: 'Student story' })}${L.videoCard(D.videos.film, { label: 'Graduate story' })}${L.videoCard(D.videos.campus, { label: 'Day in the life' })}</div>
 </div></section>
 <section class="section section--soft" data-elementor="container:more-stories"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">More voices</span><h2 class="h2">From law to <em>project management.</em></h2></div>

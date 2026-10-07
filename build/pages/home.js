@@ -76,6 +76,17 @@ ${L.logoStrip(0)}
   <ul class="creds"><li><b>Top 7%</b><span>of universities worldwide — CWUR 2025</span></li><li><b>Top 20%</b><span>in the UK for industry &amp; public-sector engagement</span></li><li><b>5 QS Stars</b><span>for teaching, 2025</span></li></ul><p class="fn">University of Lancashire ratings, as published by the University; terms and conditions apply.</p><p style="margin-top:36px;display:flex;gap:28px;flex-wrap:wrap"><a class="link-arrow" href="about/">Read our story ${icon('arrow')}</a><a class="link-arrow" href="life/alumni/">Meet the alumni ${icon('arrow')}</a><a class="link-arrow" href="about/#partnership">Our University of Lancashire partnership ${icon('arrow')}</a></p>
 </div></section>
 
+<section class="section section--navy filmsec" data-elementor="container:featured-video"><div class="wrap">
+  <div class="split split--head" style="margin-bottom:36px"><div><span class="eyebrow">Watch</span><h2 class="h2">See UoME <em>in a minute.</em></h2></div><p class="lede">Graduation day, the Ebene campus and the people who make it work — a short film for anyone wondering what studying here is really like.</p></div>
+  <div class="filmgrid">
+    ${L.videoCard(D.videos.film, { big: true, label: 'Featured film · 1 min' })}
+    <div class="filmside">
+      ${L.videoCard(D.videos.campus, { label: 'Campus · 45 sec' })}
+      ${L.videoCard(D.videos.students, { label: 'Students · 1 min' })}
+    </div>
+  </div>
+</div></section>
+
 <section class="section" data-elementor="container:programmes"><div class="wrap">
   <div class="sec-head sec-head--row"><div><span class="eyebrow">Programmes</span><h2 class="h2">Seven programmes. <em>Three directions.</em></h2></div><a class="link-arrow" href="study/">Open the full course finder ${icon('arrow')}</a></div>
   <div class="plist__filters" role="group" aria-label="Filter programmes" data-plist-filter>
@@ -94,6 +105,11 @@ ${L.logoStrip(0)}
     ${D.sampleStories.slice(0, 2).map((m) => `<div class="rot__s"><div class="story"><div class="story__img"><div class="arch arch--mono" role="img" aria-label="Portrait placeholder"><span aria-hidden="true">${esc(m.init)}</span></div></div><div>${L.sampleTag(m)}<blockquote class="quote" style="margin:0 0 8px">${esc(m.quote)}</blockquote><div class="cite"><b>${esc(m.name)}</b><span>${esc(m.course)} · ${esc(m.yearLabel)}</span><span style="color:var(--crimson);font-weight:600">${esc(m.outcome)}</span></div><p style="margin-top:28px"><a class="link-arrow" href="study/${m.area === 'pm' ? 'business-management' : 'law'}/${m.programme}/">See the programme ${icon('arrow')}</a></p></div></div></div>`).join('')}
     <div class="rot__dots" role="tablist" aria-label="Choose a story"><button role="tab" class="is-on" aria-label="Story 1"></button><button role="tab" aria-label="Story 2"></button><button role="tab" aria-label="Story 3"></button></div>
   </div>
+</div></section>
+
+<section class="section" data-elementor="container:home-faq"><div class="wrap split split--top">
+  <div class="stickycol"><span class="eyebrow">FAQs</span><h2 class="h2">Quick answers, <em>before you ask.</em></h2><p class="lede" style="margin:18px 0 26px">The questions we hear most from applicants and parents — answered from UoME’s published information.</p><p style="display:flex;gap:18px;flex-wrap:wrap"><a class="btn btn--navy" href="faq/">All FAQs ${icon('arrow')}</a><a class="link-arrow" href="contact/#callback">Still unsure? Request a callback ${icon('arrow')}</a></p></div>
+  <div>${['How do I apply?', 'What are the entry requirements?', 'Can I study while working?', 'Can I pay in instalments?', 'Is my degree recognised?', 'Do I need a visa?'].map((q) => { const f = D.faqs.find((x) => x.q === q); return f ? `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>` : ''; }).join('')}</div>
 </div></section>
 
 <section class="section section--soft" data-elementor="container:home-enquiry"><div class="wrap split split--top">

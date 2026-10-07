@@ -318,6 +318,38 @@
     $$('.subnav a').forEach(function (a) { a.addEventListener('click', function () { var s = d.getElementById(a.getAttribute('href').slice(1)); if (s && s.classList.contains('accm')) s.classList.add('is-open'); }); });
   }
 
+  /* video player modal */
+  var vp = $('#vplayer'), vtag = $('#vtag'), vlast = null;
+  function vclose() { if (!vp) return; vp.classList.remove('is-open'); try { vtag.pause(); vtag.removeAttribute('src'); vtag.load(); } catch (x) { /* ignore */ } d.body.style.overflow = ''; if (vlast) vlast.focus(); }
+  if (vp) {
+    d.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-video]'); if (!c) return;
+      vlast = c; vtag.src = c.getAttribute('data-video'); vtag.poster = c.getAttribute('data-poster') || ''; $('[data-vtitle-out]', vp).textContent = c.getAttribute('data-vtitle') || '';
+      vp.classList.add('is-open'); d.body.style.overflow = 'hidden'; track('video_play', { title: c.getAttribute('data-vtitle') });
+      var pr = vtag.play(); if (pr && pr.catch) pr.catch(function () { /* user can press play */ });
+      $('[data-vclose]', vp).focus();
+    });
+    $('[data-vclose]', vp).addEventListener('click', vclose);
+    vp.addEventListener('click', function (e) { if (e.target === vp) vclose(); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && vtag.getAttribute('src')) vclose(); });
+  }
+
+  /* FAQ page: search + topic chips */
+  $$('[data-faq-list]').forEach(function (box) {
+    var inp = $('[data-faq-search]'), chips = $$('[data-faq-cats] [data-f]'), groups = $$('.faqgroup', box), empty = $('[data-faq-empty]', box), cat = 'all';
+    function run() {
+      var v = (inp.value || '').toLowerCase().trim(), any = false;
+      groups.forEach(function (g) {
+        var show = cat === 'all' || g.getAttribute('data-cat') === cat, n = 0;
+        $$('details', g).forEach(function (dt) { var m = !v || dt.textContent.toLowerCase().indexOf(v) > -1; dt.hidden = !m; if (m) n++; if (v && m) dt.open = true; });
+        g.hidden = !show || n === 0; if (!g.hidden) any = true;
+      });
+      if (empty) empty.hidden = any;
+    }
+    chips.forEach(function (b) { b.addEventListener('click', function () { cat = b.getAttribute('data-f'); chips.forEach(function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); }); run(); }); });
+    inp.addEventListener('input', run);
+  });
+
   /* story rotator */
   $$('[data-rotator]').forEach(function (r) {
     var slides = $$('.rot__s', r), dots = $$('.rot__dots button', r), cur = 0, t;

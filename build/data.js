@@ -536,5 +536,12 @@ const nav = [
 ];
 
 const O = require('./outcomes-data');
+const faqs = require('./faq-data');
+const videos = {
+  film: { id: 'film', title: 'See UoME in a minute', src: 'assets/video/uome-placeholder.webm', poster: 'assets/video/uome-poster.webp', sample: true },
+  campus: { id: 'campus', title: 'Walk the campus', src: 'assets/video/uome-placeholder.webm', poster: 'assets/img/campus-atrium.webp', sample: true },
+  students: { id: 'students', title: 'Hear it from students', src: 'assets/video/uome-placeholder.webm', poster: 'assets/img/life-group-1.webp', sample: true },
+  mauritius: { id: 'mauritius', title: 'Welcome to Mauritius', src: 'assets/video/uome-placeholder.webm', poster: 'assets/img/core-night.webp', sample: true },
+};
 
-module.exports = { sampleStories: O.sampleStories, sectors: O.sectors, careersSupport: O.careersSupport, site, intakes, programmes, accreditations, fees, instalmentDates, costOfLiving, timeline, leadership, events, stories, news, nav };
+module.exports = { faqs, videos, sampleStories: O.sampleStories, sectors: O.sectors, careersSupport: O.careersSupport, site, intakes, programmes, accreditations, fees, instalmentDates, costOfLiving, timeline, leadership, events, stories, news, nav };

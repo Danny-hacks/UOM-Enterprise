@@ -93,7 +93,7 @@ function header(depth, active) {
   const nd = navData();
   const DD = {
     study: [['study/', 'Course finder'], ['study/?area=law', 'Law'], ['study/?area=pm', 'Project management'], ['study/?area=digital', 'Digital marketing'], ['study/#quiz', 'Programme quiz']],
-    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit'], ['contact/#callback', 'Request a callback']],
+    apply: [['apply/#steps', 'How to apply'], ['apply/#requirements', 'Entry requirements'], ['apply/#fees', 'Fees & estimator'], ['events/#visit', 'Book a visit'], ['faq/', 'FAQs'], ['contact/#callback', 'Request a callback']],
     international: [['international/#journey', 'Your journey'], ['international/#visa', 'Visa & health'], ['international/#accommodation', 'Accommodation'], ['international/#cost', 'Cost of living']],
     life: [['life/#tour', 'Campus tour'], ['life/stories/', 'Student stories'], ['life/alumni/', 'Alumni'], ['life/student-support/', 'Student support'], ['gallery/', 'Gallery']],
     outcomes: [['outcomes/#sectors', 'Where graduates work'], ['outcomes/#stories', 'Graduate stories'], ['outcomes/#support', 'Careers support'], ['careers-accreditation/', 'Accreditation & routes']],
@@ -136,13 +136,14 @@ function footer(depth) {
       <div class="social"><a href="https://www.facebook.com/Uclaninmauritius" aria-label="Facebook">${icon('fb')}</a><a href="https://www.instagram.com/uclan_mauritius/" aria-label="Instagram">${icon('ig')}</a></div>
     </div>
     <div><p class="ftr-h" role="heading" aria-level="2">Study</p><ul>${programmes.map((p) => `<li><a href="${R}${progUrl(p)}">${esc(p.short)}</a></li>`).join('')}<li><a href="${R}study/">Course finder</a></li></ul></div>
-    <div><p class="ftr-h" role="heading" aria-level="2">Apply &amp; visit</p><ul><li><a href="${R}apply/">How to apply</a></li><li><a href="${R}apply/#fees">Fees &amp; estimator</a></li><li><a href="${R}international/">International students</a></li><li><a href="${R}events/">Events &amp; taster lectures</a></li><li><a href="${R}life/">Campus &amp; student life</a></li><li><a href="${R}contact/">Contact</a></li></ul></div>
+    <div><p class="ftr-h" role="heading" aria-level="2">Apply &amp; visit</p><ul><li><a href="${R}apply/">How to apply</a></li><li><a href="${R}apply/#fees">Fees &amp; estimator</a></li><li><a href="${R}international/">International students</a></li><li><a href="${R}events/">Events &amp; taster lectures</a></li><li><a href="${R}life/">Campus &amp; student life</a></li><li><a href="${R}faq/">FAQs</a></li><li><a href="${R}contact/">Contact</a></li></ul></div>
     <div><p class="ftr-h" role="heading" aria-level="2">UoME</p><ul><li><a href="${R}about/">About us</a></li><li><a href="${R}careers-accreditation/">Accreditation</a></li><li><a href="${R}outcomes/">Careers &amp; outcomes</a></li><li><a href="${R}life/stories/">Student stories</a></li><li><a href="${R}life/alumni/">Alumni</a></li><li><a href="${R}news/">Guides &amp; news</a></li><li><a href="${R}parents/">For parents</a></li><li><a href="${R}partners/">Schools &amp; partners</a></li></ul></div>
   </div>
   <div class="ftr__bot"><span>© 2010 – 2026 UOM Enterprise Ltd. Registered with the Higher Education Commission, Mauritius.</span><nav aria-label="Legal"><a href="${R}legal/">Privacy</a><a href="${R}legal/#cookies">Cookies</a><a href="${R}legal/#complaints">Complaints</a></nav></div>
 </div></footer>
 <aside class="wa-wrap" aria-label="Chat with UoME"><a class="wa" href="${waLink()}" aria-label="Chat with UoME on WhatsApp" data-elementor="widget:whatsapp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/></svg><span>Chat with us</span></a></aside>
 <div class="modal gate" id="gate" role="dialog" aria-modal="true" aria-label="Get the factsheet"><div class="modal__box"><button class="modal__x" data-gate-close aria-label="Close">×</button><form class="form" data-gate-form novalidate><span class="eyebrow">Free download</span><h2 class="h3">Get the <em>factsheet.</em></h2><p class="small" style="margin:-4px 0 6px">Tell us who you are and the download starts straight away — an adviser may follow up during office hours.</p><div class="field"><label class="lab" for="gn">Name</label><input class="input" id="gn" name="name" required autocomplete="name"><span class="err"></span></div><div class="field"><label class="lab" for="ge">Email</label><input class="input" id="ge" name="email" type="email" required autocomplete="email"><span class="err"></span></div><label class="consent"><input type="checkbox" name="consent" required><span>I agree that UOM Enterprise may contact me about this programme, in line with its <a href="${R}legal/">privacy notice</a>.</span></label><span class="err" data-consent-err></span><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" type="submit">Download ${icon('arrow')}</button><button class="btn btn--ghost" type="button" data-gate-skip>Skip, just download</button></div></form></div></div>
+<div class="modal vmodal" id="vplayer" role="dialog" aria-modal="true" aria-label="Video player"><div class="vmodal__box"><button class="modal__x vmodal__x" data-vclose aria-label="Close video">×</button><video id="vtag" controls playsinline preload="none"></video><p class="vmodal__t" data-vtitle-out></p></div></div>
 <div class="topbar" id="topbar" aria-hidden="true"></div>
 <button class="totop" id="totop" aria-label="Back to top"><svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="bg" cx="32" cy="32" r="29"/><circle class="fg" cx="32" cy="32" r="29" stroke-dasharray="182.2" stroke-dashoffset="182.2"/></svg><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="mbar" role="navigation" aria-label="Quick actions"><a href="${R}apply/online/">${icon('arrow')}Apply now</a><a href="tel:${site.tel}">${icon('phone')}Call</a><a href="${R}contact/">${icon('mail')}Enquire</a></div>
@@ -164,6 +165,18 @@ function miniForm({ programme = '', id = 'q', title = 'Ask us <em>anything.</em>
     <div><button class="btn" type="submit">Send enquiry ${icon('arrow')}</button></div>
     <div class="success" data-success hidden>${icon('check')}<h3 class="h3">Thank you — <em>we’ve got it.</em></h3><p>An adviser will be in touch during office hours (${esc(site.hours)}).</p></div>
   </form></div>`;
+}
+
+// video card: poster + play button; opens the shared player modal (core.js [data-video])
+function videoCard(v, { big = false, label = '', cls = '' } = {}) {
+  return `<button class="vcard ${big ? 'vcard--big' : ''} ${cls}" type="button" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}" data-vtitle="${esc(v.title)}" aria-label="Play video: ${esc(v.title)}"><img src="${v.poster}" alt="" loading="lazy"><span class="vcard__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="vcard__cap">${label ? `<small>${esc(label)}</small>` : ''}<b>${esc(v.title)}</b></span>${sampleTag(v)}</button>`;
+}
+
+// FAQ list (accordion); cat filters to one category, limit trims
+function faqList(cat, limit) {
+  let items = require('./data').faqs.filter((f) => !cat || (Array.isArray(cat) ? cat.includes(f.cat) : f.cat === cat));
+  if (limit) items = items.slice(0, limit);
+  return items.map((f) => `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('');
 }
 
 function ctaBand(depth, o = {}) {
@@ -270,4 +283,4 @@ const tickerBand = (words, gold = true) => {
   return `<div class="ticker ${gold === true ? 'ticker--gold' : gold === 'red' ? 'ticker--red' : ''}" aria-hidden="true" data-elementor="widget:marquee"><div class="ticker__track">${row}${row}</div></div>`;
 };
 
-module.exports = { sampleTag, waLink, miniForm, page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };
+module.exports = { videoCard, faqList, sampleTag, waLink, miniForm, page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };

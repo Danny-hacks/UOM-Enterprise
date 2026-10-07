@@ -24,6 +24,11 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
   </div>
 </div></section>
 
+<section class="section section--navy filmsec" data-elementor="container:mauritius-film"><div class="wrap split">
+  <div><span class="eyebrow">Welcome</span><h2 class="h2">Your new home, <em>in two minutes.</em></h2><p class="lede" style="margin-top:18px">See Ebene, the campus and everyday life in Mauritius before you pack.</p></div>
+  ${L.videoCard(D.videos.mauritius, { big: true, label: 'Mauritius · 2 min' })}
+</div></section>
+
 <section class="section section--navy grain" id="visa" data-elementor="container:visa"><div class="wrap split split--top">
   <div data-reveal><span class="eyebrow">Student visa</span><h2 class="h2">We handle the <em>visa process</em> with you.</h2></div>
   <div class="prose on-dark" data-reveal style="color:rgba(255,255,255,.85)">
@@ -71,6 +76,10 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
   <div class="stats stats--sm" style="margin-top:56px"><div class="stat stat--sm"><b>15–33<sup>°C</sup></b><span style="color:var(--mute)">year-round tropical climate</span></div><div class="stat stat--sm"><b>1.2<sup>m</sup></b><span style="color:var(--mute)">people in a multicultural island nation</span></div><div class="stat stat--sm"><b>150<sup>km</sup></b><span style="color:var(--mute)">of white sandy beaches</span></div><div class="stat stat--sm"><b>10<sup>min</sup></b><span style="color:var(--mute)">on foot from campus to the metro station</span></div></div>
 </div></section>
 
+<section class="section section--soft" id="faqs" data-elementor="container:intl-faq"><div class="wrap split split--top">
+  <div><span class="eyebrow">FAQs</span><h2 class="h2">Moving to Mauritius: <em>your questions.</em></h2><p style="margin-top:20px"><a class="link-arrow" href="faq/">All FAQs ${icon('arrow')}</a></p></div>
+  <div>${L.faqList('International')}</div>
+</div></section>
 ${L.ctaBand(0, { title: 'Ready to <em>make the move?</em>', text: 'Tell us where you’re applying from and which programme interests you — an adviser will guide you through every step.', primary: ['Start your enquiry', 'apply/start/?who=intl'], secondary: ['Download the international checklist', 'assets/docs/application-checklist-international.pdf'] })}
 `;
   return { path: 'international/index.html', html: L.page({ depth: 1, active: 'international', title: 'International students — visa, accommodation and cost of living', desc: 'Study at UoME from abroad: a seven-step journey from application to arrival, student visa support, accommodation in Ebene, airport pick-up and a cost-of-living calculator.', body, scripts: ['estimator'] }) };
