@@ -1287,3 +1287,11 @@ body:has(.cmpdock.is-on) .wa { bottom: 96px; }
 .filmband .eyebrow { color: #fff; }
 .filmband em { color: var(--gold-light); }
 .filmband__lab b, .filmband__lab small { text-shadow: 0 2px 14px rgba(10, 17, 66, .7); }
+
+/* hero video (right-hand art) */
+.phead__art--video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.phead__vplay { position: absolute; z-index: 2; left: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 12px; padding: 8px 18px 8px 8px; border: 0; background: rgba(10, 17, 66, .82); backdrop-filter: blur(8px); color: #fff; cursor: pointer; font-family: var(--display); font-weight: 700; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; transition: background .25s, transform .3s var(--ease); }
+.phead__vplay span { width: 44px; height: 44px; display: grid; place-items: center; background: var(--crimson); color: #fff; border-radius: 50%; transition: background .25s, color .25s; }
+.phead__vplay span svg { width: 46%; margin-left: 6%; }
+.phead__vplay:hover { background: rgba(10, 17, 66, .95); transform: translateY(-2px); }
+.phead__vplay:hover span { background: var(--gold); color: var(--navy); }

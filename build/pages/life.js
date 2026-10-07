@@ -13,9 +13,8 @@ const TOUR = [
 
 function lifePage() {
   const body = `
-${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus & community', title: 'Life at <em>UoME.</em>', lede: 'A compact, connected campus in the heart of Ebene — and a community of students, graduates and academics who look out for each other.' , image: 'campus-atrium'})}
+${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus & community', title: 'Life at <em>UoME.</em>', lede: 'A compact, connected campus in the heart of Ebene — and a community of students, graduates and academics who look out for each other.' , image: 'campus-atrium', video: D.videos.campus })}
 
-${L.filmBand(D.videos.campus, { eyebrow: 'Campus film', title: 'Step inside <em>The Core.</em>', text: 'A short walk through our Ebene campus — the classrooms, computer lab, library and lunchroom, and the people who use them.', chips: ['Classrooms', 'Computer lab', 'Library', 'Lunchroom', 'Ebene Cybercity'], link: ['Then take the full scroll-through tour', '#tour'], dur: '0:45' })}
 
 <section class="section" id="tour" data-elementor="container:campus-tour"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Campus tour</span><h2 class="h2">Walk the campus, <em>scroll by scroll.</em></h2></div>

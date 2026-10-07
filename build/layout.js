@@ -299,12 +299,12 @@ ${scripts.map((s) => `<script src="${R}assets/js/${s}.min.js"></script>`).join('
 }
 
 // reusable blocks -------------------------------------------------------
-function pageHead({ crumbs, eyebrow, title, lede, image, depth = 0, extra = '' }) {
+function pageHead({ crumbs, eyebrow, title, lede, image, video = null, depth = 0, extra = '' }) {
   const R = rel(depth);
   const c = crumbs.map(([t, u]) => (u ? `<li><a href="${R}${u}">${esc(t)}</a></li>` : `<li aria-current="page">${esc(t)}</li>`)).join('');
   return `<section class="phead ${image ? 'phead--img' : ''}" data-elementor="container:page-header">
   <div class="wrap phead__in"><div class="phead__copy"><ol class="crumbs" aria-label="Breadcrumb">${c}</ol>${eyebrow ? `<span class="eyebrow">${esc(eyebrow)}</span>` : ''}<h1 class="h1">${title}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${extra}</div></div>
-  ${image ? `<div class="phead__art" aria-hidden="true"><img src="${R}assets/img/${image}.webp" alt="" loading="eager"></div>` : ''}
+  ${video ? `<div class="phead__art phead__art--video"><video autoplay muted loop playsinline preload="metadata" poster="${R}${video.poster}" aria-hidden="true" tabindex="-1"><source src="${R}${video.src}" type="video/webm"></video><button class="phead__vplay" type="button" data-video="${esc(video.src)}" data-poster="${esc(video.poster)}" data-vtitle="${esc(video.title)}" aria-label="Play with sound: ${esc(video.title)}"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><b>Watch with sound</b></button></div>` : image ? `<div class="phead__art" aria-hidden="true"><img src="${R}assets/img/${image}.webp" alt="" loading="eager"></div>` : ''}
 </section>`;
 }
 

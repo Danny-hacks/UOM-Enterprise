@@ -318,6 +318,9 @@
     $$('.subnav a').forEach(function (a) { a.addEventListener('click', function () { var s = d.getElementById(a.getAttribute('href').slice(1)); if (s && s.classList.contains('accm')) s.classList.add('is-open'); }); });
   }
 
+  /* muted hero videos: respect reduced motion, pause when off-screen */
+  $$('.phead__art--video video').forEach(function (v) { if (reduceMotion) { v.removeAttribute('autoplay'); v.pause(); return; } if ('IntersectionObserver' in w) new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }); }).observe(v); });
+
   /* video player modal */
   var vp = $('#vplayer'), vtag = $('#vtag'), vlast = null;
   function vclose() { if (!vp) return; vp.classList.remove('is-open'); try { vtag.pause(); vtag.removeAttribute('src'); vtag.load(); } catch (x) { /* ignore */ } d.body.style.overflow = ''; if (vlast) vlast.focus(); }
