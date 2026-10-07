@@ -324,7 +324,7 @@
   if (vp) {
     d.addEventListener('click', function (e) {
       var c = e.target.closest('[data-video]'); if (!c) return;
-      vlast = c; vtag.src = c.getAttribute('data-video'); vtag.poster = c.getAttribute('data-poster') || ''; $('[data-vtitle-out]', vp).textContent = c.getAttribute('data-vtitle') || '';
+      vlast = c; vtag.src = ROOT + c.getAttribute('data-video'); vtag.poster = c.getAttribute('data-poster') ? ROOT + c.getAttribute('data-poster') : ''; $('[data-vtitle-out]', vp).textContent = c.getAttribute('data-vtitle') || '';
       vp.classList.add('is-open'); d.body.style.overflow = 'hidden'; track('video_play', { title: c.getAttribute('data-vtitle') });
       var pr = vtag.play(); if (pr && pr.catch) pr.catch(function () { /* user can press play */ });
       $('[data-vclose]', vp).focus();

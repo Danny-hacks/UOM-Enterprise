@@ -1262,3 +1262,28 @@ body:has(.cmpdock.is-on) .wa { bottom: 96px; }
 .notsure__opts b { font-family: var(--display); font-weight: 800; font-size: .95rem; letter-spacing: -.01em; overflow-wrap: anywhere; }
 .notsure__opts span { font-size: .85rem; color: rgba(255, 255, 255, .72); }
 .quote::before { display: block; height: .5em; margin-bottom: .15em; }
+
+/* ---------- cinematic film band ---------- */
+.filmband { position: relative; min-height: clamp(460px, 62vh, 640px); display: grid; align-items: center; color: #fff; background: var(--navy); overflow: hidden; isolation: isolate; }
+.filmband__bg { position: absolute; inset: 0; z-index: -2; }
+.filmband__bg img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); animation: kenburns 24s ease-in-out infinite alternate; }
+.filmband::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 17, 66, .94) 0%, rgba(10, 17, 66, .72) 42%, rgba(10, 17, 66, .15) 100%), linear-gradient(0deg, rgba(10, 17, 66, .6), transparent 40%); }
+.filmband__in { display: grid; gap: 36px; align-items: center; padding-block: clamp(56px, 8vw, 104px); }
+@media (min-width: 900px) { .filmband__in { grid-template-columns: 1.1fr .9fr; } }
+.filmband__copy .lede { color: rgba(255, 255, 255, .88); max-width: 46ch; margin-top: 16px; }
+.filmband__chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; }
+.filmband__chips li { padding: 7px 14px; background: rgba(255, 255, 255, .12); backdrop-filter: blur(6px); font-family: var(--display); font-weight: 700; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; border-left: 3px solid var(--gold); }
+.filmband__play { position: relative; justify-self: start; display: flex; align-items: center; gap: 22px; background: none; border: 0; padding: 0; color: #fff; text-align: left; cursor: pointer; }
+@media (min-width: 900px) { .filmband__play { justify-self: center; flex-direction: column; text-align: center; gap: 18px; } }
+.filmband__btn { width: clamp(84px, 11vw, 132px); aspect-ratio: 1; display: grid; place-items: center; background: var(--crimson); color: #fff; border-radius: 50%; animation: pulse 2.4s infinite; transition: transform .35s var(--ease), background .25s; flex: none; }
+.filmband__btn svg { width: 40%; margin-left: 6%; }
+.filmband__play:hover .filmband__btn { transform: scale(1.1); background: var(--gold); color: var(--navy); }
+.filmband__lab { display: grid; gap: 2px; }
+.filmband__lab small { font-family: var(--display); font-weight: 800; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.filmband__lab b { font-family: var(--display); font-weight: 800; font-size: clamp(1.1rem, 2vw, 1.5rem); letter-spacing: -.02em; }
+.filmband__play:focus-visible { outline: 3px solid var(--gold); outline-offset: 8px; }
+.filmband .sample-tag { position: absolute; top: -34px; left: 0; }
+@media (prefers-reduced-motion: reduce) { .filmband__bg img, .filmband__btn { animation: none; } }
+.filmband .eyebrow { color: #fff; }
+.filmband em { color: var(--gold-light); }
+.filmband__lab b, .filmband__lab small { text-shadow: 0 2px 14px rgba(10, 17, 66, .7); }

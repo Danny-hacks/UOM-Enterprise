@@ -24,10 +24,6 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
   </div>
 </div></section>
 
-<section class="section" data-elementor="container:mauritius-film"><div class="wrap split">
-  <div><span class="eyebrow">Welcome</span><h2 class="h2">Your new home, <em>in two minutes.</em></h2><p class="lede" style="margin-top:18px">See Ebene, the campus and everyday life in Mauritius before you pack.</p></div>
-  ${L.videoCard(D.videos.mauritius, { big: true, label: 'Mauritius · 2 min' })}
-</div></section>
 
 <section class="section section--navy grain" id="visa" data-elementor="container:visa"><div class="wrap split split--top">
   <div data-reveal><span class="eyebrow">Student visa</span><h2 class="h2">We handle the <em>visa process</em> with you.</h2></div>
@@ -48,6 +44,8 @@ ${L.pageHead({ crumbs: [['Home', ''], ['International', null]], eyebrow: 'Intern
     </div>
   </div>
 </div></section>
+
+${L.filmBand(D.videos.mauritius, { eyebrow: 'Welcome', title: 'Your new home, <em>in two minutes.</em>', text: 'See Ebene, the campus and everyday life in Mauritius before you pack.', chips: ['Ebene', 'Campus', 'Student life', 'Getting around'], dur: '2:00' })}
 
 <section class="section" id="cost" data-elementor="container:cost-of-living"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Cost of living</span><h2 class="h2">Build your <em>monthly budget.</em></h2><p class="lede" style="margin-top:14px">Approximate costs from UoME. Adjust the sliders to see a monthly and annual picture — the yearly cost of living is estimated at around £3,500.</p></div>

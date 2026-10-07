@@ -172,6 +172,14 @@ function videoCard(v, { big = false, label = '', cls = '', dur = '' } = {}) {
   return `<button class="vcard ${big ? 'vcard--big' : ''} ${cls}" type="button" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}" data-vtitle="${esc(v.title)}" aria-label="Play video: ${esc(v.title)}"><img src="${v.poster}" alt="" loading="lazy"><span class="vcard__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="vcard__cap">${label ? `<small>${esc(label)}</small>` : ''}<b>${esc(v.title)}</b></span>${dur ? `<span class="vcard__dur">${esc(dur)}</span>` : ''}${sampleTag(v)}</button>`;
 }
 
+// full-bleed cinematic film band: photo background, copy on the left, big play button
+function filmBand(v, { eyebrow = 'Watch', title = '', text = '', chips = [], link = null, dur = '' } = {}) {
+  return `<section class="filmband" data-elementor="container:film-band"><div class="filmband__bg"><img src="${v.poster}" alt="" loading="lazy"></div><div class="wrap filmband__in">
+    <div class="filmband__copy"><span class="eyebrow">${esc(eyebrow)}</span><h2 class="h2">${title}</h2><p class="lede">${text}</p>${chips.length ? `<ul class="filmband__chips">${chips.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}${link ? `<p style="margin-top:26px"><a class="link-arrow" href="${link[1]}" style="color:#fff">${esc(link[0])} ${icon('arrow')}</a></p>` : ''}</div>
+    <button class="filmband__play" type="button" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}" data-vtitle="${esc(v.title)}" aria-label="Play video: ${esc(v.title)}"><span class="filmband__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="filmband__lab"><small>${dur ? esc(dur) + ' · ' : ''}Watch the film</small><b>${esc(v.title)}</b></span>${sampleTag(v)}</button>
+  </div></section>`;
+}
+
 // FAQ list (accordion); cat filters to one category, limit trims
 function faqList(cat, limit) {
   let items = require('./data').faqs.filter((f) => !cat || (Array.isArray(cat) ? cat.includes(f.cat) : f.cat === cat));
@@ -220,7 +228,7 @@ function fixPaths(html, depth) {
 // Alternate plain section backgrounds so two neighbouring sections never share the same colour.
 // Works on top-level <section> blocks of a page body; explicit dark/accent sections are left alone.
 function alternateBackgrounds(html) {
-  const DARK = /(?:^|\s)(section--navy|section--gold|cta|band|hero|filmsec|ticker)(?:\s|$)/;
+  const DARK = /(?:^|\s)(section--navy|section--gold|cta|band|hero|filmsec|filmband|ticker)(?:\s|$)/;
   const out = []; let i = 0, prev = null, first = true;
   const re = /<section(?: class="([^"]*)")?|<\/section>|<nav class="subnav"|<div class="wrap cbody"|<div class="wrap finder"|<div class="wrap artwrap"|<div class="factbar"/g;
   let m, depth = 0, last = 0; const parts = [];
@@ -319,4 +327,4 @@ const tickerBand = (words, gold = true) => {
   return `<div class="ticker ${gold === true ? 'ticker--gold' : gold === 'red' ? 'ticker--red' : ''}" aria-hidden="true" data-elementor="widget:marquee"><div class="ticker__track">${row}${row}</div></div>`;
 };
 
-module.exports = { videoCard, faqList, sampleTag, waLink, miniForm, page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };
+module.exports = { filmBand, videoCard, faqList, sampleTag, waLink, miniForm, page, pageHead, ctaBand, nextStrip, discountBar, logoStrip, tickerBand, icon, esc, rel, byslug, progUrl, img, stars3 };

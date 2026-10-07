@@ -15,10 +15,7 @@ function lifePage() {
   const body = `
 ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', null]], eyebrow: 'Campus & community', title: 'Life at <em>UoME.</em>', lede: 'A compact, connected campus in the heart of Ebene — and a community of students, graduates and academics who look out for each other.' , image: 'campus-atrium'})}
 
-<section class="section section--navy filmsec" data-elementor="container:campus-film"><div class="wrap split split--top">
-  <div><span class="eyebrow">Campus film</span><h2 class="h2">Step inside <em>The Core.</em></h2><p class="lede" style="margin-top:18px">A short walk through our Ebene campus — classrooms, lab, library and the people who use them. Then take the full scroll-through tour below.</p><p style="margin-top:24px"><a class="link-arrow" href="#tour" style="color:#fff">Take the campus tour ${icon('arrow')}</a></p></div>
-  ${L.videoCard(D.videos.campus, { big: true, label: 'Campus · 45 sec' })}
-</div></section>
+${L.filmBand(D.videos.campus, { eyebrow: 'Campus film', title: 'Step inside <em>The Core.</em>', text: 'A short walk through our Ebene campus — the classrooms, computer lab, library and lunchroom, and the people who use them.', chips: ['Classrooms', 'Computer lab', 'Library', 'Lunchroom', 'Ebene Cybercity'], link: ['Then take the full scroll-through tour', '#tour'], dur: '0:45' })}
 
 <section class="section" id="tour" data-elementor="container:campus-tour"><div class="wrap">
   <div class="sec-head" data-reveal><span class="eyebrow">Campus tour</span><h2 class="h2">Walk the campus, <em>scroll by scroll.</em></h2></div>
