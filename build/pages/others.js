@@ -271,9 +271,9 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Contact', null]], eyebrow: 'Get in touch
   <aside><div class="contact-cards">
     <a class="ccard" href="tel:${D.site.tel}">${icon('phone')}<div><b>${D.site.phone1}</b><span>${D.site.phone2} · ${esc(D.site.hours)}</span></div></a>
     <a class="ccard" href="${L.waLink()}">${icon('chat')}<div><b>Chat on WhatsApp</b><span>${D.site.whatsappLabel} · replies during office hours</span></div></a>
-    <a class="ccard" href="mailto:${D.site.email}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.email}</b><span>Admissions &amp; general enquiries</span></div></a>
-    <a class="ccard" href="mailto:${D.site.supportEmail}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.supportEmail}</b><span>Current students — student support</span></div></a>
-    <a class="ccard" href="mailto:${D.site.financeEmail}">${icon('mail')}<div><b style="font-size:1.15rem;word-break:break-all">${D.site.financeEmail}</b><span>Tuition payments &amp; finance</span></div></a>
+    <a class="ccard" href="mailto:${D.site.email}">${icon('mail')}<div><b class="ccard__mail">${D.site.email}</b><span>Admissions &amp; general enquiries</span></div></a>
+    <a class="ccard" href="mailto:${D.site.supportEmail}">${icon('mail')}<div><b class="ccard__mail">${D.site.supportEmail}</b><span>Current students — student support</span></div></a>
+    <a class="ccard" href="mailto:${D.site.financeEmail}">${icon('mail')}<div><b class="ccard__mail">${D.site.financeEmail}</b><span>Tuition payments &amp; finance</span></div></a>
     <a class="ccard" href="${D.site.map}">${icon('pin')}<div><b>${esc(D.site.address)}</b><span>Opposite the Ebene Commercial Centre · metro 10 minutes’ walk</span></div></a>
     <div class="ccard">${icon('clock')}<div><b>${esc(D.site.hours)}</b><span>${esc(D.site.hoursNote)}</span></div></div>
   </div></aside>

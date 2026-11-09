@@ -1295,3 +1295,66 @@ body:has(.cmpdock.is-on) .wa { bottom: 96px; }
 .phead__vplay span svg { width: 46%; margin-left: 6%; }
 .phead__vplay:hover { background: rgba(10, 17, 66, .95); transform: translateY(-2px); }
 .phead__vplay:hover span { background: var(--gold); color: var(--navy); }
+
+/* ---- Calm UI type: menu, buttons and controls use the body font (Source Sans 3),
+   sentence case, no tracking — easier on the eyes and consistent with body text. ---- */
+.nav__link, .btn, .link-arrow, .chip, .subnav a, .seg button, .path__go, .secchips a, .cmpbtn, .sector__p a, .disc a, .mbar a, .filters__toggle, .stepname {
+  font-family: var(--body);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.nav__link { font-size: .98rem; }
+.btn { font-size: 1.02rem; }
+.btn--sm { font-size: .94rem; }
+.link-arrow, .path__go, .sector__p a, .disc a { font-size: 1rem; }
+.chip, .subnav a, .seg button, .cmpbtn, .secchips a { font-size: .95rem; }
+.mbar a { font-size: .8rem; }
+.filters__toggle { font-size: 1rem; }
+.stepname { font-size: 1rem; }
+.dd a { font-family: var(--body); font-weight: 600; font-size: 1rem; }
+.drawer summary, .drawer__body > a { font-family: var(--body); font-weight: 600; font-size: 1.35rem; letter-spacing: 0; }
+.drawer__plain { font-family: var(--body); font-weight: 600; font-size: 1.35rem; letter-spacing: 0; }
+
+/* ---- One type system: Montserrat = headings, numerals & card titles; Source Sans 3 = everything else.
+   Small labels are sentence case, untracked and never below .875rem. ---- */
+.eyebrow { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .74rem); }
+.tag { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.pre__row { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .7rem); }
+.search__list small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.hero__scroll { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .6rem); }
+.countdown__lab { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.lab { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.proof__lab { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.node small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.tour__loc { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .7rem); }
+.media figcaption { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.ftr h3, .ftr .ftr-h { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .7rem); }
+.fact small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .62rem); }
+.badge { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.fgroup h3 { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.cmp tbody th { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .64rem); }
+.gal figcaption { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .64rem); }
+.leader span { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .7rem); }
+.takeaways b { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .72rem); }
+.tocard b, .factcard b { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .72rem); }
+.person .person__txt span { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.sample-tag { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .6rem); }
+.appsteps li { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .72rem); }
+.wa { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .78rem); }
+.sresults small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.vcard__cap small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .66rem); }
+.filmband__chips li { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .7rem); }
+.filmband__lab small { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .68rem); }
+.phead__vplay { font-family: var(--body); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: max(.875rem, .72rem); }
+.eyebrow { font-weight: 700; font-size: 1rem; }
+.ftr h3, .ftr .ftr-h { font-size: 1rem; font-weight: 700; }
+.proof__item small, .ev__d small { text-transform: none; letter-spacing: 0; font-size: .875rem; }
+/* chat button waits until the visitor scrolls, so it never covers the first-screen search bar */
+.wa { opacity: 0; pointer-events: none; transform: translateY(12px); }
+body:has(.hdr.is-stuck) .wa { opacity: 1; pointer-events: auto; transform: none; }
+body:has(.hdr.is-stuck) .wa:hover { transform: translateY(-3px); }
+.ccard b.ccard__mail { font-family: var(--body); font-weight: 700; font-size: 1.05rem; letter-spacing: 0; overflow-wrap: anywhere; }
+.fn { font-size: .875rem; }
+.vcard__dur { font-size: .85rem; }
+.appsteps li span { font-size: .875rem; }

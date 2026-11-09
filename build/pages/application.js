@@ -19,7 +19,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Apply', 'apply/'], ['Online application'
         <h2 class="h3">Which programme and <em>which intake?</em></h2>
         <div class="field"><label class="lab" for="a-prog">Programme</label><select class="select" id="a-prog" name="programme" required><option value="">Choose a programme…</option>${progOpts}</select><span class="err"></span></div>
         <div class="row2"><div class="field"><label class="lab" for="a-int">Intake</label><select class="select" id="a-int" name="intake" required><option value="">Choose an intake…</option></select><span class="err"></span></div>
-        <div class="field"><label class="lab" for="a-mode">Study mode</label><select class="select" id="a-mode" name="mode"><option>As published for the programme</option><option>Full-time</option><option>Part-time</option></select></div></div>
+        <div class="field"><label class="lab" for="a-mode">Study mode</label><select class="select" id="a-mode" name="mode"><option>As per the programme</option><option>Full-time</option><option>Part-time</option></select></div></div>
         <div class="field"><span class="lab">I am applying from</span><div class="opt"><label><input type="radio" name="who" value="local" checked><span>Mauritius</span></label><label><input type="radio" name="who" value="intl"><span>Overseas</span></label></div></div>
         <div class="notice" data-entry-note hidden></div>
       </div>
