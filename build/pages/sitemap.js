@@ -73,11 +73,11 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Site map', null]], eyebrow: 'Site map', 
 .sm ul{list-style:none;margin:0;padding:0}
 .sm li{padding:8px 0;border-bottom:1px solid var(--line)}
 .sm li:last-child{border-bottom:0}
-.sm a{font-weight:600;color:var(--crimson);text-decoration:none}
+.sm a{display:inline-block;padding:6px 0;font-weight:600;color:var(--crimson);text-decoration:none}
 .sm a:hover{text-decoration:underline}
 .sm__sub{padding-left:18px}
 .sm__sub a{font-weight:500}
-.sm__h{font-size:.95rem;color:var(--gold-deep);font-weight:700;padding-top:16px!important}
+.sm__h{font-size:.95rem;color:var(--crimson);font-weight:700;padding-top:16px!important}
 .sm__note{display:block;font-size:.85rem;color:var(--ink-soft,#5a5f7a);font-weight:400}
 </style>
 <section class="section"><div class="wrap">

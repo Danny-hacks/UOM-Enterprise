@@ -121,7 +121,7 @@ function header(depth, active) {
 <div class="drawer" id="drawer" aria-hidden="true"><div class="drawer__top"><a class="logo" href="${R}"><img src="${R}assets/img/logos/uome-white.png" alt="UOM Enterprise" height="40"></a><button class="icon-btn" data-drawer-close aria-label="Close menu">${icon('close')}</button></div>
   <div class="drawer__body">${drawer}<a class="drawer__plain" href="${R}contact/">Contact</a></div>
   <div class="drawer__foot"><a class="btn btn--gold btn--block" href="${R}apply/online/">Apply now ${icon('arrow')}</a><a class="btn btn--ghost-light btn--block" href="tel:${site.tel}">Call ${site.phone1}</a></div></div>
-<div class="search" id="search" role="dialog" aria-label="Search the site"><button class="icon-btn search__close" data-search-close aria-label="Close search">${icon('close')}</button><div class="search__in"><input class="search__field" id="q" type="search" placeholder="Search programmes, fees, visas…" autocomplete="off"><div class="search__list" id="qres"></div></div></div>`;
+<div class="search" id="search" role="dialog" aria-label="Search the site"><button class="icon-btn search__close" data-search-close aria-label="Close search">${icon('close')}</button><div class="search__in"><input class="search__field" id="q" type="search" aria-label="Search the site" placeholder="Search programmes, fees, visas…" autocomplete="off"><div class="search__list" id="qres"></div></div></div>`;
 }
 
 function footer(depth) {

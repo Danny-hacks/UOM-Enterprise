@@ -314,7 +314,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Search', null]], eyebrow: 'Search', titl
   <form class="searchbox" role="search" data-searchpage><label class="vh" for="sq2">Search the site</label><input class="input searchbox__in" id="sq2" type="search" placeholder="Search programmes, fees, visas…" autocomplete="off"><button class="btn" type="submit">Search ${icon('arrow')}</button></form>
   <p class="small" data-sp-count style="margin:18px 0 0"></p>
   <ol class="sresults" data-sp-list></ol>
-  <div class="empty" data-sp-empty hidden><h3 class="h3">No matches.</h3><p class="small">Try “fees”, “visa” or “law”, or call ${D.site.phone1}.</p></div>
+  <div class="empty" data-sp-empty hidden><h2 class="h3">No matches.</h2><p class="small">Try “fees”, “visa” or “law”, or call ${D.site.phone1}.</p></div>
 </div></section>
 `;
   return { path: 'search/index.html', html: L.page({ depth: 1, title: 'Search', desc: 'Search UoME programmes, fees, visas, guides and more.', body, scripts: [] }) };
