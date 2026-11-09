@@ -49,7 +49,7 @@ ${L.pageHead({ crumbs: [['Home', ''], ['Life at UoME', 'life/'], ['Student stori
       <h2 class="h2" style="margin-bottom:26px">${esc(s.name)}</h2>
       <blockquote class="quote" style="margin:0 0 28px">${esc(s.quote)}</blockquote>
       <div class="prose">${s.more.map((m) => `<p>${esc(m)}</p>`).join('')}</div>
-      <p style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--navy" href="life/stories/${s.slug}/">Read the full story ${icon('arrow')}</a><a class="btn btn--ghost" href="study/digital/msc-digital-marketing/">Explore the MSc</a></p>
+      <p style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn--navy" href="life/stories/${s.slug}/">Read the full story ${icon('arrow')}</a><a class="btn btn--ghost" href="study/digital-marketing/msc-digital-marketing/">Explore the MSc</a></p>
     </div>
   </div>
 </div></section>

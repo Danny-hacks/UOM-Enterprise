@@ -16,6 +16,7 @@ const pages = [
   ...require('./pages/outcomes')(),
   ...require('./pages/application')(),
   ...require('./pages/faq')(),
+  require('./pages/sitemap')(),
 ];
 
 for (const p of pages) {

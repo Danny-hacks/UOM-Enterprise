@@ -28,7 +28,7 @@ const stars3 = `<span class="crest-stars" aria-hidden="true">${icon('star').repl
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const byslug = (s) => programmes.find((p) => p.slug === s);
-const AREA_DIR = { law: 'law', pm: 'business-management', digital: 'digital' };
+const AREA_DIR = { law: 'law', pm: 'business-management', digital: 'digital-marketing' };
 const progUrl = (p) => `study/${AREA_DIR[p.area]}/${p.slug}/`;
 const rel = (depth) => '../'.repeat(depth);
 const img = (name, size = '') => `assets/img/${name}${size}.webp`;
@@ -40,7 +40,7 @@ function navData() {
     study: {
       cols: [
         ['Law', law.map((p) => [progUrl(p), p.short, `${p.levelLabel} · ${p.durationLabel}`])],
-        ['Project management & digital', other.map((p) => [progUrl(p), p.short, `${p.levelLabel} · ${p.durationLabel}`])],
+        ['Project management & digital marketing', other.map((p) => [progUrl(p), p.short, `${p.levelLabel} · ${p.durationLabel}`])],
         ['Find your fit', [['study/', 'Course finder', 'Filter by level, mode and intake'], ['study/#quiz', 'Which programme is right for me?', 'A 2-minute guided quiz'], ['study/#compare', 'Compare programmes', 'Side by side'], ['careers-accreditation/', 'Accreditation & career routes', 'APM · CIOB · IDM · CVLE']]],
       ],
       feat: ['study/#quiz', 'Not sure where to start?', 'Take the 2-minute programme quiz', 'campus-advice-s'],

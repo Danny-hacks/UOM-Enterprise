@@ -95,7 +95,7 @@ Rejected: default AI-site look (purple/blue gradients, Inter + centred hero + th
 /study/                 Finder + compare + quiz
   /study/law/  llb-english-mauritian-law · llb-english-law · graduate-diploma-in-law · llm-financial-commercial-law
   /study/business-management/  msc-project-management · msc-construction-project-management
-  /study/digital/  msc-digital-marketing
+  /study/digital-marketing/  msc-digital-marketing
 /apply/                 How to apply · key dates · entry · fees & savings estimator · forms & checklists · start application
 /international/         Journey timeline · visa · health · accommodation · cost of living · enquire
 /life/                  Campus tour · facilities · clubs · student support hub · stories · alumni
